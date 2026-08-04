@@ -1,0 +1,424 @@
+[
+  {
+    "id": 2,
+    "name": "Africa",
+    "url": "",
+    "description": "",
+    "link": "https://ruralhackers.com/author/africa/",
+    "slug": "africa",
+    "avatar_urls": {
+      "24": "https://secure.gravatar.com/avatar/97645dffc001208a5cfe466c9eb8b25e620a534fc8a6bac2a6c603c7268e9ee5?s=24&d=mm&r=g",
+      "48": "https://secure.gravatar.com/avatar/97645dffc001208a5cfe466c9eb8b25e620a534fc8a6bac2a6c603c7268e9ee5?s=48&d=mm&r=g",
+      "96": "https://secure.gravatar.com/avatar/97645dffc001208a5cfe466c9eb8b25e620a534fc8a6bac2a6c603c7268e9ee5?s=96&d=mm&r=g"
+    },
+    "meta": [],
+    "yoast_head": null,
+    "yoast_head_json": null,
+    "_links": {
+      "self": [
+        {
+          "href": "https://ruralhackers.com/wp-json/wp/v2/users/2",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ruralhackers.com/wp-json/wp/v2/users"
+        }
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "name": "agustin@anceu.com",
+    "url": "http://ruralhackers.com",
+    "description": "",
+    "link": "https://ruralhackers.com/author/agustinanceu-com/",
+    "slug": "agustinanceu-com",
+    "avatar_urls": {
+      "24": "https://secure.gravatar.com/avatar/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=24&d=mm&r=g",
+      "48": "https://secure.gravatar.com/avatar/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=48&d=mm&r=g",
+      "96": "https://secure.gravatar.com/avatar/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=96&d=mm&r=g"
+    },
+    "meta": [],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.1 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>agustin@anceu.com, Author at Rural Hackers</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://ruralhackers.com/author/agustinanceu-com/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"profile\" />\n<meta property=\"og:title\" content=\"agustin@anceu.com, Author at Rural Hackers\" />\n<meta property=\"og:url\" content=\"https://ruralhackers.com/author/agustinanceu-com/\" />\n<meta property=\"og:site_name\" content=\"Rural Hackers\" />\n<meta property=\"og:image\" content=\"https://secure.gravatar.com/avatar/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=500&d=mm&r=g\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"ProfilePage\",\"@id\":\"https:\\/\\/ruralhackers.com\\/author\\/agustinanceu-com\\/\",\"url\":\"https:\\/\\/ruralhackers.com\\/author\\/agustinanceu-com\\/\",\"name\":\"agustin@anceu.com, Author at Rural Hackers\",\"isPartOf\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/#website\"},\"breadcrumb\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/author\\/agustinanceu-com\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/ruralhackers.com\\/author\\/agustinanceu-com\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/ruralhackers.com\\/author\\/agustinanceu-com\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/ruralhackers.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Archives for agustin@anceu.com\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/ruralhackers.com\\/#website\",\"url\":\"https:\\/\\/ruralhackers.com\\/\",\"name\":\"Rural Hackers\",\"description\":\"A movement for the revitalization of rural life \\/\\/\",\"publisher\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/ruralhackers.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/ruralhackers.com\\/#organization\",\"name\":\"Rural Hackers\",\"url\":\"https:\\/\\/ruralhackers.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/ruralhackers.com\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"http:\\/\\/ruralhackers.com\\/wp-content\\/uploads\\/2025\\/02\\/RH_FULL.png\",\"contentUrl\":\"http:\\/\\/ruralhackers.com\\/wp-content\\/uploads\\/2025\\/02\\/RH_FULL.png\",\"width\":500,\"height\":500,\"caption\":\"Rural Hackers\"},\"image\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/#\\/schema\\/logo\\/image\\/\"}},{\"@type\":\"Person\",\"@id\":\"https:\\/\\/ruralhackers.com\\/#\\/schema\\/person\\/38451dba448a5c53a3aebf6b825858e8\",\"name\":\"agustin@anceu.com\",\"image\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=96&d=mm&r=g\",\"url\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=96&d=mm&r=g\",\"contentUrl\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=96&d=mm&r=g\",\"caption\":\"agustin@anceu.com\"},\"sameAs\":[\"http:\\/\\/ruralhackers.com\"],\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/author\\/agustinanceu-com\\/\"}}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "yoast_head_json": {
+      "title": "agustin@anceu.com, Author at Rural Hackers",
+      "robots": {
+        "index": "index",
+        "follow": "follow",
+        "max-snippet": "max-snippet:-1",
+        "max-image-preview": "max-image-preview:large",
+        "max-video-preview": "max-video-preview:-1"
+      },
+      "canonical": "https://ruralhackers.com/author/agustinanceu-com/",
+      "og_locale": "en_US",
+      "og_type": "profile",
+      "og_title": "agustin@anceu.com, Author at Rural Hackers",
+      "og_url": "https://ruralhackers.com/author/agustinanceu-com/",
+      "og_site_name": "Rural Hackers",
+      "og_image": [
+        {
+          "url": "https://secure.gravatar.com/avatar/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=500&d=mm&r=g",
+          "type": "",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "twitter_card": "summary_large_image",
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ProfilePage",
+            "@id": "https://ruralhackers.com/author/agustinanceu-com/",
+            "url": "https://ruralhackers.com/author/agustinanceu-com/",
+            "name": "agustin@anceu.com, Author at Rural Hackers",
+            "isPartOf": {
+              "@id": "https://ruralhackers.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://ruralhackers.com/author/agustinanceu-com/#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "potentialAction": [
+              {
+                "@type": "ReadAction",
+                "target": [
+                  "https://ruralhackers.com/author/agustinanceu-com/"
+                ]
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://ruralhackers.com/author/agustinanceu-com/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://ruralhackers.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Archives for agustin@anceu.com"
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://ruralhackers.com/#website",
+            "url": "https://ruralhackers.com/",
+            "name": "Rural Hackers",
+            "description": "A movement for the revitalization of rural life //",
+            "publisher": {
+              "@id": "https://ruralhackers.com/#organization"
+            },
+            "potentialAction": [
+              {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://ruralhackers.com/?s={search_term_string}"
+                },
+                "query-input": {
+                  "@type": "PropertyValueSpecification",
+                  "valueRequired": true,
+                  "valueName": "search_term_string"
+                }
+              }
+            ],
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://ruralhackers.com/#organization",
+            "name": "Rural Hackers",
+            "url": "https://ruralhackers.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "inLanguage": "en-US",
+              "@id": "https://ruralhackers.com/#/schema/logo/image/",
+              "url": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+              "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+              "width": 500,
+              "height": 500,
+              "caption": "Rural Hackers"
+            },
+            "image": {
+              "@id": "https://ruralhackers.com/#/schema/logo/image/"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://ruralhackers.com/#/schema/person/38451dba448a5c53a3aebf6b825858e8",
+            "name": "agustin@anceu.com",
+            "image": {
+              "@type": "ImageObject",
+              "inLanguage": "en-US",
+              "@id": "https://secure.gravatar.com/avatar/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=96&d=mm&r=g",
+              "url": "https://secure.gravatar.com/avatar/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=96&d=mm&r=g",
+              "contentUrl": "https://secure.gravatar.com/avatar/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=96&d=mm&r=g",
+              "caption": "agustin@anceu.com"
+            },
+            "sameAs": [
+              "http://ruralhackers.com"
+            ],
+            "mainEntityOfPage": {
+              "@id": "https://ruralhackers.com/author/agustinanceu-com/"
+            }
+          }
+        ]
+      }
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https://ruralhackers.com/wp-json/wp/v2/users/1",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ruralhackers.com/wp-json/wp/v2/users"
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "name": "ana abascal",
+    "url": "",
+    "description": "",
+    "link": "https://ruralhackers.com/author/ana/",
+    "slug": "ana",
+    "avatar_urls": {
+      "24": "https://secure.gravatar.com/avatar/df3fdddda032749129915a799c2893d46d7daa408d71d5a3410adba0b3e3b827?s=24&d=mm&r=g",
+      "48": "https://secure.gravatar.com/avatar/df3fdddda032749129915a799c2893d46d7daa408d71d5a3410adba0b3e3b827?s=48&d=mm&r=g",
+      "96": "https://secure.gravatar.com/avatar/df3fdddda032749129915a799c2893d46d7daa408d71d5a3410adba0b3e3b827?s=96&d=mm&r=g"
+    },
+    "meta": [],
+    "yoast_head": null,
+    "yoast_head_json": null,
+    "_links": {
+      "self": [
+        {
+          "href": "https://ruralhackers.com/wp-json/wp/v2/users/5",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ruralhackers.com/wp-json/wp/v2/users"
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "name": "juan",
+    "url": "",
+    "description": "",
+    "link": "https://ruralhackers.com/author/juan/",
+    "slug": "juan",
+    "avatar_urls": {
+      "24": "https://secure.gravatar.com/avatar/62b9ffcdba12d4d7794185ce3908cbd9fdac07ed63410dd8adac0c572a6bfa26?s=24&d=mm&r=g",
+      "48": "https://secure.gravatar.com/avatar/62b9ffcdba12d4d7794185ce3908cbd9fdac07ed63410dd8adac0c572a6bfa26?s=48&d=mm&r=g",
+      "96": "https://secure.gravatar.com/avatar/62b9ffcdba12d4d7794185ce3908cbd9fdac07ed63410dd8adac0c572a6bfa26?s=96&d=mm&r=g"
+    },
+    "meta": [],
+    "yoast_head": null,
+    "yoast_head_json": null,
+    "_links": {
+      "self": [
+        {
+          "href": "https://ruralhackers.com/wp-json/wp/v2/users/4",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ruralhackers.com/wp-json/wp/v2/users"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Nacho",
+    "url": "",
+    "description": "",
+    "link": "https://ruralhackers.com/author/nacho/",
+    "slug": "nacho",
+    "avatar_urls": {
+      "24": "https://secure.gravatar.com/avatar/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=24&d=mm&r=g",
+      "48": "https://secure.gravatar.com/avatar/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=48&d=mm&r=g",
+      "96": "https://secure.gravatar.com/avatar/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=96&d=mm&r=g"
+    },
+    "meta": [],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.1 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>Nacho, Author at Rural Hackers</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://ruralhackers.com/author/nacho/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"profile\" />\n<meta property=\"og:title\" content=\"Nacho, Author at Rural Hackers\" />\n<meta property=\"og:url\" content=\"https://ruralhackers.com/author/nacho/\" />\n<meta property=\"og:site_name\" content=\"Rural Hackers\" />\n<meta property=\"og:image\" content=\"https://secure.gravatar.com/avatar/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=500&d=mm&r=g\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"ProfilePage\",\"@id\":\"https:\\/\\/ruralhackers.com\\/author\\/nacho\\/\",\"url\":\"https:\\/\\/ruralhackers.com\\/author\\/nacho\\/\",\"name\":\"Nacho, Author at Rural Hackers\",\"isPartOf\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/#website\"},\"breadcrumb\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/author\\/nacho\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/ruralhackers.com\\/author\\/nacho\\/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/ruralhackers.com\\/author\\/nacho\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/ruralhackers.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Archives for Nacho\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/ruralhackers.com\\/#website\",\"url\":\"https:\\/\\/ruralhackers.com\\/\",\"name\":\"Rural Hackers\",\"description\":\"A movement for the revitalization of rural life \\/\\/\",\"publisher\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/ruralhackers.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/ruralhackers.com\\/#organization\",\"name\":\"Rural Hackers\",\"url\":\"https:\\/\\/ruralhackers.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/ruralhackers.com\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"http:\\/\\/ruralhackers.com\\/wp-content\\/uploads\\/2025\\/02\\/RH_FULL.png\",\"contentUrl\":\"http:\\/\\/ruralhackers.com\\/wp-content\\/uploads\\/2025\\/02\\/RH_FULL.png\",\"width\":500,\"height\":500,\"caption\":\"Rural Hackers\"},\"image\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/#\\/schema\\/logo\\/image\\/\"}},{\"@type\":\"Person\",\"@id\":\"https:\\/\\/ruralhackers.com\\/#\\/schema\\/person\\/adb3bb473a2fc7ff85f658f5df2c206f\",\"name\":\"Nacho\",\"image\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=96&d=mm&r=g\",\"url\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=96&d=mm&r=g\",\"contentUrl\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=96&d=mm&r=g\",\"caption\":\"Nacho\"},\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/author\\/nacho\\/\"}}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "yoast_head_json": {
+      "title": "Nacho, Author at Rural Hackers",
+      "robots": {
+        "index": "index",
+        "follow": "follow",
+        "max-snippet": "max-snippet:-1",
+        "max-image-preview": "max-image-preview:large",
+        "max-video-preview": "max-video-preview:-1"
+      },
+      "canonical": "https://ruralhackers.com/author/nacho/",
+      "og_locale": "en_US",
+      "og_type": "profile",
+      "og_title": "Nacho, Author at Rural Hackers",
+      "og_url": "https://ruralhackers.com/author/nacho/",
+      "og_site_name": "Rural Hackers",
+      "og_image": [
+        {
+          "url": "https://secure.gravatar.com/avatar/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=500&d=mm&r=g",
+          "type": "",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "twitter_card": "summary_large_image",
+      "schema": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ProfilePage",
+            "@id": "https://ruralhackers.com/author/nacho/",
+            "url": "https://ruralhackers.com/author/nacho/",
+            "name": "Nacho, Author at Rural Hackers",
+            "isPartOf": {
+              "@id": "https://ruralhackers.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://ruralhackers.com/author/nacho/#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "potentialAction": [
+              {
+                "@type": "ReadAction",
+                "target": [
+                  "https://ruralhackers.com/author/nacho/"
+                ]
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://ruralhackers.com/author/nacho/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://ruralhackers.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Archives for Nacho"
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://ruralhackers.com/#website",
+            "url": "https://ruralhackers.com/",
+            "name": "Rural Hackers",
+            "description": "A movement for the revitalization of rural life //",
+            "publisher": {
+              "@id": "https://ruralhackers.com/#organization"
+            },
+            "potentialAction": [
+              {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://ruralhackers.com/?s={search_term_string}"
+                },
+                "query-input": {
+                  "@type": "PropertyValueSpecification",
+                  "valueRequired": true,
+                  "valueName": "search_term_string"
+                }
+              }
+            ],
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://ruralhackers.com/#organization",
+            "name": "Rural Hackers",
+            "url": "https://ruralhackers.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "inLanguage": "en-US",
+              "@id": "https://ruralhackers.com/#/schema/logo/image/",
+              "url": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+              "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+              "width": 500,
+              "height": 500,
+              "caption": "Rural Hackers"
+            },
+            "image": {
+              "@id": "https://ruralhackers.com/#/schema/logo/image/"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://ruralhackers.com/#/schema/person/adb3bb473a2fc7ff85f658f5df2c206f",
+            "name": "Nacho",
+            "image": {
+              "@type": "ImageObject",
+              "inLanguage": "en-US",
+              "@id": "https://secure.gravatar.com/avatar/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=96&d=mm&r=g",
+              "url": "https://secure.gravatar.com/avatar/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=96&d=mm&r=g",
+              "contentUrl": "https://secure.gravatar.com/avatar/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=96&d=mm&r=g",
+              "caption": "Nacho"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://ruralhackers.com/author/nacho/"
+            }
+          }
+        ]
+      }
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https://ruralhackers.com/wp-json/wp/v2/users/3",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ruralhackers.com/wp-json/wp/v2/users"
+        }
+      ]
+    }
+  }
+]

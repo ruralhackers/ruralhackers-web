@@ -1,5 +1,11 @@
 import { describe, it, expect } from 'vitest'
-import { BASE_URL, EXPECTED, POST_TYPES, REQUIRED_ASSETS } from './config.ts'
+import {
+  BASE_URL,
+  EXPECTED,
+  POST_TYPES,
+  REQUIRED_ASSETS,
+  TEMPLATE_RENDERED_PAGES,
+} from './config.ts'
 
 describe('config', () => {
   it('points at ruralhackers over https with no trailing slash', () => {
@@ -33,5 +39,11 @@ describe('config', () => {
       'uploads/fonts/OffBitTrial-101.otf',
       'uploads/fonts/OffBitTrial-101Bold.otf',
     ])
+  })
+})
+
+describe('TEMPLATE_RENDERED_PAGES', () => {
+  it('exempts the posts index, which wordpress renders from a template', () => {
+    expect(TEMPLATE_RENDERED_PAGES).toEqual(['blog'])
   })
 })

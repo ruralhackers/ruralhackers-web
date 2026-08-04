@@ -7,11 +7,28 @@ export async function writeReport(outDir: string): Promise<string> {
     await readFile(join(outDir, 'media', 'manifest.json'), 'utf8'),
   ) as MediaRecord[]
   const csv = await readFile(join(outDir, 'seo', 'url-inventory.csv'), 'utf8')
-  const urlCount = csv.trim().split('\r\n').length - 1
+  const itemCount = csv.trim().split('\r\n').length - 1
 
-  // Types come from the files themselves. WordPress reports two plain JPEGs as
-  // image/heic, and harvested records have no API metadata at all.
-  const typeOf = (m: MediaRecord) => m.actualMime ?? m.mime ?? 'unknown'
+  /**
+   * The sitemap surface is wider than the content inventory: it also carries the
+   * category and author archives, which have no REST item of their own. Counting
+   * only the inventory would read as if those urls had been lost.
+   */
+  const sitemapCount = (
+    JSON.parse(await readFile(join(outDir, 'seo', 'sitemap-urls.json'), 'utf8')) as unknown[]
+  ).length
+
+  /** Extensions worth naming when the bytes cannot identify themselves. */
+  const EXT_MIME: Readonly<Record<string, string>> = { css: 'text/css', js: 'text/javascript' }
+
+  // Types come from the files themselves: WordPress mislabels files, and
+  // harvested records have no API metadata at all. Stylesheets have no magic
+  // bytes, so those fall back to the extension rather than reading "unknown".
+  const typeOf = (m: MediaRecord) =>
+    m.actualMime ||
+    m.mime ||
+    EXT_MIME[m.localPath.split('.').pop()?.toLowerCase() ?? ''] ||
+    'unknown'
 
   const byMime = new Map<string, number>()
   for (const m of manifest) {
@@ -32,7 +49,8 @@ export async function writeReport(outDir: string): Promise<string> {
   const lines = [
     '# Rural Hackers archive inventory',
     '',
-    `- URLs in inventory: ${urlCount}`,
+    `- URLs in the sitemap: ${sitemapCount}`,
+    `- Content items (pages and posts): ${itemCount}`,
     `- Media records: ${manifest.length} (${(bytes / 1024 / 1024).toFixed(0)} MB known)`,
     `- Harvested outside the library listing: ${harvested.length}`,
     '',

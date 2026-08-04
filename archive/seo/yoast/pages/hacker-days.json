@@ -1,0 +1,135 @@
+{
+  "title": "Hacker Days - Rural Hackers",
+  "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+  },
+  "canonical": "https://ruralhackers.com/hacker-days/",
+  "og_locale": "en_US",
+  "og_type": "article",
+  "og_title": "Hacker Days - Rural Hackers",
+  "og_description": "Hacker Days Hacker Days is a hands-on, collaborative event organized by Rural Hackers that brings together technologists, designers, and rural enthusiasts to co-create innovative solutions for pressing challenges in rural communities. Over the course of one week, participants work in teams to develop functional prototypes—such as apps, tools, or systems—that address specific local needs, like water management, biodiversity monitoring, [&hellip;]",
+  "og_url": "https://ruralhackers.com/hacker-days/",
+  "og_site_name": "Rural Hackers",
+  "article_modified_time": "2025-03-13T11:17:15+00:00",
+  "og_image": [
+    {
+      "url": "http://ruralhackers.com/wp-content/uploads/2025/02/IMG_20240511_172631.jpg",
+      "type": "",
+      "width": "",
+      "height": ""
+    }
+  ],
+  "twitter_card": "summary_large_image",
+  "twitter_misc": {
+    "Est. reading time": "3 minutes"
+  },
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://ruralhackers.com/hacker-days/",
+        "url": "https://ruralhackers.com/hacker-days/",
+        "name": "Hacker Days - Rural Hackers",
+        "isPartOf": {
+          "@id": "https://ruralhackers.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://ruralhackers.com/hacker-days/#primaryimage"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/hacker-days/#primaryimage"
+        },
+        "thumbnailUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/IMG_20240511_172631.jpg",
+        "datePublished": "2025-03-11T13:11:17+00:00",
+        "dateModified": "2025-03-13T11:17:15+00:00",
+        "breadcrumb": {
+          "@id": "https://ruralhackers.com/hacker-days/#breadcrumb"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://ruralhackers.com/hacker-days/"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://ruralhackers.com/hacker-days/#primaryimage",
+        "url": "https://ruralhackers.com/wp-content/uploads/2025/02/IMG_20240511_172631.jpg",
+        "contentUrl": "https://ruralhackers.com/wp-content/uploads/2025/02/IMG_20240511_172631.jpg",
+        "width": 1296,
+        "height": 972
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ruralhackers.com/hacker-days/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ruralhackers.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Hacker Days"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ruralhackers.com/#website",
+        "url": "https://ruralhackers.com/",
+        "name": "Rural Hackers",
+        "description": "A movement for the revitalization of rural life //",
+        "publisher": {
+          "@id": "https://ruralhackers.com/#organization"
+        },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://ruralhackers.com/?s={search_term_string}"
+            },
+            "query-input": {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": true,
+              "valueName": "search_term_string"
+            }
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ruralhackers.com/#organization",
+        "name": "Rural Hackers",
+        "url": "https://ruralhackers.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://ruralhackers.com/#/schema/logo/image/",
+          "url": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "width": 500,
+          "height": 500,
+          "caption": "Rural Hackers"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/#/schema/logo/image/"
+        }
+      }
+    ]
+  }
+}

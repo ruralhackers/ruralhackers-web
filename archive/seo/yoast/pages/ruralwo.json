@@ -1,0 +1,133 @@
+{
+  "title": "RuralWO - Rural Hackers",
+  "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+  },
+  "canonical": "https://ruralhackers.com/ruralwo/",
+  "og_locale": "en_US",
+  "og_type": "article",
+  "og_title": "RuralWO - Rural Hackers",
+  "og_description": "A residency program for women to connect with WordPress community We believe that access to knowledge and opportunities can empower more women to take active roles in the WordPress ecosystem, creating a more inclusive and diverse community. A one month experience for women to connect with WordPress in nature We are dedicated to fostering strong [&hellip;]",
+  "og_url": "https://ruralhackers.com/ruralwo/",
+  "og_site_name": "Rural Hackers",
+  "article_modified_time": "2025-09-26T11:33:42+00:00",
+  "og_image": [
+    {
+      "url": "http://ruralhackers.com/wp-content/uploads/2025/04/PXL_20230605_164653460-1.jpg",
+      "type": "",
+      "width": "",
+      "height": ""
+    }
+  ],
+  "twitter_card": "summary_large_image",
+  "twitter_misc": {
+    "Est. reading time": "3 minutes"
+  },
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://ruralhackers.com/ruralwo/",
+        "url": "https://ruralhackers.com/ruralwo/",
+        "name": "RuralWO - Rural Hackers",
+        "isPartOf": {
+          "@id": "https://ruralhackers.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://ruralhackers.com/ruralwo/#primaryimage"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/ruralwo/#primaryimage"
+        },
+        "thumbnailUrl": "http://ruralhackers.com/wp-content/uploads/2025/04/PXL_20230605_164653460-1.jpg",
+        "datePublished": "2025-03-07T23:13:51+00:00",
+        "dateModified": "2025-09-26T11:33:42+00:00",
+        "breadcrumb": {
+          "@id": "https://ruralhackers.com/ruralwo/#breadcrumb"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://ruralhackers.com/ruralwo/"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://ruralhackers.com/ruralwo/#primaryimage",
+        "url": "http://ruralhackers.com/wp-content/uploads/2025/04/PXL_20230605_164653460-1.jpg",
+        "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/04/PXL_20230605_164653460-1.jpg"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ruralhackers.com/ruralwo/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ruralhackers.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "RuralWO"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ruralhackers.com/#website",
+        "url": "https://ruralhackers.com/",
+        "name": "Rural Hackers",
+        "description": "A movement for the revitalization of rural life //",
+        "publisher": {
+          "@id": "https://ruralhackers.com/#organization"
+        },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://ruralhackers.com/?s={search_term_string}"
+            },
+            "query-input": {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": true,
+              "valueName": "search_term_string"
+            }
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ruralhackers.com/#organization",
+        "name": "Rural Hackers",
+        "url": "https://ruralhackers.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://ruralhackers.com/#/schema/logo/image/",
+          "url": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "width": 500,
+          "height": 500,
+          "caption": "Rural Hackers"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/#/schema/logo/image/"
+        }
+      }
+    ]
+  }
+}

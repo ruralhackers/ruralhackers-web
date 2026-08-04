@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest'
-import { checkCounts, checkReferencedImages, checkRequiredAssets } from './verify.ts'
+import {
+  checkCounts,
+  checkMarkdownBodies,
+  checkReferencedImages,
+  checkRequiredAssets,
+} from './verify.ts'
 import type { MediaRecord } from './media.ts'
 
 const rec = (
@@ -171,5 +176,42 @@ describe('checkRequiredAssets', () => {
     const manifest = allThree.map((p) => asset(p.replace(/_/g, '%5F'), 'downloaded'))
     // Only the Inter filename contains an underscore; the other two match plainly.
     expect(checkRequiredAssets(manifest)).toEqual([])
+  })
+})
+
+describe('checkMarkdownBodies', () => {
+  it('passes when every file has prose', () => {
+    expect(
+      checkMarkdownBodies([
+        { file: 'content/pages/about.md', body: '---\ntitle: "About"\n---\n\nWe build things.\n' },
+      ]),
+    ).toEqual([])
+  })
+
+  it('errors on a page whose body is only frontmatter', () => {
+    const problems = checkMarkdownBodies([
+      { file: 'content/pages/hacker-days.md', body: '---\ntitle: "Hacker Days"\n---\n\n' },
+    ])
+    expect(problems).toHaveLength(1)
+    expect(problems[0]!.rule).toBe('empty-markdown')
+    expect(problems[0]!.severity).toBe('error')
+    expect(problems[0]!.detail).toBe('content/pages/hacker-days.md has no body')
+  })
+
+  it('exempts the posts index, which has no body of its own', () => {
+    // page_for_posts is 16, slug `blog`. The theme renders the index; the page
+    // owns the url and the title only.
+    expect(
+      checkMarkdownBodies([{ file: 'content/pages/blog.md', body: '---\ntitle: "Blog"\n---\n\n' }]),
+    ).toEqual([])
+  })
+
+  it('does not exempt a post that merely happens to be named blog elsewhere', () => {
+    // The exemption is by slug, so this is a deliberate limitation worth pinning:
+    // a genuinely empty posts/blog.md would also be tolerated. There is no such
+    // post on this site, and the counts assert that.
+    expect(
+      checkMarkdownBodies([{ file: 'content/posts/whatever.md', body: '---\nx: 1\n---\n' }]),
+    ).toHaveLength(1)
   })
 })

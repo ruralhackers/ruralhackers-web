@@ -1,6 +1,6 @@
 import { readdir, readFile, stat } from 'node:fs/promises'
 import { join, relative } from 'node:path'
-import { EXPECTED, REQUIRED_ASSETS } from './config.ts'
+import { EXPECTED, REQUIRED_ASSETS, TEMPLATE_RENDERED_PAGES } from './config.ts'
 import { canonicalPath, uploadPathFromUrl, type MediaRecord } from './media.ts'
 
 export interface Problem {
@@ -43,6 +43,29 @@ export function checkReferencedImages(
         })
       }
     }
+  }
+  return problems
+}
+
+const MARKDOWN_SLUG = /(?:^|\/)([^/]+)\.md$/
+
+/**
+ * Every archived item must carry prose, with one enumerated exception.
+ *
+ * The `page_for_posts` target has no body of its own — the theme generates the
+ * index — so an empty body there is a fact about WordPress, not a gap in the
+ * archive. Any other empty file means content was lost in the transform.
+ */
+export function checkMarkdownBodies(
+  markdown: readonly { file: string; body: string }[],
+): Problem[] {
+  const templated = new Set<string>(TEMPLATE_RENDERED_PAGES)
+  const problems: Problem[] = []
+  for (const { file, body } of markdown) {
+    const prose = body.replace(/^---[\s\S]*?---\n/, '').trim()
+    if (prose !== '') continue
+    if (templated.has(MARKDOWN_SLUG.exec(file)?.[1] ?? '')) continue
+    problems.push({ rule: 'empty-markdown', detail: `${file} has no body`, severity: 'error' })
   }
   return problems
 }
@@ -153,14 +176,9 @@ export async function verifyArchive(outDir: string): Promise<Problem[]> {
   const mdFiles = (await walk(join(outDir, 'content'))).filter((f) => f.endsWith('.md'))
   const markdown: { file: string; body: string }[] = []
   for (const f of mdFiles) {
-    const body = await readFile(f, 'utf8')
-    const rel = relative(outDir, f)
-    const prose = body.replace(/^---[\s\S]*?---\n/, '').trim()
-    if (prose === '') {
-      problems.push({ rule: 'empty-markdown', detail: `${rel} has no body`, severity: 'error' })
-    }
-    markdown.push({ file: rel, body })
+    markdown.push({ file: relative(outDir, f), body: await readFile(f, 'utf8') })
   }
+  problems.push(...checkMarkdownBodies(markdown))
 
   // Rule 4: the assertion that actually protects the archive.
   problems.push(...checkReferencedImages(markdown, manifest))

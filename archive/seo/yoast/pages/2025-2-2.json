@@ -1,0 +1,135 @@
+{
+  "title": "2026 - Rural Hackers",
+  "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+  },
+  "canonical": "https://ruralhackers.com/2025-2-2/",
+  "og_locale": "en_US",
+  "og_type": "article",
+  "og_title": "2026 - Rural Hackers",
+  "og_description": "The European Union in the Villages: Listening to Rural Galicia Through Data Democracy Local Discovery Quest report – Gaxate, Vilán and Anceu, Ponte Caldelas (Galicia), 20 June 2026 4Data Democracy Project – WP7 Local Discovery Quest For many of us living in the countryside, the European Union can feel like something that happens in a [&hellip;]",
+  "og_url": "https://ruralhackers.com/2025-2-2/",
+  "og_site_name": "Rural Hackers",
+  "article_modified_time": "2026-07-16T19:14:48+00:00",
+  "og_image": [
+    {
+      "width": 2560,
+      "height": 1928,
+      "url": "https://ruralhackers.com/wp-content/uploads/2026/07/IMG_20260620_124841-scaled.jpg",
+      "type": "image/jpeg"
+    }
+  ],
+  "twitter_card": "summary_large_image",
+  "twitter_misc": {
+    "Est. reading time": "3 minutes"
+  },
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://ruralhackers.com/2025-2-2/",
+        "url": "https://ruralhackers.com/2025-2-2/",
+        "name": "2026 - Rural Hackers",
+        "isPartOf": {
+          "@id": "https://ruralhackers.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://ruralhackers.com/2025-2-2/#primaryimage"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/2025-2-2/#primaryimage"
+        },
+        "thumbnailUrl": "https://ruralhackers.com/wp-content/uploads/2026/07/IMG_20260620_124841-1024x771.jpg",
+        "datePublished": "2026-07-16T16:01:31+00:00",
+        "dateModified": "2026-07-16T19:14:48+00:00",
+        "breadcrumb": {
+          "@id": "https://ruralhackers.com/2025-2-2/#breadcrumb"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://ruralhackers.com/2025-2-2/"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://ruralhackers.com/2025-2-2/#primaryimage",
+        "url": "https://ruralhackers.com/wp-content/uploads/2026/07/IMG_20260620_124841-scaled.jpg",
+        "contentUrl": "https://ruralhackers.com/wp-content/uploads/2026/07/IMG_20260620_124841-scaled.jpg",
+        "width": 2560,
+        "height": 1928
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ruralhackers.com/2025-2-2/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ruralhackers.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "2026"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ruralhackers.com/#website",
+        "url": "https://ruralhackers.com/",
+        "name": "Rural Hackers",
+        "description": "A movement for the revitalization of rural life //",
+        "publisher": {
+          "@id": "https://ruralhackers.com/#organization"
+        },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://ruralhackers.com/?s={search_term_string}"
+            },
+            "query-input": {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": true,
+              "valueName": "search_term_string"
+            }
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ruralhackers.com/#organization",
+        "name": "Rural Hackers",
+        "url": "https://ruralhackers.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://ruralhackers.com/#/schema/logo/image/",
+          "url": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "width": 500,
+          "height": 500,
+          "caption": "Rural Hackers"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/#/schema/logo/image/"
+        }
+      }
+    ]
+  }
+}

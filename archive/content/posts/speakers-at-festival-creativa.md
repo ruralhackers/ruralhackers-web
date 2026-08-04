@@ -1,0 +1,10 @@
+---
+title: "Speakers at Festival Creativa"
+wpId: 863
+slug: "speakers-at-festival-creativa"
+url: "https://ruralhackers.com/speakers-at-festival-creativa/"
+seoTitle: "Speakers at Festival Creativa - Rural Hackers"
+canonical: "https://ruralhackers.com/speakers-at-festival-creativa/"
+---
+
+We’re excited to share that Rural Hackers took the stage at Creativa Festival 2025 in Vigo—an inspiring gathering where art, creativity, and music met in powerful ways. Our co-founder, Nacho, was invited to speak about how art and tech are transforming rural life—not just as tools, but as bridges between generations, places, and ideas. At Rural Hackers, we believe creativity shouldn’t be limited to cities. Rural villages hold deep cultural memory and resilience—and when connected with new technologies, they become fertile ground for bold experimentation and community-driven innovation.

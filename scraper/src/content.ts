@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
-import { EXPECTED, POST_TYPES } from './config.ts'
+import { EXPECTED, POST_TYPES, TEMPLATE_RENDERED_PAGES } from './config.ts'
 import { toCsv, urlToArchivePath } from './discover.ts'
 import { decodeEntities } from './html-entities.ts'
 import type { Http } from './http.ts'
@@ -76,7 +76,11 @@ export async function extractContent(http: Http, outDir: string): Promise<Archiv
       // `link` is authoritative. The page slugged `home` is served at "/".
       const archivePath = urlToArchivePath(r.link)
       const html = r.content?.rendered ?? ''
-      if (html.trim() === '') throw new Error(`${kind}/${r.slug}: empty content`)
+      // An empty body is a failure everywhere except the pages WordPress renders
+      // from a template — `blog` is the posts index and owns no content.
+      if (html.trim() === '' && !(TEMPLATE_RENDERED_PAGES as readonly string[]).includes(r.slug)) {
+        throw new Error(`${kind}/${r.slug}: empty content`)
+      }
 
       items.push({
         kind,

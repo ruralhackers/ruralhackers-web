@@ -1,0 +1,137 @@
+{
+  "title": "Creative Residencies - Rural Hackers",
+  "description": "Creative residencies of Rural Hackers",
+  "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+  },
+  "canonical": "https://ruralhackers.com/creative-residencies/",
+  "og_locale": "en_US",
+  "og_type": "article",
+  "og_title": "Creative Residencies - Rural Hackers",
+  "og_description": "Creative residencies of Rural Hackers",
+  "og_url": "https://ruralhackers.com/creative-residencies/",
+  "og_site_name": "Rural Hackers",
+  "article_modified_time": "2025-03-07T23:48:35+00:00",
+  "og_image": [
+    {
+      "url": "http://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-35-42.png",
+      "type": "",
+      "width": "",
+      "height": ""
+    }
+  ],
+  "twitter_card": "summary_large_image",
+  "twitter_misc": {
+    "Est. reading time": "9 minutes"
+  },
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://ruralhackers.com/creative-residencies/",
+        "url": "https://ruralhackers.com/creative-residencies/",
+        "name": "Creative Residencies - Rural Hackers",
+        "isPartOf": {
+          "@id": "https://ruralhackers.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://ruralhackers.com/creative-residencies/#primaryimage"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/creative-residencies/#primaryimage"
+        },
+        "thumbnailUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-35-42.png",
+        "datePublished": "2025-03-07T23:48:33+00:00",
+        "dateModified": "2025-03-07T23:48:35+00:00",
+        "description": "Creative residencies of Rural Hackers",
+        "breadcrumb": {
+          "@id": "https://ruralhackers.com/creative-residencies/#breadcrumb"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://ruralhackers.com/creative-residencies/"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://ruralhackers.com/creative-residencies/#primaryimage",
+        "url": "https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-35-42.png",
+        "contentUrl": "https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-35-42.png",
+        "width": 739,
+        "height": 949
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ruralhackers.com/creative-residencies/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ruralhackers.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Creative Residencies"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ruralhackers.com/#website",
+        "url": "https://ruralhackers.com/",
+        "name": "Rural Hackers",
+        "description": "A movement for the revitalization of rural life //",
+        "publisher": {
+          "@id": "https://ruralhackers.com/#organization"
+        },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://ruralhackers.com/?s={search_term_string}"
+            },
+            "query-input": {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": true,
+              "valueName": "search_term_string"
+            }
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ruralhackers.com/#organization",
+        "name": "Rural Hackers",
+        "url": "https://ruralhackers.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://ruralhackers.com/#/schema/logo/image/",
+          "url": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "width": 500,
+          "height": 500,
+          "caption": "Rural Hackers"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/#/schema/logo/image/"
+        }
+      }
+    ]
+  }
+}

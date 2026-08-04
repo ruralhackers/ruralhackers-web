@@ -1,0 +1,135 @@
+{
+  "title": "Rural Digital Projects - Rural Hackers",
+  "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+  },
+  "canonical": "https://ruralhackers.com/rural-digital-projects/",
+  "og_locale": "en_US",
+  "og_type": "article",
+  "og_title": "Rural Digital Projects - Rural Hackers",
+  "og_description": "Rural Digital Projects Bridging Bytes and Barns—Open Tech for Rural Futures Rural Hackers doesn’t just dream about better futures for the countryside—we code them. That&#8217;s why we develop all our rural digital projects. This is where lines of logic meet the unyielding grit of rural life. On this page, you’ll find tools, platforms, and open-source [&hellip;]",
+  "og_url": "https://ruralhackers.com/rural-digital-projects/",
+  "og_site_name": "Rural Hackers",
+  "article_modified_time": "2025-03-07T23:57:03+00:00",
+  "og_image": [
+    {
+      "url": "http://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-36-57.png",
+      "type": "",
+      "width": "",
+      "height": ""
+    }
+  ],
+  "twitter_card": "summary_large_image",
+  "twitter_misc": {
+    "Est. reading time": "7 minutes"
+  },
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://ruralhackers.com/rural-digital-projects/",
+        "url": "https://ruralhackers.com/rural-digital-projects/",
+        "name": "Rural Digital Projects - Rural Hackers",
+        "isPartOf": {
+          "@id": "https://ruralhackers.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://ruralhackers.com/rural-digital-projects/#primaryimage"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/rural-digital-projects/#primaryimage"
+        },
+        "thumbnailUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-36-57.png",
+        "datePublished": "2025-03-07T23:57:01+00:00",
+        "dateModified": "2025-03-07T23:57:03+00:00",
+        "breadcrumb": {
+          "@id": "https://ruralhackers.com/rural-digital-projects/#breadcrumb"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://ruralhackers.com/rural-digital-projects/"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://ruralhackers.com/rural-digital-projects/#primaryimage",
+        "url": "https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-36-57.png",
+        "contentUrl": "https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-36-57.png",
+        "width": 751,
+        "height": 976
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ruralhackers.com/rural-digital-projects/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ruralhackers.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Rural Digital Projects"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ruralhackers.com/#website",
+        "url": "https://ruralhackers.com/",
+        "name": "Rural Hackers",
+        "description": "A movement for the revitalization of rural life //",
+        "publisher": {
+          "@id": "https://ruralhackers.com/#organization"
+        },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://ruralhackers.com/?s={search_term_string}"
+            },
+            "query-input": {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": true,
+              "valueName": "search_term_string"
+            }
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ruralhackers.com/#organization",
+        "name": "Rural Hackers",
+        "url": "https://ruralhackers.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://ruralhackers.com/#/schema/logo/image/",
+          "url": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "width": 500,
+          "height": 500,
+          "caption": "Rural Hackers"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/#/schema/logo/image/"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "id": 16,
+  "date": "2024-11-10T10:29:43",
+  "date_gmt": "2024-11-10T10:29:43",
+  "guid": {
+    "rendered": "http://ruralhackers.com/blog/"
+  },
+  "modified": "2024-11-10T10:29:43",
+  "modified_gmt": "2024-11-10T10:29:43",
+  "slug": "blog",
+  "status": "publish",
+  "type": "page",
+  "link": "https://ruralhackers.com/blog/",
+  "title": {
+    "rendered": "Blog"
+  },
+  "content": {
+    "rendered": "",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+    "footnotes": ""
+  },
+  "class_list": [
+    "post-16",
+    "page",
+    "type-page",
+    "status-publish",
+    "hentry"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.1 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>Blog - Rural Hackers</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://ruralhackers.com/blog/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Blog - Rural Hackers\" />\n<meta property=\"og:url\" content=\"https://ruralhackers.com/blog/\" />\n<meta property=\"og:site_name\" content=\"Rural Hackers\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":[\"WebPage\",\"CollectionPage\"],\"@id\":\"https:\\/\\/ruralhackers.com\\/blog\\/\",\"url\":\"https:\\/\\/ruralhackers.com\\/blog\\/\",\"name\":\"Blog - Rural Hackers\",\"isPartOf\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/#website\"},\"datePublished\":\"2024-11-10T10:29:43+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/blog\\/#breadcrumb\"},\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/ruralhackers.com\\/blog\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/ruralhackers.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/ruralhackers.com\\/#website\",\"url\":\"https:\\/\\/ruralhackers.com\\/\",\"name\":\"Rural Hackers\",\"description\":\"A movement for the revitalization of rural life \\/\\/\",\"publisher\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/ruralhackers.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/ruralhackers.com\\/#organization\",\"name\":\"Rural Hackers\",\"url\":\"https:\\/\\/ruralhackers.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/ruralhackers.com\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"http:\\/\\/ruralhackers.com\\/wp-content\\/uploads\\/2025\\/02\\/RH_FULL.png\",\"contentUrl\":\"http:\\/\\/ruralhackers.com\\/wp-content\\/uploads\\/2025\\/02\\/RH_FULL.png\",\"width\":500,\"height\":500,\"caption\":\"Rural Hackers\"},\"image\":{\"@id\":\"https:\\/\\/ruralhackers.com\\/#\\/schema\\/logo\\/image\\/\"}}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+    "title": "Blog - Rural Hackers",
+    "robots": {
+      "index": "index",
+      "follow": "follow",
+      "max-snippet": "max-snippet:-1",
+      "max-image-preview": "max-image-preview:large",
+      "max-video-preview": "max-video-preview:-1"
+    },
+    "canonical": "https://ruralhackers.com/blog/",
+    "og_locale": "en_US",
+    "og_type": "article",
+    "og_title": "Blog - Rural Hackers",
+    "og_url": "https://ruralhackers.com/blog/",
+    "og_site_name": "Rural Hackers",
+    "twitter_card": "summary_large_image",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": [
+            "WebPage",
+            "CollectionPage"
+          ],
+          "@id": "https://ruralhackers.com/blog/",
+          "url": "https://ruralhackers.com/blog/",
+          "name": "Blog - Rural Hackers",
+          "isPartOf": {
+            "@id": "https://ruralhackers.com/#website"
+          },
+          "datePublished": "2024-11-10T10:29:43+00:00",
+          "breadcrumb": {
+            "@id": "https://ruralhackers.com/blog/#breadcrumb"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://ruralhackers.com/blog/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://ruralhackers.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://ruralhackers.com/#website",
+          "url": "https://ruralhackers.com/",
+          "name": "Rural Hackers",
+          "description": "A movement for the revitalization of rural life //",
+          "publisher": {
+            "@id": "https://ruralhackers.com/#organization"
+          },
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://ruralhackers.com/?s={search_term_string}"
+              },
+              "query-input": {
+                "@type": "PropertyValueSpecification",
+                "valueRequired": true,
+                "valueName": "search_term_string"
+              }
+            }
+          ],
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://ruralhackers.com/#organization",
+          "name": "Rural Hackers",
+          "url": "https://ruralhackers.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "inLanguage": "en-US",
+            "@id": "https://ruralhackers.com/#/schema/logo/image/",
+            "url": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+            "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+            "width": 500,
+            "height": 500,
+            "caption": "Rural Hackers"
+          },
+          "image": {
+            "@id": "https://ruralhackers.com/#/schema/logo/image/"
+          }
+        }
+      ]
+    }
+  },
+  "_links": {
+    "self": [
+      {
+        "href": "https://ruralhackers.com/wp-json/wp/v2/pages/16",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://ruralhackers.com/wp-json/wp/v2/pages"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://ruralhackers.com/wp-json/wp/v2/types/page"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://ruralhackers.com/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://ruralhackers.com/wp-json/wp/v2/comments?post=16"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 0,
+        "href": "https://ruralhackers.com/wp-json/wp/v2/pages/16/revisions"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://ruralhackers.com/wp-json/wp/v2/media?parent=16"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

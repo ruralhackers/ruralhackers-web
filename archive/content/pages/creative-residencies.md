@@ -1,0 +1,102 @@
+---
+title: "Creative Residencies"
+wpId: 695
+slug: "creative-residencies"
+url: "https://ruralhackers.com/creative-residencies/"
+seoTitle: "Creative Residencies - Rural Hackers"
+seoDescription: "Creative residencies of Rural Hackers"
+canonical: "https://ruralhackers.com/creative-residencies/"
+---
+
+## Creative Residencies
+
+At Rural Hackers, our Creative Residencies are more than a timeline—they’re a testament to what happens when curious minds collide with the rhythms of rural life. From experimental tech prototypes to community-driven art installations, each project born at Anceu Coliving carries the imprint of its creators: bold, unconventional, and deeply rooted in the landscapes that inspired them. These residencies are where solar-powered tools met ancient farming traditions, digital storytelling wove into Galician folklore, and temporary collaborations blossomed into lasting impact. Dive into the stories below, and discover how a month in the countryside can spark ideas that ripple far beyond the hills.
+
+_This is the residencies of Rural Hackers—where the past fuels the next wave of creative rebellion._
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+## Culture Moves Europe Residency
+
+As a proud partner of [Culture Moves Europe](https://culture.ec.europa.eu/creative-europe/creative-europe-culture-strand/culture-moves-europe) Programme , we hosted five exceptional residencies featuring talented individuals from Germany, Belgium, and Poland. These creative minds have converged at Anceu Coliving to collaborate, innovate, and inspire one another.  
+
+## Galicia Ilustrada Residency by Cami
+
+[Cam’s](https://www.camstass.com/) art serves as a portal to worlds brimming with wonder, magic, and a dash of the unexpected. Guided by her boundless imagination, she crafts spaces that blend figurative and abstract elements. During her time in Anceu [in 2024](https://ruralhackers.com/2024-2/), Cam immersed herself in the local culture, conducting interviews with villagers to uncover beliefs, traditions, history, and native flora. This rich tapestry of information inspired her to create three distinctive pieces of art, now proudly installed along the paths of Anceu. In a heartwarming collaboration with the village children, Cam also painted interactive games in the main square, bringing joy and playfulness to the community’s shared spaces.  
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+## Upcycling and Sustainability Advocate
+
+[Lotte](https://www.instagram.com/atelier_luuu/?hl=es) has mastered the art of upcycling, breathing new life into discarded fabrics, clothes, and textiles during her creative residency. With sustainability at the core of her practice, Lotte ingeniously transforms materials once considered waste into objects of beauty and purpose. During her residency, she engaged deeply with local artists, interviewing tattoo artist Carlos, photographer Carlos, weaver Rosario, and painter Emilia to gain fresh perspectives on creativity. Lotte also hosted afternoon sessions exploring the essence of creativity with villagers, introducing artistic techniques like gel plate printing. Her final piece, a textile artwork, will encapsulate the inspiration drawn from these rich interactions. Some [videos](https://www.instagram.com/p/CyvhistK0nU/) here.
+
+## Mery: Where Art Meets Nature
+
+A graduate of the Krakow Academy of Fine Arts, this left-handed creative sees beauty in nature and the extraordinary aspects of everyday life. As the founder of [Ja Mery Studio](https://www.behance.net/mariajaboska), Mery is passionate about making a difference, creating captivating spaces, translating ideas into visuals, and embracing both grand and small adventures. She collects memories from the people she meets, the sounds she hears, the sights she encounters, and the conversations she engages in, all while maintaining an aesthetic of simplicity and beauty. For her residency project, Mery embarked on an inner journey to discover the local flora. Gathering knowledge from villagers about native plants, she created an installation that beautifully showcases the botanical richness of the area.
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+## Square of Anceu
+
+We painted some traditional games in the main square with the kids of the village and the support of the Belgium artist Cam Stass. More info in this [link](https://www.instagram.com/reel/C-fJC2Csp1_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==)
+
+## Human versus Machine Residency
+
+[Cuco](https://linktr.ee/cucoshop)’s artistic vision and Anis’s tech expertise intertwined in a unique dance. The residency aimed to train AI, under Anis’s guidance, to echo Cuco’s style. All of that happened during one of our creative residencies. Over weeks, they honed algorithms, capturing Cuco’s essence. Cuco and Anis, an artist and a technologist, have ventured into the challenging arena of coalescing art with artificial intelligence. Their residency is an awe-inspiring symbiosis that gave birth to two intellectually stimulating pieces that delve into the intricate dynamics between humans and AI.
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+## Becoming cuco shortfilm
+
+[Julia Casal](https://l.instagram.com/?u=http%3A%2F%2Fjuliacasal.com%2F%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAab6LpmpWDgX5jWIQE75IzEEui7BcTcnkwOPnrnO95m2pDcUoIXyI81xQck_aem_ZSjdlhjcaD41-FfUD0lDgQ&e=AT3yE_d4XrRTr5ykrYlZ24T5HT91TVZqWBUwgUEHAPSDUe5QJTNFj1yYSaHSFFwk12623VtHleV_e8AzhtZrabMw4DEvzfXt5sXjnw)’s documentary delves into the creative process of an artist and its AI. From digitalizing Cuco’s work to refining AI algorithms, every step reveals human ingenuity. Cuco and Anis navigated complexities, teaching AI to paint like Cuco, pushing art-tech boundaries.  Julia produced a new documentary about how Artistic expression and technology have long shared an intricate symbiotic relationship, shaping and advancing each other. In this era of rapid technological evolution, this project offers valuable insights in the complex dialogue of the AI impacts beyond its functional utility. You can enjoy the documentary [here](https://vimeo.com/910381475)
+
+## As Indianas shortfilm
+
+This project delves into the [emigration narratives](https://www.youtube.com/watch?v=iHJRjgDhy4o) originating from the village of Anceu. Through the voices of women, the film captures their experiences from a feminist perspective. The Galician diaspora represents a significant chapter in our history, marked by the migration to South America. We were captivated by these migrant stories from a young age, listening to our grandparents sharing their incredible experiences and long journeys. This rich oral tradition laid the foundation for our understanding of Galicia.
+
+[Arianna](https://www.filmmakers.eu/en/actors/arianna-rodriguez-chusino) from Ecuador began this residency to explore and document these stories in greater depth. She created the documentary “As Indianas” by immersing herself in the local community.
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+## Asi e Nito Comic by Chano
+
+Our creative residencies don’t know about borders, that’s why we also implement projects with Galician people.
+
+We began our partnership with [Ensaia](https://www.ensaia.com/) Association. Ensaia is a community of altruist people with a long-term vision, aiming to showcase and positively impact the talent in Galicia. Through independent donations of great people, they award an annual grant to a talented Galician that need some support to bright even more.
+
+In this first experience, the artist [Chano Ripio](https://www.instagram.com/sacapunteo/?hl=es) joined us for a one-month residency as a finalist from the Ensaia program. We could tell you more but maybe is better to [hear him](https://www.youtube.com/watch?v=6QXYINHFzoE).
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+## Mapping species Residency
+
+Our resident, [Mery](https://www.instagram.com/mery.jab/?hl=es) from Poland, has brought this to life through her captivating project of mapping the diverse species found in the picturesque surroundings of Anceu. Armed with her keen observational skills, Mery set out to explore the local flora, bringing into focus the incredible biodiversity that exists. During this journey, Mery shared reflection that resonates deeply with us, “There’s literally nothing in nature that blooms all year long, so do not expect yourself to do so.”
+
+## Casa do Pobo reopening residency
+
+With an unparalleled passion for community engagement and a heart full of dedication, [Victor](https://www.instagram.com/ruralchamps_/) has breathed life into Casa do Pobo (the communal house of the village) with a series of vibrant activities. From teaching boxing to our elders, bringing the world of technology closer to them, providing English classes, to serving as a trainer for the children, Victor has become a vital force.
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+## Creative writing residency
+
+[María Cabrera](https://www.instagram.com/mariacabrerago/), a renowned writer, guided a creative writing workshop at Casa do Pobo, the village’s communal house. This space became a center of creativity where participants were encouraged to freely explore their literary potential. María provided expert exercises that helped emerging writers unlock their creativity, crafting detailed stories and expressing their deepest emotions. The workshop was notably enriched by lively interactions between the participants living at the coliving space and the local villagers, enhancing the overall learning experience. More info [here](https://www.instagram.com/p/CvpE6qAMkcX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==).  
+  
+
+## Robotics for kids
+
+Thanks to Ivan, our robotics genius, we have been able to enjoy robotics classes in the Casa do Pobo of Anceu. The children, apart from having fun, have learned a lot about robots and their small but complex mechanism.
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)

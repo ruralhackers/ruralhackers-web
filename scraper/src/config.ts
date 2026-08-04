@@ -43,6 +43,20 @@ export const POST_TYPES = {
 } as const
 
 /**
+ * Pages WordPress renders from a template, so their `content.rendered` is
+ * legitimately empty.
+ *
+ * `blog` is page 16, the `page_for_posts` target. The theme generates the posts
+ * index; the page exists only to own the url and the title. An empty body there
+ * is correct, and throwing on it would abort the archive over a fact about the
+ * source site rather than a gap in the archive.
+ *
+ * Enumerated rather than inferred: an unexpectedly empty page is still a real
+ * failure, and this list is what keeps that assertion meaningful.
+ */
+export const TEMPLATE_RENDERED_PAGES = ['blog'] as const
+
+/**
  * Assets referenced only from a rendered page's inline `<style>`.
  *
  * These three fonts are in no page's `content.rendered` and the media library

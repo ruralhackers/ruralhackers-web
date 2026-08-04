@@ -1,0 +1,160 @@
+{
+  "title": "Speakers at Festival Creativa - Rural Hackers",
+  "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+  },
+  "canonical": "https://ruralhackers.com/speakers-at-festival-creativa/",
+  "og_locale": "en_US",
+  "og_type": "article",
+  "og_title": "Speakers at Festival Creativa - Rural Hackers",
+  "og_description": "We’re excited to share that Rural Hackers took the stage at Creativa Festival 2025 in Vigo—an inspiring gathering where art, creativity, and music met in powerful ways. Our co-founder, Nacho, was invited to speak about how art and tech are transforming rural life—not just as tools, but as bridges between generations, places, and ideas. At [&hellip;]",
+  "og_url": "https://ruralhackers.com/speakers-at-festival-creativa/",
+  "og_site_name": "Rural Hackers",
+  "article_published_time": "2025-04-29T10:20:40+00:00",
+  "article_modified_time": "2025-04-29T10:20:42+00:00",
+  "author": "Nacho",
+  "twitter_card": "summary_large_image",
+  "twitter_misc": {
+    "Written by": "Nacho",
+    "Est. reading time": "1 minute"
+  },
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://ruralhackers.com/speakers-at-festival-creativa/#article",
+        "isPartOf": {
+          "@id": "https://ruralhackers.com/speakers-at-festival-creativa/"
+        },
+        "author": {
+          "name": "Nacho",
+          "@id": "https://ruralhackers.com/#/schema/person/adb3bb473a2fc7ff85f658f5df2c206f"
+        },
+        "headline": "Speakers at Festival Creativa",
+        "datePublished": "2025-04-29T10:20:40+00:00",
+        "dateModified": "2025-04-29T10:20:42+00:00",
+        "mainEntityOfPage": {
+          "@id": "https://ruralhackers.com/speakers-at-festival-creativa/"
+        },
+        "wordCount": 96,
+        "commentCount": 0,
+        "publisher": {
+          "@id": "https://ruralhackers.com/#organization"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "CommentAction",
+            "name": "Comment",
+            "target": [
+              "https://ruralhackers.com/speakers-at-festival-creativa/#respond"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://ruralhackers.com/speakers-at-festival-creativa/",
+        "url": "https://ruralhackers.com/speakers-at-festival-creativa/",
+        "name": "Speakers at Festival Creativa - Rural Hackers",
+        "isPartOf": {
+          "@id": "https://ruralhackers.com/#website"
+        },
+        "datePublished": "2025-04-29T10:20:40+00:00",
+        "dateModified": "2025-04-29T10:20:42+00:00",
+        "breadcrumb": {
+          "@id": "https://ruralhackers.com/speakers-at-festival-creativa/#breadcrumb"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://ruralhackers.com/speakers-at-festival-creativa/"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ruralhackers.com/speakers-at-festival-creativa/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ruralhackers.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Speakers at Festival Creativa"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ruralhackers.com/#website",
+        "url": "https://ruralhackers.com/",
+        "name": "Rural Hackers",
+        "description": "A movement for the revitalization of rural life //",
+        "publisher": {
+          "@id": "https://ruralhackers.com/#organization"
+        },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://ruralhackers.com/?s={search_term_string}"
+            },
+            "query-input": {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": true,
+              "valueName": "search_term_string"
+            }
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ruralhackers.com/#organization",
+        "name": "Rural Hackers",
+        "url": "https://ruralhackers.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://ruralhackers.com/#/schema/logo/image/",
+          "url": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "width": 500,
+          "height": 500,
+          "caption": "Rural Hackers"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/#/schema/logo/image/"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://ruralhackers.com/#/schema/person/adb3bb473a2fc7ff85f658f5df2c206f",
+        "name": "Nacho",
+        "image": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://secure.gravatar.com/avatar/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=96&d=mm&r=g",
+          "url": "https://secure.gravatar.com/avatar/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=96&d=mm&r=g",
+          "contentUrl": "https://secure.gravatar.com/avatar/0e2e02121d71dfb98f26a5687be45592cea77eea183dbc6d71cd8b8bdc7ffb4d?s=96&d=mm&r=g",
+          "caption": "Nacho"
+        },
+        "url": "https://ruralhackers.com/author/nacho/"
+      }
+    ]
+  }
+}

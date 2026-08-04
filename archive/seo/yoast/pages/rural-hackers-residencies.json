@@ -1,0 +1,138 @@
+{
+  "title": "Rural Hackers Residencies - Rural Hackers",
+  "description": "Rural Hackers Residencies develop artistic projects where rural life shapes ideas through slowness, community and collaboration.",
+  "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+  },
+  "canonical": "https://ruralhackers.com/rural-hackers-residencies/",
+  "og_locale": "en_US",
+  "og_type": "article",
+  "og_title": "Rural Hackers Residencies - Rural Hackers",
+  "og_description": "Rural Hackers Residencies develop artistic projects where rural life shapes ideas through slowness, community and collaboration.",
+  "og_url": "https://ruralhackers.com/rural-hackers-residencies/",
+  "og_site_name": "Rural Hackers",
+  "article_modified_time": "2026-01-20T00:51:12+00:00",
+  "og_image": [
+    {
+      "width": 768,
+      "height": 512,
+      "url": "https://ruralhackers.com/wp-content/uploads/2026/01/Room-102-4-768x512.jpg.webp",
+      "type": "image/webp"
+    }
+  ],
+  "twitter_card": "summary_large_image",
+  "twitter_misc": {
+    "Est. reading time": "8 minutes"
+  },
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://ruralhackers.com/rural-hackers-residencies/",
+        "url": "https://ruralhackers.com/rural-hackers-residencies/",
+        "name": "Rural Hackers Residencies - Rural Hackers",
+        "isPartOf": {
+          "@id": "https://ruralhackers.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://ruralhackers.com/rural-hackers-residencies/#primaryimage"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/rural-hackers-residencies/#primaryimage"
+        },
+        "thumbnailUrl": "https://ruralhackers.com/wp-content/uploads/2026/01/Room-102-4-768x512.jpg.webp",
+        "datePublished": "2026-01-13T11:20:50+00:00",
+        "dateModified": "2026-01-20T00:51:12+00:00",
+        "description": "Rural Hackers Residencies develop artistic projects where rural life shapes ideas through slowness, community and collaboration.",
+        "breadcrumb": {
+          "@id": "https://ruralhackers.com/rural-hackers-residencies/#breadcrumb"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://ruralhackers.com/rural-hackers-residencies/"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://ruralhackers.com/rural-hackers-residencies/#primaryimage",
+        "url": "https://ruralhackers.com/wp-content/uploads/2026/01/Room-102-4-768x512.jpg.webp",
+        "contentUrl": "https://ruralhackers.com/wp-content/uploads/2026/01/Room-102-4-768x512.jpg.webp",
+        "width": 768,
+        "height": 512,
+        "caption": "Anceu Coliving Room"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ruralhackers.com/rural-hackers-residencies/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ruralhackers.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Rural Hackers Residencies"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ruralhackers.com/#website",
+        "url": "https://ruralhackers.com/",
+        "name": "Rural Hackers",
+        "description": "A movement for the revitalization of rural life //",
+        "publisher": {
+          "@id": "https://ruralhackers.com/#organization"
+        },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://ruralhackers.com/?s={search_term_string}"
+            },
+            "query-input": {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": true,
+              "valueName": "search_term_string"
+            }
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ruralhackers.com/#organization",
+        "name": "Rural Hackers",
+        "url": "https://ruralhackers.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://ruralhackers.com/#/schema/logo/image/",
+          "url": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "width": 500,
+          "height": 500,
+          "caption": "Rural Hackers"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/#/schema/logo/image/"
+        }
+      }
+    ]
+  }
+}

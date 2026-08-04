@@ -1,0 +1,135 @@
+{
+  "title": "2024 - Rural Hackers",
+  "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+  },
+  "canonical": "https://ruralhackers.com/2024-2/",
+  "og_locale": "en_US",
+  "og_type": "article",
+  "og_title": "2024 - Rural Hackers",
+  "og_description": "Fuchiqueira is born A Fuchiqueira is an afternoon filled with creativity, innovation, and exploration. It&#8217;s a time for intergenerational knowledge sharing through a variety of workshops from traditional knowledge to Tech one. This event embodies the spirit of invention and natural exploration, encouraging participants to engage in trial and error in a supportive environment. Edition [&hellip;]",
+  "og_url": "https://ruralhackers.com/2024-2/",
+  "og_site_name": "Rural Hackers",
+  "article_modified_time": "2026-02-08T10:53:10+00:00",
+  "og_image": [
+    {
+      "url": "http://ruralhackers.com/wp-content/uploads/2025/02/IMG_20240511_172631.jpg",
+      "type": "",
+      "width": "",
+      "height": ""
+    }
+  ],
+  "twitter_card": "summary_large_image",
+  "twitter_misc": {
+    "Est. reading time": "12 minutes"
+  },
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://ruralhackers.com/2024-2/",
+        "url": "https://ruralhackers.com/2024-2/",
+        "name": "2024 - Rural Hackers",
+        "isPartOf": {
+          "@id": "https://ruralhackers.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://ruralhackers.com/2024-2/#primaryimage"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/2024-2/#primaryimage"
+        },
+        "thumbnailUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/IMG_20240511_172631.jpg",
+        "datePublished": "2025-02-14T13:11:57+00:00",
+        "dateModified": "2026-02-08T10:53:10+00:00",
+        "breadcrumb": {
+          "@id": "https://ruralhackers.com/2024-2/#breadcrumb"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://ruralhackers.com/2024-2/"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://ruralhackers.com/2024-2/#primaryimage",
+        "url": "https://ruralhackers.com/wp-content/uploads/2025/02/IMG_20240511_172631.jpg",
+        "contentUrl": "https://ruralhackers.com/wp-content/uploads/2025/02/IMG_20240511_172631.jpg",
+        "width": 1296,
+        "height": 972
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ruralhackers.com/2024-2/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ruralhackers.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "2024"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ruralhackers.com/#website",
+        "url": "https://ruralhackers.com/",
+        "name": "Rural Hackers",
+        "description": "A movement for the revitalization of rural life //",
+        "publisher": {
+          "@id": "https://ruralhackers.com/#organization"
+        },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://ruralhackers.com/?s={search_term_string}"
+            },
+            "query-input": {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": true,
+              "valueName": "search_term_string"
+            }
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ruralhackers.com/#organization",
+        "name": "Rural Hackers",
+        "url": "https://ruralhackers.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://ruralhackers.com/#/schema/logo/image/",
+          "url": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "width": 500,
+          "height": 500,
+          "caption": "Rural Hackers"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/#/schema/logo/image/"
+        }
+      }
+    ]
+  }
+}

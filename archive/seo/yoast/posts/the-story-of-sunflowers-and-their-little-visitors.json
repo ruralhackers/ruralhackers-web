@@ -1,0 +1,188 @@
+{
+  "title": "The story of sunflowers and their little visitors - Rural Hackers",
+  "robots": {
+    "index": "index",
+    "follow": "follow",
+    "max-snippet": "max-snippet:-1",
+    "max-image-preview": "max-image-preview:large",
+    "max-video-preview": "max-video-preview:-1"
+  },
+  "canonical": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/",
+  "og_locale": "en_US",
+  "og_type": "article",
+  "og_title": "The story of sunflowers and their little visitors - Rural Hackers",
+  "og_description": "Sunflowers have a way of capturing the heart with their vibrant yellow petals and striking dark centers, reminiscent of the sun itself. But these beauties are more than mere decorations; they are thriving ecosystems, supporting countless insects and playing a vital role in nature. The image above captures this perfectly, as a small beetle delicately [&hellip;]",
+  "og_url": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/",
+  "og_site_name": "Rural Hackers",
+  "article_published_time": "2024-11-10T17:15:15+00:00",
+  "og_image": [
+    {
+      "width": 1290,
+      "height": 800,
+      "url": "https://ruralhackers.com/wp-content/uploads/2024/11/sunflower.webp",
+      "type": "image/webp"
+    }
+  ],
+  "author": "agustin@anceu.com",
+  "twitter_card": "summary_large_image",
+  "twitter_misc": {
+    "Written by": "agustin@anceu.com",
+    "Est. reading time": "1 minute"
+  },
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/#article",
+        "isPartOf": {
+          "@id": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/"
+        },
+        "author": {
+          "name": "agustin@anceu.com",
+          "@id": "https://ruralhackers.com/#/schema/person/38451dba448a5c53a3aebf6b825858e8"
+        },
+        "headline": "The story of sunflowers and their little visitors",
+        "datePublished": "2024-11-10T17:15:15+00:00",
+        "mainEntityOfPage": {
+          "@id": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/"
+        },
+        "wordCount": 148,
+        "commentCount": 0,
+        "publisher": {
+          "@id": "https://ruralhackers.com/#organization"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/#primaryimage"
+        },
+        "thumbnailUrl": "https://ruralhackers.com/wp-content/uploads/2024/11/sunflower.webp",
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "CommentAction",
+            "name": "Comment",
+            "target": [
+              "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/#respond"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/",
+        "url": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/",
+        "name": "The story of sunflowers and their little visitors - Rural Hackers",
+        "isPartOf": {
+          "@id": "https://ruralhackers.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/#primaryimage"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/#primaryimage"
+        },
+        "thumbnailUrl": "https://ruralhackers.com/wp-content/uploads/2024/11/sunflower.webp",
+        "datePublished": "2024-11-10T17:15:15+00:00",
+        "breadcrumb": {
+          "@id": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/#breadcrumb"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/"
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/#primaryimage",
+        "url": "https://ruralhackers.com/wp-content/uploads/2024/11/sunflower.webp",
+        "contentUrl": "https://ruralhackers.com/wp-content/uploads/2024/11/sunflower.webp",
+        "width": 1290,
+        "height": 800
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ruralhackers.com/the-story-of-sunflowers-and-their-little-visitors/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ruralhackers.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "The story of sunflowers and their little visitors"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ruralhackers.com/#website",
+        "url": "https://ruralhackers.com/",
+        "name": "Rural Hackers",
+        "description": "A movement for the revitalization of rural life //",
+        "publisher": {
+          "@id": "https://ruralhackers.com/#organization"
+        },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://ruralhackers.com/?s={search_term_string}"
+            },
+            "query-input": {
+              "@type": "PropertyValueSpecification",
+              "valueRequired": true,
+              "valueName": "search_term_string"
+            }
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ruralhackers.com/#organization",
+        "name": "Rural Hackers",
+        "url": "https://ruralhackers.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://ruralhackers.com/#/schema/logo/image/",
+          "url": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "contentUrl": "http://ruralhackers.com/wp-content/uploads/2025/02/RH_FULL.png",
+          "width": 500,
+          "height": 500,
+          "caption": "Rural Hackers"
+        },
+        "image": {
+          "@id": "https://ruralhackers.com/#/schema/logo/image/"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://ruralhackers.com/#/schema/person/38451dba448a5c53a3aebf6b825858e8",
+        "name": "agustin@anceu.com",
+        "image": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://secure.gravatar.com/avatar/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=96&d=mm&r=g",
+          "url": "https://secure.gravatar.com/avatar/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=96&d=mm&r=g",
+          "contentUrl": "https://secure.gravatar.com/avatar/90dfb4b4b6151011da4349de385703ea3208ba520fa31933aeeb12a56a398ca0?s=96&d=mm&r=g",
+          "caption": "agustin@anceu.com"
+        },
+        "sameAs": [
+          "http://ruralhackers.com"
+        ],
+        "url": "https://ruralhackers.com/author/agustinanceu-com/"
+      }
+    ]
+  }
+}
