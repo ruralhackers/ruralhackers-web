@@ -7,23 +7,23 @@ English, Spanish and Galician.
 ## Archiving
 
 ```
-pnpm install
-pnpm exec playwright install chromium
-pnpm archive
+bun install
+bunx playwright install chromium
+bun run archive
 ```
 
 Stages run in order and each is resumable, so an interrupted run is continued by
 re-running the same command. Individually:
 
 ```
-pnpm archive:discover    # sitemaps -> 22 urls
-pnpm archive:content     # 15 pages, 3 posts, taxonomies, Yoast metadata
-pnpm archive:snapshot    # full page html + desktop/mobile screenshots
-pnpm archive:media       # 218 library images + harvested theme assets
-pnpm archive:markdown    # rendered html -> markdown
-pnpm archive:verify      # completeness assertions
-pnpm archive:report      # archive/reports/inventory.md
-pnpm archive:checksums   # sha256 of everything git does not hold
+bun run archive:discover    # sitemaps -> 22 urls
+bun run archive:content     # 15 pages, 3 posts, taxonomies, Yoast metadata
+bun run archive:snapshot    # full page html + desktop/mobile screenshots
+bun run archive:media       # 218 library images + harvested theme assets
+bun run archive:markdown    # rendered html -> markdown
+bun run archive:verify      # completeness assertions
+bun run archive:report      # archive/reports/inventory.md
+bun run archive:checksums   # sha256 of everything git does not hold
 ```
 
 `snapshot` runs **before** `media`, unlike the anceu archive. The theme's three
@@ -32,7 +32,12 @@ inline `<style>`, so `media` harvests from `archive/pages-full/` as well as from
 post content. Without that ordering the site's entire typography is absent from
 the archive and nothing notices.
 
-`pnpm test` runs the unit tests, `pnpm typecheck` the types.
+`bun run test` runs the unit tests, `bun run typecheck` the types.
+
+bun is the only package manager; there is one lockfile. The scraper still
+**runs** on Node — `node scraper/src/cli.ts` — because that is what its
+playwright usage is proven against. Installing with bun and executing with Node
+was verified: all 117 tests pass and every stage runs.
 
 ## What the archive holds
 
