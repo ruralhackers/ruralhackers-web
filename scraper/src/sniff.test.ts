@@ -66,3 +66,41 @@ describe('sniffMime', () => {
     expect(sniffMime(bytes(0xff, 0xd8, 0xff, 0xdb))).toBe('image/jpeg')
   })
 })
+
+describe('sniffMime on fonts', () => {
+  const bytesOf = (...parts: (string | number[])[]): Uint8Array => {
+    const out: number[] = []
+    for (const p of parts) {
+      if (typeof p === 'string') out.push(...[...p].map((c) => c.charCodeAt(0)))
+      else out.push(...p)
+    }
+    return new Uint8Array(out)
+  }
+
+  it('identifies a CFF-flavoured OpenType font by its OTTO tag', () => {
+    // OffBitTrial-101.otf, the site's display face.
+    expect(sniffMime(bytesOf('OTTO', [0x00, 0x0d, 0x00, 0x80]))).toBe('font/otf')
+  })
+
+  it('identifies a TrueType font by its 0x00010000 version', () => {
+    // Inter-VariableFont_opszwght.ttf, the site's body face.
+    expect(sniffMime(bytesOf([0x00, 0x01, 0x00, 0x00], [0x00, 0x11, 0x00, 0x80]))).toBe('font/ttf')
+  })
+
+  it('identifies the legacy `true` TrueType tag', () => {
+    expect(sniffMime(bytesOf('true', [0x00, 0x0a]))).toBe('font/ttf')
+  })
+
+  it('identifies woff and woff2 separately', () => {
+    expect(sniffMime(bytesOf('wOFF', 'OTTO'))).toBe('font/woff')
+    expect(sniffMime(bytesOf('wOF2', 'OTTO'))).toBe('font/woff2')
+  })
+
+  it('still returns null for bytes it cannot place', () => {
+    expect(sniffMime(bytesOf('not a known format at all'))).toBeNull()
+  })
+
+  it('does not mistake a jpeg for a font', () => {
+    expect(sniffMime(bytesOf([0xff, 0xd8, 0xff, 0xe0]))).toBe('image/jpeg')
+  })
+})

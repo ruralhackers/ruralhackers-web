@@ -18,6 +18,15 @@ export function sniffMime(bytes: Uint8Array): string | null {
   if (ascii(0, 'RIFF') && ascii(8, 'WEBP')) return 'image/webp'
   if (ascii(0, '%PDF')) return 'application/pdf'
 
+  // Fonts. The archive holds the theme's .otf and .ttf faces, which are
+  // referenced only from a rendered page's inline <style> and appear in no
+  // media library listing.
+  if (ascii(0, 'OTTO')) return 'font/otf'
+  if (ascii(0, 'wOFF')) return 'font/woff'
+  if (ascii(0, 'wOF2')) return 'font/woff2'
+  if (ascii(0, 'true') || ascii(0, 'ttcf')) return 'font/ttf'
+  if (at(0) === 0x00 && at(1) === 0x01 && at(2) === 0x00 && at(3) === 0x00) return 'font/ttf'
+
   // ISO-BMFF: `....ftyp<brand>`. HEIC and HEIF share the container with MP4.
   if (ascii(4, 'ftyp')) {
     const brand = String.fromCharCode(at(8), at(9), at(10), at(11))
