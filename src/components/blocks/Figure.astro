@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  src: ImageMetadata
+  alt: string
+  caption?: string
+  width?: number
+}
+const { src, alt, caption, width } = Astro.props
+---
+{/*
+  alt is required, not optional. 215 of the 225 archived images have no alt text
+  and phase 2 is the moment that stops being free — the type forces a decision,
+  and `alt=""` is a valid, deliberate answer for decoration.
+*/}
+<figure>
+  <Image src={src} alt={alt} width={width} formats={['avif', 'webp']} />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  figure { margin: 0; }
+  figcaption {
+    font-size: var(--size-small);
+    color: var(--color-accent-4);
+    margin-top: var(--space-20);
+  }
+</style>

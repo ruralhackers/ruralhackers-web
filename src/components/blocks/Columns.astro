@@ -1,0 +1,23 @@
+---
+interface Props {
+  gap?: 20 | 30 | 40 | 50
+  align?: 'top' | 'center'
+  /** Viewport width in px below which columns stack. */
+  stackBelow?: number
+}
+const { gap = 40, align = 'top' } = Astro.props
+---
+<div class:list={['columns', `align-${align}`]} style={`--cols-gap: var(--space-${gap})`}>
+  <slot />
+</div>
+
+<style>
+  .columns { display: flex; flex-wrap: wrap; gap: var(--cols-gap); }
+  .align-top { align-items: flex-start; }
+  .align-center { align-items: center; }
+  /* 782px is wordpress's own stacking breakpoint, kept so layouts break where
+     they break today. */
+  @media (max-width: 781px) {
+    .columns { flex-direction: column; }
+  }
+</style>

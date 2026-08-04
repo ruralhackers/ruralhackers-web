@@ -1,0 +1,27 @@
+---
+interface Props {
+  align?: 'left' | 'center' | 'right'
+}
+const { align = 'left' } = Astro.props
+const justify = align === 'left' ? 'flex-start' : align === 'right' ? 'flex-end' : 'center'
+---
+<div class="buttons" style={`--btn-justify: ${justify}`}><slot /></div>
+
+<style>
+  .buttons {
+    display: flex;
+    gap: var(--space-30);
+    justify-content: var(--btn-justify);
+    flex-wrap: wrap;
+  }
+  .buttons :global(a) {
+    font-family: var(--font-body);
+    border: 2px solid currentColor;
+    padding: var(--space-20) var(--space-30);
+  }
+  .buttons :global(a:hover) {
+    background: var(--color-accent-1);
+    color: var(--color-base);
+    text-decoration: none;
+  }
+</style>

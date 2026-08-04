@@ -1,0 +1,14 @@
+---
+interface Props {
+  /** A flex-basis, e.g. "33.33%". Omit to share space equally. */
+  width?: string
+}
+const { width } = Astro.props
+---
+<div class="column" style={width ? `flex-basis: ${width}; flex-grow: 0` : undefined}>
+  <slot />
+</div>
+
+<style>
+  .column { flex: 1 1 0; min-width: 0; }
+</style>

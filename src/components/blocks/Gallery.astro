@@ -1,0 +1,21 @@
+---
+interface Props {
+  columns?: 2 | 3 | 4
+  gap?: 20 | 30 | 40
+}
+const { columns = 3, gap = 30 } = Astro.props
+---
+<div class="gallery" style={`--gal-cols: ${columns}; --gal-gap: var(--space-${gap})`}>
+  <slot />
+</div>
+
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(var(--gal-cols), 1fr);
+    gap: var(--gal-gap);
+  }
+  @media (max-width: 781px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  src?: ImageMetadata
+  alt?: string
+  minHeight?: string
+  /** 0–100. The archived covers darken their imagery to keep text legible. */
+  overlay?: number
+}
+const { src, alt = '', minHeight = '60vh', overlay = 40 } = Astro.props
+---
+<div class="cover" style={`--cover-min: ${minHeight}; --cover-overlay: ${overlay / 100}`}>
+  {src && <Image class="bg" src={src} alt={alt} formats={['avif', 'webp']} />}
+  <div class="content"><slot /></div>
+</div>
+
+<style>
+  .cover {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: var(--cover-min);
+    overflow: hidden;
+  }
+  .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-contrast);
+    opacity: var(--cover-overlay);
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+    color: var(--color-base);
+    padding: var(--space-50);
+    text-align: center;
+  }
+</style>

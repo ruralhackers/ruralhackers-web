@@ -1,0 +1,26 @@
+---
+interface Props {
+  width?: 'content' | 'wide' | 'full'
+  background?: 'base' | 'accent-5' | 'accent-1' | 'contrast'
+  space?: 20 | 30 | 40 | 50 | 60 | 70 | 80
+}
+const { width = 'content', background = 'base', space = 60 } = Astro.props
+---
+<section
+  class:list={['section', `w-${width}`, `bg-${background}`]}
+  style={`--section-space: var(--space-${space})`}
+>
+  <div class="inner"><slot /></div>
+</section>
+
+<style>
+  .section { padding-block: var(--section-space); }
+  .inner { margin-inline: auto; padding-inline: var(--space-40); }
+  .w-content .inner { max-width: var(--content-size); }
+  .w-wide .inner { max-width: var(--wide-size); }
+  .w-full .inner { max-width: none; padding-inline: 0; }
+  .bg-base { background: var(--color-base); }
+  .bg-accent-5 { background: var(--color-accent-5); }
+  .bg-accent-1 { background: var(--color-accent-1); color: var(--color-base); }
+  .bg-contrast { background: var(--color-contrast); color: var(--color-base); }
+</style>

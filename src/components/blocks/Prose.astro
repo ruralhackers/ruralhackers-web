@@ -1,0 +1,26 @@
+---
+interface Props {
+  font?: 'body' | 'display'
+  size?: 'small' | 'medium' | 'large' | 'x-large' | 'xx-large'
+}
+const { font = 'body', size } = Astro.props
+---
+{/*
+  Ten of the archived paragraphs explicitly opt into the display face, which is
+  why `font` is a prop rather than always inheriting.
+*/}
+<div
+  class="prose"
+  style={[
+    `--prose-font: var(--font-${font})`,
+    size ? `--prose-size: var(--size-${size})` : '',
+  ].filter(Boolean).join('; ')}
+>
+  <slot />
+</div>
+
+<style>
+  .prose { font-family: var(--prose-font); font-size: var(--prose-size, inherit); }
+  .prose :global(p) { margin-block: 0 var(--space-30); }
+  .prose :global(ul) { padding-inline-start: var(--space-40); }
+</style>
