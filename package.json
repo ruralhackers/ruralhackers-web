@@ -1,0 +1,28 @@
+{
+  "name": "ruralhackers-web",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "archive": "node scraper/src/cli.ts all",
+    "archive:discover": "node scraper/src/cli.ts discover",
+    "archive:content": "node scraper/src/cli.ts content",
+    "archive:snapshot": "node scraper/src/cli.ts snapshot",
+    "archive:media": "node scraper/src/cli.ts media",
+    "archive:markdown": "node scraper/src/cli.ts markdown",
+    "archive:verify": "node scraper/src/cli.ts verify",
+    "archive:report": "node scraper/src/cli.ts report",
+    "archive:checksums": "node scraper/src/cli.ts checksums"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.2",
+    "@types/turndown": "5.0.6",
+    "playwright": "1.62.1",
+    "turndown": "7.2.4",
+    "typescript": "7.0.2",
+    "vitest": "4.1.10"
+  }
+}

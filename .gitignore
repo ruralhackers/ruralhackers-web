@@ -4,9 +4,17 @@ dist/
 .netlify/
 .env
 .env.*
+.cache/
 .DS_Store
+*.log
 
-# The archived media is 107 MB and is the irreplaceable part of this repo.
-# Gitignored for size — back it up off this machine before WordPress is
-# switched off. See docs/superpowers/specs/.
+# The three directories checksums.ts treats as unversioned. They are too large
+# for git and are the parts that cannot be regenerated once WordPress is off.
+# archive/reports/checksums.sha256 IS committed, so the backup stays verifiable
+# with `sha256sum -c` and needs nothing from this repo.
 archive/media/
+archive/screenshots/
+archive/pages-full/
+
+# brainstorming visual companion
+.superpowers/
