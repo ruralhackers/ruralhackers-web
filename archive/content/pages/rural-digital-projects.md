@@ -7,7 +7,7 @@ seoTitle: "Rural Digital Projects - Rural Hackers"
 canonical: "https://ruralhackers.com/rural-digital-projects/"
 ---
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-36-57.png)
 
 ## Rural Digital Projects
 
@@ -29,15 +29,15 @@ A Fuchiqueira is an afternoon filled with creativity, innovation, and exploratio
 
 [Edition IV](https://www.instagram.com/p/C8hyQl0MHuq/)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_20240511_172631.jpg)
 
 ## Anceu Maker Space
 
 Our “atelier” has been transformed into a maker space where we can work with art, creativity, and machines. We blend technology and art like true rural hackers! Thanks to the collaboration of our community and the valuable assistance of our neighbors from the village, we have carried out a series of significant improvements. We have learned how to change a roof, apply whitewash, and sand walls. With the help of AI, we have created an interior design prototype. More about the experience [here](https://www.instagram.com/p/CvZx1DAr6o-/).  
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/atelier-paint-2-768x576-1.jpg)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Curiositech-33.jpg)
 
 ## Curiositech and Do Action Hackathon
 
@@ -49,9 +49,9 @@ The websites developed include “El Mercado de la Tía Ni,” which transforms 
 
 Thanks to Ivan, our robotics genius, we have been able to enjoy robotics classes in the Casa do Pobo of Anceu. The children, apart from having fun, have learned a lot about robots and their small but complex mechanism.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-15-11-52-33.png)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/PXL_20240626_153916741.jpg)
 *OLYMPUS DIGITAL CAMERA*
 
 ## ReFrame Cam project
@@ -66,9 +66,9 @@ Working closely with the villagers, participants recorded a wide array of fascin
 
 All these videos are included in signs all over the village with NFC and QR codes. You can see more info of the project [here](https://linktr.ee/pegadas.do.recordo).
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_20230326_162840.jpg)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_5679.jpg)
 *OLYMPUS DIGITAL CAMERA*
 
 ## Anceu Monsters
@@ -83,9 +83,9 @@ We love that young people can discover new technologies by gamifying their villa
 
 We participated in the [DO\_Action](https://doaction.org/es/) event by [WordPress Pontevedra](https://wppontevedra.org/) where volunteers come together to help NGOs create or enhance their websites in just one day. This time, we had the pleasure of collaborating with [Epa Association](https://www.instagram.com/epa.asociacion/), an association that promotes social and cultural well-being through education, art, and civic participation in rural areas.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-15-10-50-11.png)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_2451.jpg)
 
 ## TecnoArranxo
 
@@ -100,4 +100,4 @@ We acquired our first vinyl cutter machine, which has significantly enhanced our
 
 We’ve expanded our equipment collection. We now have a heat press machine, inspired by the [Precious Plastic project](https://www.preciousplastic.com/), which allows us to create new materials from recycled plastics. We’ve also acquired a pin-making machine, adding a fun and creative option for our community to learn and create their own custom pins.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_5017.jpg)

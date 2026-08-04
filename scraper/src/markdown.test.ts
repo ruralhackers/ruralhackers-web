@@ -1,5 +1,11 @@
 import { describe, it, expect } from 'vitest'
-import { basenameOf, frontmatter, htmlToMarkdown, normalizeUploadUrl } from './markdown.ts'
+import {
+  basenameOf,
+  frontmatter,
+  htmlToMarkdown,
+  normalizeUploadUrl,
+  pickImageSrc,
+} from './markdown.ts'
 
 const KNOWN = new Set(['Hacker-Days.jpeg', 'WhatsApp-Image-2026-06-06-at-16.25.27-3.jpeg'])
 
@@ -97,5 +103,40 @@ describe('frontmatter', () => {
 
   it('renders string arrays as inline yaml lists', () => {
     expect(frontmatter({ tags: ['a', 'b'] })).toBe('---\ntags: ["a", "b"]\n---\n')
+  })
+})
+
+describe('pickImageSrc', () => {
+  it('prefers data-src when src is a lazysizes placeholder', () => {
+    // SiteGround's lazysizes puts a base64 gif in src and the real file in
+    // data-src. Reading src alone captured the placeholder for 151 of the 155
+    // content images, leaving phase 2 with no image references at all.
+    expect(
+      pickImageSrc(
+        'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+        'https://ruralhackers.com/wp-content/uploads/2025/02/Mapa.jpg',
+      ),
+    ).toBe('https://ruralhackers.com/wp-content/uploads/2025/02/Mapa.jpg')
+  })
+
+  it('keeps a real src untouched, ignoring any data-src', () => {
+    expect(
+      pickImageSrc('https://ruralhackers.com/wp-content/uploads/a.jpg', 'https://other/b.jpg'),
+    ).toBe('https://ruralhackers.com/wp-content/uploads/a.jpg')
+  })
+
+  it('falls back to the placeholder when there is no data-src', () => {
+    // Better to record what the page actually had than to invent a url.
+    expect(pickImageSrc('data:image/gif;base64,AAAA', null)).toBe('data:image/gif;base64,AAAA')
+  })
+
+  it('treats a missing src as empty', () => {
+    expect(pickImageSrc(null, null)).toBe('')
+  })
+
+  it('uses data-src when src is absent entirely', () => {
+    expect(pickImageSrc(null, 'https://ruralhackers.com/wp-content/uploads/c.jpg')).toBe(
+      'https://ruralhackers.com/wp-content/uploads/c.jpg',
+    )
   })
 })

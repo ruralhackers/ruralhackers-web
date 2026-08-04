@@ -9,11 +9,11 @@ canonical: "https://ruralhackers.com/ruralwo/"
 
 ## **A residency program for women to connect with WordPress community**
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/04/PXL_20230605_164653460-1.jpg)
 
 ## We believe that access to knowledge and opportunities can empower more women to take active roles in the WordPress ecosystem, creating a more inclusive and diverse community.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/04/P8200509-scaled.jpg)
 
 ## **A one month experience for women to connect with WordPress in nature**
 
@@ -35,7 +35,7 @@ RuralWO is a blend of learning, impact, and community-building.
     
 -   **Financial aid:** a grant of 500€ to support your living expenses and help you focus fully on your project.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/04/Screenshot-from-2025-04-01-17-47-07.png)
 
 ## Next steps
 
@@ -77,14 +77,14 @@ Fill the form to join.
 
 [Sign up](https://forms.gle/YFkHUTZrdth4BjRB7)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-29-42.png)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/04/PXL_20230521_153102992.jpg)
 
 ## Our partners
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/09/logo-wppontevedra-img.png)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/09/logo-wpcom.png)
 
-![Anceu Coliving](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![Anceu Coliving](https://ruralhackers.com/wp-content/uploads/2025/02/Anceu-Coliving-Logo_Primary-01.png)

@@ -13,20 +13,20 @@ canonical: "https://ruralhackers.com/hacker-days/"
 
 ## Key points of Hacker Days
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_20240511_172631.jpg)
 
 ### Focus on Real Problems
 
 Hacker Days tackles tangible issues faced by rural areas, such as **community water management**, **biodiversity monitoring**, or **digital inclusion**.  
   
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_4457.jpg)
 
 ### Collaborative Environment
 
 Participants work in teams, combining their skills in **technology, design, and community engagement** to prototype solutions.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_2451.jpg)
 
 ### Hands-On Prototyping
 
@@ -34,7 +34,7 @@ Over the course of a week, participants develop **functional prototypes** that
   
   
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Entre-Culturas-Ed-II-7-1.jpg)
 
 ### Community-Centered
 
@@ -42,7 +42,7 @@ Local residents, like **Rogelio** and **Rosabel**, actively participate, ensu
   
   
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_5679.jpg)
 
 ### Open source
 
@@ -57,7 +57,7 @@ All solutions are developed as **open-source projects**, allowing other rural c
 
 > Empower local communities
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-28-41.png)
 
 ## **Upcoming Hacker Days Event (2025)**
 
@@ -107,7 +107,7 @@ How would you like to contribute? \*
 
 ( function() { const style = document.createElement( 'style' ); style.appendChild( document.createTextNode( '#wpforms-716-field\_4-container { position: absolute !important; overflow: hidden !important; display: inline !important; height: 1px !important; width: 1px !important; z-index: -1000 !important; padding: 0 !important; } #wpforms-716-field\_4-container input { visibility: hidden; } #wpforms-conversational-form-page #wpforms-716-field\_4-container label { counter-increment: none; }' ) ); document.head.appendChild( style ); document.currentScript?.remove(); } )();
 
-Submit![Loading](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+Submit![Loading](https://ruralhackers.com/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg)
 
 ![Loading](https://ruralhackers.com/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg)
 

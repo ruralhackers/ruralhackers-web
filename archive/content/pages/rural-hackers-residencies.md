@@ -18,37 +18,37 @@ Your work might live on a forest path, in the main square, inside Casa do Pobo, 
 
 ## What’s included
 
-![Anceu Coliving Room](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![Anceu Coliving Room](https://ruralhackers.com/wp-content/uploads/2026/01/Room-102-4-768x512.jpg.webp)
 
 ### Private Accomodation
 
 Individual room at Anceu Coliving with private bathroom
 
-![Rural Hacker Residencies](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![Rural Hacker Residencies](https://ruralhackers.com/wp-content/uploads/2026/01/IMG_20240523_171814.jpg-edited.webp)
 
 ### Creative community
 
 Be part of a community of creators, technologist and open minded people from all over the world
 
-![Cora and Rosario](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![Cora and Rosario](https://ruralhackers.com/wp-content/uploads/2026/01/Screenshot-from-2025-02-17-14-33-22-edited-1.png)
 
 ### 1 weekly 1-hour session
 
 A framework to refine your idea, solve problems, and ensure your project resonates with local context
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/IMG_20240511_172631-edited-1.jpg)
 
 ### Maker Space
 
 Full access to our Maker Space (3D printer, vinyl cutter, plastic recycling machine, badge maker)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Entre-Culturas-3-106-1.jpg)
 
 ### Final event to show your creation
 
 Every rural hackers residencies culminates in a public moment: an exhibition, installation, workshop, screening, or intervention.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/IMG_5352-1-768x512.jpg.webp)
 
 ### Daily essentials
 
@@ -74,73 +74,73 @@ Coffee, tea, milk, and fresh bread, olive oil
 
 These projects didn’t just happen _in_ Anceu—they happened _with_ Anceu village community.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/cami_3x21.jpg)
 
 ### Galicia Ilustrada
 
 [Cam](https://www.camstass.com/) from Belgium immersed herself in the local culture, conducting interviews with villagers. This information inspired her to create three pieces of art, now installed along the paths of Anceu.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/rogelilo_3x2.jpg)
 
 ### A tribute to our neighbour Rogelio
 
 [Shona](https://www.instagram.com/reels/DKVEuaatE6p/), from New York, created a lakeside installation using recycled wood and the forest as her canvas. The piece honors Rogelio, a neighbor who supports us greatly and carries deep knowledge of the land.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/pandereterias_3x2.jpg)
 
 ### Raices project
 
 [Hugo and Alessandro](https://www.instagram.com/p/DIg23zpKkWj/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==) from Cuba and Italy, musicians from Madrid’s Reina Sofía School led workshops on Cuban and Italian rhythms and closed with a live concert.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/carlos_3x2_more_topcrop_with_watercolor.jpg)
 
 ### The Gift of being Seen
 
 [Kristinka](https://www.instagram.com/kristinka.lazar._.atelier/) from Croatia painted portraits of 80 local residents during [2024](https://ruralhackers.com/2024-2/). Her goal was to go beyond appearances and capture each person’s unique story, history, and character.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/mery_3x2.jpg)
 
 ### Where arts meets nature
 
 [Mery](https://www.behance.net/mariajaboska) from Poland embarked on an inner journey to discover the local flora. Gathering knowledge from villagers about native plants, she created an installation that showcases the botanical richness of the area.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/revista_3x2_crop.jpg)
 
 ### Rural Hackers Magazine
 
 [Cora and Feli](https://www.instagram.com/p/DHQqE7LMkQN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==) from Germany immersed themselves in local culture, collecting stories and exploring the impact of our projects. The magazine reflects that deep community connection—full of warmth and hospitality.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/foto3_3x2_mid_thirds.jpg)
 
 ### Reframe Cam
 
 Ovi from Romania installed capture points with 3D-printed phone holders so villagers can take photos and upload them via QR codes to a shared server. This helps us track environmental change over time.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/raquel_3x2_topcrop.jpg)
 
 ### Natural Colors of the Forest
 
 [Raquel](https://www.instagram.com/reels/DIwz-EnNlAZ/), from Portugal, explored natural dyeing with materials gathered from the forest. Also, she led workshops at Casa do Pobo. The residency culminated in a collective artwork, celebrating nature and tradition.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/chano_3x2_crop.jpg)
 
 ### Asi e Nito Comic
 
 [Chano](https://www.instagram.com/p/C8U0L3vsBZo/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==), an artist from Galicia, created a comic inspired by the village of Anceu. The story follows two mischievous aliens who land on Earth and start stirring up chaos among the neighbors of a small rural village.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/foto_3x2.jpg)
 
 ### Textile art in nature
 
 Shona, from New York, created an installation deep in the forest, using recycled textiles. The piece is a tribute to **Se**, one of the people who most actively supports the cultural and social life of the village.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2026/01/foto2_3x21.jpg)
 
 ### Upcycling and Sustainability Advocate
 
 [Lotte](https://www.instagram.com/atelier_luuu/?hl=es) from the Netherlands connected with local artists. She hosted sessions with villagers on creativity. These exchanges shaped her process. Her final textile piece reflects the inspiration gathered from the community.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/06/IMG_6047-scaled.jpg)
 
 ### A mural for Ventin village
 
@@ -150,7 +150,7 @@ Shona, from New York, created an installation deep in the forest, using recycled
 > 
 >   
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/04/R1-06716-028A.jpg)
 
 ## Contact us
 

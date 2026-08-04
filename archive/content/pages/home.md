@@ -12,7 +12,7 @@ canonical: "https://ruralhackers.com/"
 
 A movement for the revitalization of **rural life** //
 
-![Mapa Anceu](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![Mapa Anceu](https://ruralhackers.com/wp-content/uploads/2025/02/Ilustracion_sin_titulo-1-scaled.jpg)
 
 # Rural Hackers
 
@@ -20,9 +20,9 @@ Rural Hackers is an international organization dedicated to fostering innovation
 
 **Rural Hackers** is based on the power of inspiration. Our aim is to create a place where you can find people who become your reference for change.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-37-24.png)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-29-52.png)
 
 ## The Context
 
@@ -37,11 +37,11 @@ Rural areas of Galicia (Spain) are becoming severely depopulated. This fact jeop
 > Rosario  
 > Anceu, Ponte Caldelas
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-33-22.png)
 
 ## Stuff we do
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-35-37.png)
 
 ### Creative Residencies
 
@@ -49,7 +49,7 @@ One-month experience at Anceu coliving to develop projects on tech, arts or crea
 
 [Learn more](https://ruralhackers.com/rural-hackers-residencies/)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-28-59.png)
 
 ### Rural Digital Projects
 
@@ -57,7 +57,7 @@ We develop open source tech solutions to fight against rural challenges
 
 [Learn more](https://ruralhackers.com/rural-digital-projects/)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-34-27.png)
 
 ### Sharing Knowledge Events
 
@@ -69,15 +69,15 @@ Monthly initiatives to learn traditional and innovative knowledge.
 
 ## We build trough the power of the local villagers of Anceu and our international community. Together, we create a future where every person’s effort leads to lasting impact.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-31-36.png)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-34-36.png)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-33-58.png)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/DSC02753.jpg)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-36-57.png)
 
 ![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-36-57.png)
 
@@ -87,7 +87,7 @@ Our actions are fueled by the hacking mindset, problems are opportunities, obsta
 
 Our collaborators join us on a journey that transcends logos, KPIs, and numerical outcomes. They focus on people, fostering connections and enriching experiences that drive rural innovation in villages.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/ey_logo.png)
 
 ## Follow us in real life
 

@@ -22,6 +22,20 @@ export function basenameOf(url: string): string {
 }
 
 /**
+ * The real image url behind a lazy-loading placeholder.
+ *
+ * SiteGround Optimizer's lazysizes rewrites every `<img>` to carry a base64 gif
+ * in `src` and the actual file in `data-src`. Reading `src` alone captured the
+ * placeholder for 151 of this site's 155 content images, which left
+ * `archive/content/` — the input to phase 2 — with no usable image references at
+ * all, while `verify` passed because its image rule skips non-http urls.
+ */
+export function pickImageSrc(src: string | null, dataSrc: string | null): string {
+  if (src && !src.startsWith('data:')) return src
+  return dataSrc ?? src ?? ''
+}
+
+/**
  * Comparison uses the percent-decoded filename: content HTML writes a literal
  * en dash where the manifest path carries `%E2%80%93`, and treating those as
  * different names left resized variants unrewritten.
@@ -40,7 +54,10 @@ export function htmlToMarkdown(html: string, knownBasenames: ReadonlySet<string>
       const el = node as unknown as Element
       const img = el.querySelector('img')
       if (!img) return ''
-      const src = normalizeUploadUrl(img.getAttribute('src') ?? '', knownBasenames)
+      const src = normalizeUploadUrl(
+        pickImageSrc(img.getAttribute('src'), img.getAttribute('data-src')),
+        knownBasenames,
+      )
       const alt = img.getAttribute('alt') ?? ''
       const caption = el.querySelector('figcaption')?.textContent?.trim() ?? ''
       const image = `![${alt}](${src})`
@@ -52,7 +69,10 @@ export function htmlToMarkdown(html: string, knownBasenames: ReadonlySet<string>
     filter: 'img',
     replacement: (_content, node) => {
       const el = node as unknown as Element
-      const src = normalizeUploadUrl(el.getAttribute('src') ?? '', knownBasenames)
+      const src = normalizeUploadUrl(
+        pickImageSrc(el.getAttribute('src'), el.getAttribute('data-src')),
+        knownBasenames,
+      )
       if (!src) return ''
       return `![${el.getAttribute('alt') ?? ''}](${src})`
     },

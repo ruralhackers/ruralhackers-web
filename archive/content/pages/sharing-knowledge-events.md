@@ -7,7 +7,7 @@ seoTitle: "Sharing knowledge Events - Rural Hackers"
 canonical: "https://ruralhackers.com/sharing-knowledge-events/"
 ---
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-34-27.png)
 
 ## Sharing knowledge Events
 
@@ -29,9 +29,9 @@ A Fuchiqueira is an afternoon filled with creativity, innovation, and exploratio
 
 [Edition IV](https://www.instagram.com/p/C8hyQl0MHuq/)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_20240511_172631.jpg)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_3890.jpg)
 
 ## Green Misions
 
@@ -49,4 +49,4 @@ Our international community came together [since 2023](https://ruralhackers.com/
 
 [Edition 4](https://www.instagram.com/p/CysaNW2MPPp/?img_index=5)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/PXL_20230611_175404776.jpg)

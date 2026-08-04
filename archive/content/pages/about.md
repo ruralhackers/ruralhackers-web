@@ -7,7 +7,7 @@ seoTitle: "About - Rural Hackers"
 canonical: "https://ruralhackers.com/about/"
 ---
 
-![Picture of a flower](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![Picture of a flower](https://ruralhackers.com/wp-content/themes/twentytwentyfive/assets/images/northern-buttercups-flowers.webp)
 
 ![Picture of a flower](https://ruralhackers.com/wp-content/themes/twentytwentyfive/assets/images/northern-buttercups-flowers.webp)
 
@@ -19,9 +19,9 @@ canonical: "https://ruralhackers.com/about/"
 
 **Fleurs** is a flower delivery and subscription business. Based in the EU, our mission is not only to deliver stunning flower arrangements across but also foster knowledge and enthusiasm on the beautiful gift of nature: flowers.
 
-![Photography close up of a red flower.](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![Photography close up of a red flower.](https://ruralhackers.com/wp-content/themes/twentytwentyfive/assets/images/grid-flower-1.webp)
 
-![Black and white photography close up of a flower.](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![Black and white photography close up of a flower.](https://ruralhackers.com/wp-content/themes/twentytwentyfive/assets/images/grid-flower-2.webp)
 
 ## What people are saying
 
@@ -57,13 +57,13 @@ canonical: "https://ruralhackers.com/about/"
 
 ## Our small team is a group of driven, detail-oriented people who are passionate about their customers.
 
-![Woman on beach, splashing water.](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![Woman on beach, splashing water.](https://ruralhackers.com/wp-content/themes/twentytwentyfive/assets/images/woman-splashing-water.webp)
 
-![Portrait of a nurse](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![Portrait of a nurse](https://ruralhackers.com/wp-content/themes/twentytwentyfive/assets/images/nurse.webp)
 
-![Picture of a person typing on a typewriter.](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![Picture of a person typing on a typewriter.](https://ruralhackers.com/wp-content/themes/twentytwentyfive/assets/images/typewriter.webp)
 
-![Man in hat, standing in front of a building.](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![Man in hat, standing in front of a building.](https://ruralhackers.com/wp-content/themes/twentytwentyfive/assets/images/man-in-hat.webp)
 
 ## Frequently Asked Questions
 

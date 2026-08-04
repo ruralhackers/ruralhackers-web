@@ -14,9 +14,9 @@ At Rural Hackers, our Creative Residencies are more than a timeline—they’re 
 
 _This is the residencies of Rural Hackers—where the past fuels the next wave of creative rebellion._
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-17-14-35-42.png)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/DSC02753.jpg)
 
 ## Culture Moves Europe Residency
 
@@ -26,9 +26,9 @@ As a proud partner of [Culture Moves Europe](https://culture.ec.europa.eu/creat
 
 [Cam’s](https://www.camstass.com/) art serves as a portal to worlds brimming with wonder, magic, and a dash of the unexpected. Guided by her boundless imagination, she crafts spaces that blend figurative and abstract elements. During her time in Anceu [in 2024](https://ruralhackers.com/2024-2/), Cam immersed herself in the local culture, conducting interviews with villagers to uncover beliefs, traditions, history, and native flora. This rich tapestry of information inspired her to create three distinctive pieces of art, now proudly installed along the paths of Anceu. In a heartwarming collaboration with the village children, Cam also painted interactive games in the main square, bringing joy and playfulness to the community’s shared spaces.  
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-16-16-56-23.png)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-16-16-58-54.png)
 
 ## Upcycling and Sustainability Advocate
 
@@ -38,9 +38,9 @@ As a proud partner of [Culture Moves Europe](https://culture.ec.europa.eu/creat
 
 A graduate of the Krakow Academy of Fine Arts, this left-handed creative sees beauty in nature and the extraordinary aspects of everyday life. As the founder of [Ja Mery Studio](https://www.behance.net/mariajaboska), Mery is passionate about making a difference, creating captivating spaces, translating ideas into visuals, and embracing both grand and small adventures. She collects memories from the people she meets, the sounds she hears, the sights she encounters, and the conversations she engages in, all while maintaining an aesthetic of simplicity and beauty. For her residency project, Mery embarked on an inner journey to discover the local flora. Gathering knowledge from villagers about native plants, she created an installation that beautifully showcases the botanical richness of the area.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/P9090120.jpg)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_4284-2.jpg)
 
 ## Square of Anceu
 
@@ -50,9 +50,9 @@ We painted some traditional games in the main square with the kids of the villag
 
 [Cuco](https://linktr.ee/cucoshop)’s artistic vision and Anis’s tech expertise intertwined in a unique dance. The residency aimed to train AI, under Anis’s guidance, to echo Cuco’s style. All of that happened during one of our creative residencies. Over weeks, they honed algorithms, capturing Cuco’s essence. Cuco and Anis, an artist and a technologist, have ventured into the challenging arena of coalescing art with artificial intelligence. Their residency is an awe-inspiring symbiosis that gave birth to two intellectually stimulating pieces that delve into the intricate dynamics between humans and AI.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/IMG_0544.jpg)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/450b0d10-f4da-43fb-af0f-194fffa647f5-1.jpg)
 
 ## Becoming cuco shortfilm
 
@@ -64,7 +64,7 @@ This project delves into the [emigration narratives](https://www.youtube.com/wa
 
 [Arianna](https://www.filmmakers.eu/en/actors/arianna-rodriguez-chusino) from Ecuador began this residency to explore and document these stories in greater depth. She created the documentary “As Indianas” by immersing herself in the local community.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Untitled-design-13-768x576-1.jpg)
 
 ## Asi e Nito Comic by Chano
 
@@ -74,9 +74,9 @@ We began our partnership with [Ensaia](https://www.ensaia.com/) Association. Ens
 
 In this first experience, the artist [Chano Ripio](https://www.instagram.com/sacapunteo/?hl=es) joined us for a one-month residency as a finalist from the Ensaia program. We could tell you more but maybe is better to [hear him](https://www.youtube.com/watch?v=6QXYINHFzoE).
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-21-16-46-02.png)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-15-11-30-13.png)
 
 ## Mapping species Residency
 
@@ -86,9 +86,9 @@ Our resident, [Mery](https://www.instagram.com/mery.jab/?hl=es) from Poland, has
 
 With an unparalleled passion for community engagement and a heart full of dedication, [Victor](https://www.instagram.com/ruralchamps_/) has breathed life into Casa do Pobo (the communal house of the village) with a series of vibrant activities. From teaching boxing to our elders, bringing the world of technology closer to them, providing English classes, to serving as a trainer for the children, Victor has become a vital force.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-15-11-27-10.png)
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-21-15-52-40.png)
 
 ## Creative writing residency
 
@@ -99,4 +99,4 @@ With an unparalleled passion for community engagement and a heart full of dedica
 
 Thanks to Ivan, our robotics genius, we have been able to enjoy robotics classes in the Casa do Pobo of Anceu. The children, apart from having fun, have learned a lot about robots and their small but complex mechanism.
 
-![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+![](https://ruralhackers.com/wp-content/uploads/2025/02/Screenshot-from-2025-02-15-11-52-33.png)

@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import {
   checkCounts,
   checkMarkdownBodies,
+  checkNoPlaceholderImages,
   checkReferencedImages,
   checkRequiredAssets,
 } from './verify.ts'
@@ -213,5 +214,35 @@ describe('checkMarkdownBodies', () => {
     expect(
       checkMarkdownBodies([{ file: 'content/posts/whatever.md', body: '---\nx: 1\n---\n' }]),
     ).toHaveLength(1)
+  })
+})
+
+describe('checkNoPlaceholderImages', () => {
+  it('passes when every image reference is a real url', () => {
+    expect(
+      checkNoPlaceholderImages([
+        {
+          file: 'content/pages/home.md',
+          body: '![Mapa](https://ruralhackers.com/wp-content/uploads/2025/02/Mapa.jpg)',
+        },
+      ]),
+    ).toEqual([])
+  })
+
+  it('errors on a lazysizes base64 placeholder', () => {
+    // This is the rule that was missing. checkReferencedImages skips non-http
+    // urls, so 151 placeholder references passed verification in silence.
+    const problems = checkNoPlaceholderImages([
+      { file: 'content/pages/home.md', body: '![Mapa](data:image/gif;base64,R0lGODlhAQABAIAAAA)' },
+    ])
+    expect(problems).toHaveLength(1)
+    expect(problems[0]!.rule).toBe('placeholder-image-reference')
+    expect(problems[0]!.severity).toBe('error')
+    expect(problems[0]!.detail).toContain('content/pages/home.md')
+  })
+
+  it('counts every placeholder in a file, not just the first', () => {
+    const body = '![a](data:image/gif;base64,AA)\n\n![b](data:image/gif;base64,BB)'
+    expect(checkNoPlaceholderImages([{ file: 'content/pages/x.md', body }])).toHaveLength(2)
   })
 })

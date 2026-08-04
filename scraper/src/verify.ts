@@ -50,6 +50,32 @@ export function checkReferencedImages(
 const MARKDOWN_SLUG = /(?:^|\/)([^/]+)\.md$/
 
 /**
+ * No markdown image may point at a `data:` uri.
+ *
+ * This rule exists because its absence cost the archive its image references.
+ * SiteGround's lazysizes puts a base64 placeholder in `src` and the real file in
+ * `data-src`; the markdown stage read `src`, so 151 of 155 references were
+ * placeholders. `checkReferencedImages` could not catch it — that rule resolves
+ * each reference through `uploadPathFromUrl`, which returns null for a `data:`
+ * uri, so every one was skipped and the archive verified clean.
+ */
+export function checkNoPlaceholderImages(
+  markdown: readonly { file: string; body: string }[],
+): Problem[] {
+  const problems: Problem[] = []
+  for (const { file, body } of markdown) {
+    for (const _ of body.matchAll(/!\[[^\]]*\]\(data:/g)) {
+      problems.push({
+        rule: 'placeholder-image-reference',
+        detail: `${file} references a data: uri instead of a real image`,
+        severity: 'error',
+      })
+    }
+  }
+  return problems
+}
+
+/**
  * Every archived item must carry prose, with one enumerated exception.
  *
  * The `page_for_posts` target has no body of its own — the theme generates the
@@ -185,6 +211,9 @@ export async function verifyArchive(outDir: string): Promise<Problem[]> {
 
   // Rule 6: the theme's fonts, which no count protects.
   problems.push(...checkRequiredAssets(manifest))
+
+  // Rule 7: no lazy-loading placeholder survived into the markdown.
+  problems.push(...checkNoPlaceholderImages(markdown))
 
   // Rule 5: counts, against enumerated values.
   const count = async (sub: string) =>
