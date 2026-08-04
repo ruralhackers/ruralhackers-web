@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+.netlify/
+.env
+.env.*
+.DS_Store
+
+# The archived media is 107 MB and is the irreplaceable part of this repo.
+# Gitignored for size — back it up off this machine before WordPress is
+# switched off. See docs/superpowers/specs/.
+archive/media/
