@@ -1,0 +1,56 @@
+---
+/**
+ * Replaces WPForms 716. Four real fields, all required; WPForms' field_4 was a
+ * honeypot with a per-request randomised label.
+ *
+ * The motivation label says "Hacker Days 2025" on the live site and it is now
+ * 2026. Reproduced verbatim on purpose — correcting site copy is the owners'
+ * call, not the port's. Flagged for them.
+ */
+---
+<form name="hacker-days" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="hacker-days" />
+  <p class="hidden">
+    <label>Do not fill this in <input name="bot-field" /></label>
+  </p>
+
+  <p>
+    <label for="hd-name">Name</label>
+    <input id="hd-name" type="text" name="name" required />
+  </p>
+  <p>
+    <label for="hd-email">Email</label>
+    <input id="hd-email" type="email" name="email" required />
+  </p>
+  <p>
+    <label for="hd-motivation">Why would you like to be part of Hacker Days 2025?</label>
+    <textarea id="hd-motivation" name="motivation" rows="5" required></textarea>
+  </p>
+  <p>
+    <label for="hd-contribution">How would you like to contribute?</label>
+    <textarea id="hd-contribution" name="contribution" rows="5" required></textarea>
+  </p>
+  <p><button type="submit">Submit</button></p>
+</form>
+
+<style>
+  form { display: grid; gap: var(--space-30); max-width: var(--content-size); }
+  form p { margin: 0; display: grid; gap: var(--space-20); }
+  .hidden { position: absolute; left: -9999px; }
+  input, textarea {
+    font: inherit;
+    font-size: var(--size-medium);
+    padding: var(--space-20);
+    border: 2px solid var(--color-accent-5);
+    background: var(--color-base);
+    color: var(--color-contrast);
+  }
+  button {
+    font-family: var(--font-body);
+    border: 2px solid currentColor;
+    background: none;
+    padding: var(--space-20) var(--space-40);
+    cursor: pointer;
+  }
+  button:hover { background: var(--color-accent-1); color: var(--color-base); }
+</style>
