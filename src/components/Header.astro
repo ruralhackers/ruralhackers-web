@@ -1,0 +1,59 @@
+---
+import { NAV } from '../lib/nav.ts'
+import LanguageDropdown from './LanguageDropdown.astro'
+import { localePath, type Locale } from '../lib/i18n.ts'
+
+interface Props {
+  locale: Locale
+  path: string
+  availableLocales: readonly Locale[]
+}
+const { locale, path, availableLocales } = Astro.props
+const href = (h: string, external?: boolean) => (external ? h : localePath(locale, h))
+---
+<header>
+  <a class="wordmark" href={localePath(locale, '/')}>Rural Hackers</a>
+  <nav aria-label="Main">
+    <ul>
+      {NAV.map((item) => (
+        <li>
+          <a
+            href={href(item.href, item.external)}
+            {...(item.external ? { rel: 'noopener', target: '_blank' } : {})}
+          >{item.label}</a>
+          {item.children && (
+            <ul>
+              {item.children.map((child) => (
+                <li><a href={href(child.href, child.external)}>{child.label}</a></li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+  <LanguageDropdown locale={locale} path={path} availableLocales={availableLocales} />
+</header>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-40);
+    max-width: var(--wide-size);
+    margin: 0 auto;
+    padding: var(--space-30) var(--space-40);
+  }
+  .wordmark { font-family: var(--font-display); margin-right: auto; }
+  nav ul { display: flex; gap: var(--space-40); list-style: none; margin: 0; padding: 0; }
+  nav ul ul { display: none; }
+  nav li { position: relative; }
+  nav li:hover > ul, nav li:focus-within > ul {
+    display: block;
+    position: absolute;
+    background: var(--color-base);
+    border: 1px solid var(--color-accent-5);
+    padding: var(--space-20);
+    z-index: 10;
+  }
+</style>

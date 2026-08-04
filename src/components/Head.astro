@@ -1,0 +1,26 @@
+---
+import { localePath, type Locale } from '../lib/i18n.ts'
+
+interface Props {
+  title: string
+  description?: string
+  locale: Locale
+  path: string
+  availableLocales: readonly Locale[]
+}
+const { title, description, locale, path, availableLocales } = Astro.props
+const canonical = new URL(localePath(locale, path), Astro.site).href
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+{description && <meta name="description" content={description} />}
+<link rel="canonical" href={canonical} />
+{/* hreflang only for locales that actually exist, so we never advertise a 404. */}
+{availableLocales.map((l) => (
+  <link rel="alternate" hreflang={l} href={new URL(localePath(l, path), Astro.site).href} />
+))}
+<meta property="og:title" content={title} />
+{description && <meta property="og:description" content={description} />}
+<meta property="og:url" content={canonical} />
+<meta property="og:type" content="website" />

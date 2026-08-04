@@ -1,0 +1,50 @@
+---
+import { dropdownTargets, type Locale } from '../lib/i18n.ts'
+
+interface Props {
+  locale: Locale
+  path: string
+  availableLocales: readonly Locale[]
+}
+const { locale, path, availableLocales } = Astro.props
+const targets = dropdownTargets(locale, path, availableLocales)
+const current = targets.find((t) => t.isCurrent)!
+---
+{/*
+  A <details> rather than JavaScript: it opens on click, closes on Escape, and
+  is reachable by keyboard with no script at all.
+*/}
+<details class="lang">
+  <summary aria-label="Change language">{current.label}</summary>
+  <ul>
+    {targets.map((t) => (
+      <li>
+        <a href={t.href} hreflang={t.locale} aria-current={t.isCurrent ? 'true' : undefined}>
+          {t.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</details>
+
+<style>
+  .lang { position: relative; }
+  .lang summary {
+    cursor: pointer;
+    list-style: none;
+    font-size: var(--size-small);
+    padding: var(--space-20);
+  }
+  .lang summary::-webkit-details-marker { display: none; }
+  .lang ul {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    padding: var(--space-20);
+    list-style: none;
+    background: var(--color-base);
+    border: 1px solid var(--color-accent-5);
+    z-index: 10;
+  }
+  .lang a[aria-current='true'] { color: var(--color-accent-1); }
+</style>

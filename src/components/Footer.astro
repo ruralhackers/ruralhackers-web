@@ -1,0 +1,20 @@
+---
+import { SOCIAL } from '../lib/nav.ts'
+---
+<footer>
+  <p>Follow us in real life</p>
+  <ul>
+    {SOCIAL.map((s) => (
+      <li><a href={s.href} rel="noopener me" target="_blank">{s.label}</a></li>
+    ))}
+  </ul>
+</footer>
+
+<style>
+  footer {
+    max-width: var(--wide-size);
+    margin: 0 auto;
+    padding: var(--space-70) var(--space-40);
+  }
+  footer ul { display: flex; gap: var(--space-40); list-style: none; padding: 0; }
+</style>
