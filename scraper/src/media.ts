@@ -1,4 +1,4 @@
-import { mkdir, open, stat, writeFile } from 'node:fs/promises'
+import { mkdir, open, readdir, readFile, stat, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { BASE_URL, EXPECTED } from './config.ts'
 import type { Http } from './http.ts'
@@ -99,6 +99,37 @@ export function harvestUploadUrls(html: string): string[] {
     if (uploadPathFromUrl(url)) found.add(url)
   }
   return [...found]
+}
+
+/**
+ * The rendered pages the snapshot stage captured.
+ *
+ * This is the second source the media stage harvests from, and it is the only
+ * one that sees the theme's own assets: the three fonts and the 80 KB compiled
+ * stylesheet are referenced from a rendered page's inline `<style>`, appear in
+ * no page's `content.rendered`, and are absent from a media library that holds
+ * nothing but images. Harvesting post content alone loses all four files.
+ *
+ * Returns `[]` when `pages-full/` does not exist, so `media` still runs on a
+ * fresh archive that has not been snapshotted yet.
+ */
+export async function readRenderedPages(outDir: string): Promise<string[]> {
+  const walk = async (dir: string): Promise<string[]> => {
+    let entries
+    try {
+      entries = await readdir(dir, { withFileTypes: true })
+    } catch {
+      return []
+    }
+    const out: string[] = []
+    for (const e of entries) {
+      const p = join(dir, e.name)
+      if (e.isDirectory()) out.push(...(await walk(p)))
+      else if (e.name.endsWith('.html')) out.push(await readFile(p, 'utf8'))
+    }
+    return out
+  }
+  return walk(join(outDir, 'pages-full'))
 }
 
 const stripTags = (s: string) => s.replace(/<[^>]*>/g, '').trim()

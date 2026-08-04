@@ -1,8 +1,12 @@
+import { mkdir, mkdtemp, writeFile } from 'node:fs/promises'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 import { describe, it, expect } from 'vitest'
 import {
   canonicalName,
   canonicalPath,
   harvestUploadUrls,
+  readRenderedPages,
   stripSizeSuffix,
   uploadPathFromUrl,
 } from './media.ts'
@@ -158,5 +162,38 @@ describe('harvestUploadUrls on theme markup', () => {
     expect(harvestUploadUrls(html)).toEqual([
       'https://ruralhackers.com/wp-content/uploads/siteground-optimizer-assets/combined-css-943b3f.css',
     ])
+  })
+})
+
+describe('readRenderedPages', () => {
+  it('reads every rendered page, including ones in subdirectories', async () => {
+    const dir = await mkdtemp(join(tmpdir(), 'rh-archive-'))
+    await mkdir(join(dir, 'pages-full', 'category'), { recursive: true })
+    await writeFile(join(dir, 'pages-full', 'index.html'), '<html>home</html>', 'utf8')
+    await writeFile(join(dir, 'pages-full', 'about.html'), '<html>about</html>', 'utf8')
+    // archivePath keeps the url's shape, so /category/uncategorized/ nests.
+    await writeFile(
+      join(dir, 'pages-full', 'category', 'uncategorized.html'),
+      '<html>cat</html>',
+      'utf8',
+    )
+
+    expect(new Set(await readRenderedPages(dir))).toEqual(
+      new Set(['<html>home</html>', '<html>about</html>', '<html>cat</html>']),
+    )
+  })
+
+  it('ignores non-html files', async () => {
+    const dir = await mkdtemp(join(tmpdir(), 'rh-archive-'))
+    await mkdir(join(dir, 'pages-full'), { recursive: true })
+    await writeFile(join(dir, 'pages-full', 'index.html'), '<html>ok</html>', 'utf8')
+    await writeFile(join(dir, 'pages-full', 'notes.txt'), 'ignore me', 'utf8')
+
+    expect(await readRenderedPages(dir)).toEqual(['<html>ok</html>'])
+  })
+
+  it('returns empty rather than throwing when no snapshot exists yet', async () => {
+    const dir = await mkdtemp(join(tmpdir(), 'rh-archive-'))
+    expect(await readRenderedPages(dir)).toEqual([])
   })
 })
