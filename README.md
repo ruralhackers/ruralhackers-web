@@ -76,6 +76,21 @@ years from now with `sha256sum -c` and nothing else from this repo.
 - **134 images whose recorded filesize is stale**, because SiteGround
   re-compressed them and WordPress never updated its own record. Recorded as
   warnings; the server serves exactly what was stored.
+- **There are two contact forms, not one:** WPForms 526 on `/contact/` with 4
+  fields, and WPForms 716 on `/hacker-days/` with 5. Phase 2 needs two Netlify
+  Forms.
+
+### The archive is not byte-stable, and that is the source's doing
+
+Re-running `content` rewrites `contact` and `hacker-days` every time. Both carry
+a WPForms form, and WPForms emits two things that change per request:
+
+- `data-token-time`, an anti-spam timestamp.
+- A honeypot field whose `<label>` is randomised from words on the page, so
+  field 4 reads `to Hacker be` on one fetch and `part you you` on the next.
+
+Nothing is lost and nothing is wrong. Do not chase it as a bug, and do not
+diff-check the archive expecting silence — compare the other 16 items instead.
 
 ## Before starting phase 2
 

@@ -162,10 +162,15 @@ Three representations of every item is deliberate: `raw/` survives a lossy
 transform, `html/` records structure the rebuild discards, `content/` is what
 you author from.
 
-The `snapshot` stage carries specific weight here: the contact page's WPForms
-form (id 526) is rendered by a plugin, so the archived markup is the only record
-of its fields, labels and required flags. Phase 2 reproduces the form from that
-snapshot.
+The archive records the WPForms markup so phase 2 can reproduce the forms'
+fields, labels and required flags. **Corrected after running the archive: there
+are two forms, not one** — WPForms 526 on `/contact/` with 4 fields, and WPForms
+716 on `/hacker-days/` with 5. Both appear in `content.rendered`, so
+`archive/raw/pages/` holds them as well as `archive/pages-full/`.
+
+Both also make those two pages byte-unstable across runs: WPForms emits a
+per-request `data-token-time` and a honeypot field whose label is randomised from
+words on the page. Recorded so it is not mistaken for archive drift.
 
 `archive/media/` is gitignored for size. **It is the irreplaceable part of this
 repo and must be backed up off this machine before WordPress is switched off.**
@@ -292,9 +297,9 @@ All redirects live in Netlify's `_redirects`.
 
 ### Forms
 
-The contact page's WPForms form becomes a **Netlify Form**: a plain HTML form
-with `data-netlify="true"`, a honeypot field, no JavaScript. Fields are
-reproduced from the phase 1 snapshot.
+Both WPForms forms become **Netlify Forms**: plain HTML forms with
+`data-netlify="true"`, a honeypot field, no JavaScript. Fields are reproduced
+from the phase 1 archive — 4 for `/contact/`, 5 for `/hacker-days/`.
 
 This is the concrete reason for choosing Netlify over Cloudflare Pages — on
 Cloudflare the same form needs a Worker.
