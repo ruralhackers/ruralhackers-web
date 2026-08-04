@@ -33,11 +33,58 @@ const {
     />
   </head>
   <body>
+    {/*
+      The duotone the live site applies to photographs inside its orange bands,
+      reproduced from `url("#wp-duotone-rgb000-e56529")`: a black-to-accent-1 ramp.
+      tableValues are 229/255, 101/255 and 41/255 — the accent as 0–1 channels.
+    */}
+    <svg
+      class="filters"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <defs>
+        {/*
+          color-interpolation-filters on the filter itself, not only on the
+          transfer. Left to its linearRGB default, the luminance pass crushes the
+          shadows to pure black and the photographs read as black frames with an
+          orange centre instead of an even duotone.
+        */}
+        <filter id="duotone-accent-1" color-interpolation-filters="sRGB">
+          <feColorMatrix
+            type="matrix"
+            values=".299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 0 0 0 1 0"
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0 0.898" />
+            <feFuncG type="table" tableValues="0 0.396" />
+            <feFuncB type="table" tableValues="0 0.161" />
+            {/*
+              No feFuncA. WordPress forces alpha to 1, which paints the filter
+              region's default 10% overscan opaque black — the photographs came
+              out framed in black. Letting alpha pass through keeps the transparent
+              surround transparent.
+            */}
+          </feComponentTransfer>
+        </filter>
+      </defs>
+    </svg>
+
     <a class="skip" href="#main">Skip to content</a>
     <Header locale={locale} path={path} availableLocales={availableLocales} />
     <main id="main"><slot /></main>
     <Footer />
     <style>
+      .filters {
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      }
       .skip { position: absolute; left: -9999px; }
       .skip:focus {
         left: var(--space-30);

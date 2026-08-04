@@ -6,8 +6,10 @@ interface Props {
   alt: string
   caption?: string
   width?: number
+  /** Applies the site's black-to-accent-1 duotone, as its orange bands do. */
+  duotone?: boolean
 }
-const { src, alt, caption, width } = Astro.props
+const { src, alt, caption, width, duotone = false } = Astro.props
 ---
 {/*
   alt is required, not optional. 215 of the 225 archived images have no alt text
@@ -19,7 +21,7 @@ const { src, alt, caption, width } = Astro.props
   avif and webp sources. `layout="constrained"` is what generates the srcset and
   sizes, so the browser can pick a width instead of always taking the largest.
 */}
-<figure>
+<figure class:list={[duotone && 'duotone']}>
   <Picture
     src={src}
     alt={alt}
@@ -32,6 +34,7 @@ const { src, alt, caption, width } = Astro.props
 
 <style>
   figure { margin: 0; }
+  .duotone :global(img) { filter: url(#duotone-accent-1); }
   figcaption {
     font-size: var(--size-small);
     color: var(--color-accent-4);

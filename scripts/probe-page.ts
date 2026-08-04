@@ -53,7 +53,19 @@ const recipe = await page.evaluate(() => {
   ;[...root.children].forEach((sec, i) => {
     const s = getComputedStyle(sec)
     const r = sec.getBoundingClientRect()
-    const bg = s.backgroundColor === 'rgba(0, 0, 0, 0)' ? 'base' : rgb(s.backgroundColor)
+    /**
+     * The paint can sit on an inner wrapper rather than on the section itself, so
+     * reading only the outer element reports `base` for a section that is
+     * visibly orange. Take the first descendant that paints something and is
+     * nearly as wide as the section.
+     */
+    const painted = [sec, ...sec.querySelectorAll('*')].find((el) => {
+      const cs = getComputedStyle(el)
+      if (cs.backgroundColor === 'rgba(0, 0, 0, 0)') return false
+      return el.getBoundingClientRect().width >= r.width * 0.9
+    })
+    const bgRaw = painted ? getComputedStyle(painted).backgroundColor : 'rgba(0, 0, 0, 0)'
+    const bg = bgRaw === 'rgba(0, 0, 0, 0)' ? 'base' : rgb(bgRaw)
     out.push(
       `\n── section ${i}  bg=${bg}  fg=${rgb(s.color)}  pad=${parseInt(s.paddingTop)}/${parseInt(s.paddingBottom)}  h=${Math.round(r.height)}`,
     )
