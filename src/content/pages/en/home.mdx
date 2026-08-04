@@ -5,42 +5,74 @@ seoDescription: A movement for the revitalization of rural life
 legacyUrl: https://ruralhackers.com/
 ---
 
-import { Section, Columns, Column, Prose, Figure, Buttons, Quote } from '../../../components/blocks/index.ts'
-import mapaAnceu from '../../../assets/images/2025/02/Ilustracion_sin_titulo-1-scaled.jpg'
-import community from '../../../assets/images/2025/02/DSC02753.jpg'
-import eyLogo from '../../../assets/images/2025/02/ey_logo.png'
+import { Section, Columns, Column, Prose, PillLabel, Figure, Buttons, Quote } from '../../../components/blocks/index.ts'
+import mapAnceu from '../../../assets/images/2025/02/Ilustracion_sin_titulo-1-scaled.jpg'
+import ropePhoto from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-37-24.png'
+import goatPhoto from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-29-52.png'
+import huggingPhoto from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-33-22.png'
+import cardResidencies from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-35-37.png'
+import cardProjects from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-28-59.png'
+import cardEvents from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-34-27.png'
+import communityPhoto from '../../../assets/images/2025/02/DSC02753.jpg'
+import logoEy from '../../../assets/images/2025/02/ey_logo.png'
+import logoMontes from '../../../assets/images/2025/02/comunidad_montes-removebg-preview.webp'
+import logoCasaDoPobo from '../../../assets/images/2025/02/cropped-casa_do_pobo_de_anceu-removebg-preview.webp'
+import logoAnceu from '../../../assets/images/2025/02/Anceu-Coliving-Logo_Primary-01.png'
 
 {/*
-  Heading structure repaired. The live page has an h1 "Rural Hackers" at 48px and
-  a separate h2 "Rural Hackers" at 129.6px — the same words twice, the larger one
-  acting as a wordmark. Here the wordmark is the single h1, styled to the size it
-  renders at today. Same pixels, one heading.
+  Section rhythm and paddings measured from the live site at 1440px, in order:
+  white/10, accent-5/90, white/140, accent-5/90, white/50, accent-5/70,
+  contrast/50, white/50, accent-1/50. The paddings land on the token scale.
+
+  The hero wordmark is 129.6px Inter in accent-1 — Inter, not the display face —
+  and the h1 lives in the grey section below it, centred at 48px. Only one h1 is
+  emitted here: the wordmark carries it, and the grey heading is an h2, which
+  keeps the visuals and drops the duplicate the live page has.
 */}
 
-<Section width="wide" space={70}>
-  <h1 class="wordmark">Rural Hackers</h1>
-  <Prose font="display" size="x-large">
-    A movement for the revitalization of **rural life** //
-  </Prose>
+<Section width="full" space={20}>
+  <Columns align="center" gap={40}>
+    {/* 717px of text against a 573px map at 1440, measured on the live site. */}
+    <Column width="54%">
+      <h1 class="wordmark">Rural Hackers</h1>
+      <p class="tagline">
+        A movement for the revitalization of <strong>rural life</strong> //
+      </p>
+    </Column>
+    <Column width="42%">
+      <Figure src={mapAnceu} alt="Illustrated map of Anceu village and its valley" />
+    </Column>
+  </Columns>
 </Section>
 
-<Section space={60}>
-  <Prose>
-    Rural Hackers is an international organization dedicated to fostering innovation
-    and creativity at the intersection of technology, rural living and art. We provide
-    a platform for interdisciplinary collaboration, empowering people to challenge
-    traditional thinking and create groundbreaking projects that inspire positive change.
+<Section background="accent-5" space={70}>
+  <div class="centered">
+    ## Rural Hackers
 
-    **Rural Hackers** is based on the power of inspiration. Our aim is to create a place
-    where you can find people who become your reference for change.
-  </Prose>
+    <Prose>
+      Rural Hackers is an international organization dedicated to fostering innovation
+      and creativity at the intersection of technology, rural living and art. We provide
+      a platform for interdisciplinary collaboration, empowering people to challenge
+      traditional thinking and create groundbreaking projects that inspire positive change.
+
+      **Rural Hackers** is based on the power of inspiration. Our aim is to create a place
+      where you can find people who become your reference for change.
+    </Prose>
+  </div>
 </Section>
 
-<Section width="wide" background="accent-5" space={70}>
-  <Columns align="center">
-    <Column>
-      ## The Context
-
+<Section width="wide" space={80}>
+  <Columns align="center" gap={50}>
+    <Column width="46%">
+      <div class="stack">
+        <Figure src={ropePhoto} alt="A participant raising a coil of rope against the sky" />
+        <div class="stack-inset">
+          <Figure src={goatPhoto} alt="A goat in a field in Anceu" />
+        </div>
+      </div>
+    </Column>
+    <Column width="44%">
+      <PillLabel>The Context</PillLabel>
       <Prose>
         Rural areas of Galicia (Spain) are becoming severely depopulated. This fact
         jeopardizes a way of living, endangers a whole tradition, and disconnects us
@@ -48,46 +80,51 @@ import eyLogo from '../../../assets/images/2025/02/ey_logo.png'
         can bring steamy change to rural areas and help to build new ecosystems.
       </Prose>
     </Column>
-    <Column>
-      <Figure src={mapaAnceu} alt="Illustrated map of Anceu and the surrounding valley" />
+  </Columns>
+</Section>
+
+<Section background="accent-5" width="wide" space={70}>
+  <PillLabel>This is our motto</PillLabel>
+  <Columns align="center" gap={50}>
+    <Column width="52%">
+      <Prose font="display" size="xx-large">
+        “You can make a **difference**. You can always **contribute**. Let’s make this
+        happen **together**”
+      </Prose>
+      <Prose size="small">
+        Rosario — Anceu, Ponte Caldelas
+      </Prose>
+    </Column>
+    <Column width="38%">
+      <Figure src={huggingPhoto} alt="Two neighbours embracing in Anceu" />
     </Column>
   </Columns>
 </Section>
 
-<Section space={70}>
-  ## This is our motto
-
-  <Quote cite="Rosario — Anceu, Ponte Caldelas">
-    “You can make a **difference**. You can always **contribute**. Let’s make this
-    happen **together**.”
-  </Quote>
-</Section>
-
-<Section width="wide" space={70}>
-  ## Stuff we do
-
+<Section width="wide" space={50}>
+  <PillLabel align="center">Stuff we do</PillLabel>
   <Columns gap={40}>
     <Column>
-      ### Creative Residencies
-
-      <Prose>
+      <Figure src={cardResidencies} alt="A painted caravan at Anceu coliving" />
+      <h3 class="card-title">Creative Residencies</h3>
+      <Prose size="small">
         One-month experience at Anceu coliving to develop projects on tech, arts or
         creativity.
       </Prose>
       <Buttons><a href="/rural-hackers-residencies/">Learn more</a></Buttons>
     </Column>
     <Column>
-      ### Rural Digital Projects
-
-      <Prose>
+      <Figure src={cardProjects} alt="A hand reaching towards a screen showing a rural data tool" />
+      <h3 class="card-title">Rural Digital Projects</h3>
+      <Prose size="small">
         We develop open source tech solutions to fight against rural challenges.
       </Prose>
       <Buttons><a href="/rural-digital-projects/">Learn more</a></Buttons>
     </Column>
     <Column>
-      ### Sharing Knowledge Events
-
-      <Prose>
+      <Figure src={cardEvents} alt="Participants sitting together at an outdoor workshop" />
+      <h3 class="card-title">Sharing Knowledge Events</h3>
+      <Prose size="small">
         Monthly initiatives to learn traditional and innovative knowledge.
       </Prose>
       <Buttons><a href="/sharing-knowledge-events/">Learn more</a></Buttons>
@@ -95,52 +132,113 @@ import eyLogo from '../../../assets/images/2025/02/ey_logo.png'
   </Columns>
 </Section>
 
-<Section width="wide" space={70}>
-  ## Our hackers
+<Section background="accent-5" width="wide" space={60}>
+  <h2 class="huge">Our hackers</h2>
+  <Prose size="large">
+    We build trough the power of the local villagers of Anceu and our international
+    community. Together, we create a future where every person’s effort leads to
+    lasting impact.
+  </Prose>
+</Section>
 
-  <Columns align="center">
-    <Column>
-      <Prose font="display" size="x-large">
-        We build trough the power of the local villagers of Anceu and our international
-        community. Together, we create a future where every person’s effort leads to
-        lasting impact.
-      </Prose>
-      <Prose>
+<Section background="contrast" width="wide" space={50}>
+  <Columns align="center" gap={50}>
+    <Column width="46%">
+      <Figure src={communityPhoto} alt="The Rural Hackers community gathered outdoors" />
+    </Column>
+    <Column width="44%">
+      <Prose size="large">
         Our actions are fueled by the hacking mindset: problems are opportunities,
         obstacles are growth, reality is transformation.
       </Prose>
     </Column>
-    <Column>
-      <Figure src={community} alt="Rural Hackers participants gathered outdoors in Anceu" />
+  </Columns>
+</Section>
+
+<Section width="wide" space={50}>
+  <Columns align="center" gap={50}>
+    <Column width="40%">
+      <PillLabel>We are proud of our partners</PillLabel>
+      <Prose size="small">
+        Our collaborators join us on a journey that transcends logos, KPIs, and numerical
+        outcomes. They focus on people, fostering connections and enriching experiences
+        that drive rural innovation in villages.
+      </Prose>
+    </Column>
+    <Column width="52%">
+      <div class="logos">
+        <Figure src={logoEy} alt="Eleven Yellow" width={200} />
+        <Figure src={logoMontes} alt="Comunidade de Montes de Anceu" width={200} />
+        <Figure src={logoCasaDoPobo} alt="Casa do Pobo de Anceu" width={200} />
+        <Figure src={logoAnceu} alt="Anceu Coliving" width={200} />
+      </div>
     </Column>
   </Columns>
 </Section>
 
-<Section space={70}>
-  ## We are proud of our partners
+<Section background="accent-1" space={50}>
+  <div class="centered">
+    ## Follow us in real life
 
-  <Prose>
-    Our collaborators join us on a journey that transcends logos, KPIs, and numerical
-    outcomes. They focus on people, fostering connections and enriching experiences
-    that drive rural innovation in villages.
-  </Prose>
-  <Figure src={eyLogo} alt="Eleven Yellow" width={180} />
-</Section>
-
-<Section background="accent-1" space={60}>
-  ## Follow us in real life
-
-  <Prose>
-    Have you imagined the possibility of getting to know each other? That would be
-    fantastic.
-  </Prose>
-  <Buttons><a href="/contact/">Contact</a></Buttons>
+    <Prose>
+      Have you imagine the possibility of getting to know each other? That will be
+      fantastic.
+    </Prose>
+    <Buttons align="center"><a href="/contact/">Contact</a></Buttons>
+  </div>
 </Section>
 
 <style>
-  {`.wordmark {
-    font-size: clamp(3rem, 9vw, 8.1rem);
+  {`
+  .wordmark {
+    font-family: var(--font-body);
+    font-size: clamp(3.5rem, 9vw, 129.6px);
     line-height: 0.9;
+    font-weight: 400;
+    color: var(--color-accent-1);
     margin: 0 0 var(--space-30);
-  }`}
+  }
+  /* 30px OffBit Trial in accent-1, on one line — measured at 717x42. */
+  .tagline {
+    font-family: var(--font-display);
+    font-size: clamp(1.125rem, 2.1vw, 30px);
+    line-height: 1.4;
+    color: var(--color-accent-1);
+    text-transform: uppercase;
+    margin: 0;
+    white-space: nowrap;
+  }
+  @media (max-width: 781px) { .tagline { white-space: normal; } }
+  .centered { text-align: center; max-width: var(--content-size); margin-inline: auto; }
+  .centered h2 { font-size: 48px; }
+
+  /* The Context stacks two photos, the second overlapping the first from below. */
+  .stack { position: relative; }
+  .stack-inset {
+    width: 42%;
+    margin-top: -18%;
+    margin-left: 34%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-title {
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent-4);
+    margin: var(--space-30) 0 var(--space-20);
+  }
+
+  .huge { font-size: clamp(3rem, 8vw, 7rem); line-height: 0.95; margin: 0 0 var(--space-40); }
+
+  .logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-50);
+    align-items: center;
+    justify-items: center;
+  }
+  `}
 </style>

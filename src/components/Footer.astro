@@ -1,20 +1,56 @@
 ---
+import { Image } from 'astro:assets'
 import { SOCIAL } from '../lib/nav.ts'
+import logo from '../assets/logo-footer.png'
 ---
+{/*
+  Read from the archived footer: the transparent logo at left, the three social
+  links stacked at right, then the copyright and the "Designed with ❤️ from Anceu
+  village" line. The year is not hardcoded — the live site says 2025 and would
+  have gone stale.
+*/}
 <footer>
-  <p>Follow us in real life</p>
-  <ul>
-    {SOCIAL.map((s) => (
-      <li><a href={s.href} rel="noopener me" target="_blank">{s.label}</a></li>
-    ))}
-  </ul>
+  <div class="row">
+    <Image class="mark" src={logo} alt="Rural Hackers" width={64} height={64} layout="fixed" />
+    <ul>
+      {SOCIAL.map((s) => (
+        <li><a href={s.href} rel="noopener me" target="_blank">{s.label}</a></li>
+      ))}
+    </ul>
+  </div>
+  <div class="row fine">
+    <p>© Copyright {new Date().getFullYear()}.</p>
+    <p>Designed with ❤️ from Anceu village</p>
+  </div>
 </footer>
 
 <style>
   footer {
     max-width: var(--wide-size);
     margin: 0 auto;
-    padding: var(--space-70) var(--space-40);
+    padding: var(--space-60) var(--space-40) var(--space-40);
   }
-  footer ul { display: flex; gap: var(--space-40); list-style: none; padding: 0; }
+  .row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-40);
+  }
+  .mark { display: block; }
+  footer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: var(--size-small);
+  }
+  .fine {
+    margin-top: var(--space-40);
+    font-size: 12px;
+    color: var(--color-accent-4);
+  }
+  .fine p { margin: 0; }
 </style>

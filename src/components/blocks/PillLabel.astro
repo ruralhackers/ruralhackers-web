@@ -1,0 +1,29 @@
+---
+interface Props {
+  align?: 'left' | 'center'
+}
+const { align = 'left' } = Astro.props
+---
+{/*
+  The outlined pill that labels most sections on the live site — "THE CONTEXT",
+  "THIS IS OUR MOTTO", "STUFF WE DO". It is the design's most recognisable
+  recurring element and the first thing missing from a generic rebuild.
+*/}
+<p class:list={['pill', `a-${align}`]}><span><slot /></span></p>
+
+<style>
+  .pill { margin: 0 0 var(--space-30); }
+  .a-left { text-align: left; }
+  .a-center { text-align: center; }
+  .pill span {
+    display: inline-block;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    padding: 6px var(--space-30);
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+</style>

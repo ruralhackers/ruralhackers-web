@@ -5,6 +5,10 @@ interface Props {
 const { align = 'left' } = Astro.props
 const justify = align === 'left' ? 'flex-start' : align === 'right' ? 'flex-end' : 'center'
 ---
+{/*
+  Solid black pills, not outlined rectangles. Every call to action on the live
+  site is a filled dark pill with light text — "Learn more", "Contact".
+*/}
 <div class="buttons" style={`--btn-justify: ${justify}`}><slot /></div>
 
 <style>
@@ -15,9 +19,14 @@ const justify = align === 'left' ? 'flex-start' : align === 'right' ? 'flex-end'
     flex-wrap: wrap;
   }
   .buttons :global(a) {
+    display: inline-block;
+    background: var(--color-contrast);
+    color: var(--color-base);
+    border-radius: 999px;
     font-family: var(--font-body);
-    border: 2px solid currentColor;
-    padding: var(--space-20) var(--space-30);
+    font-size: var(--size-small);
+    padding: var(--space-20) var(--space-40);
+    text-decoration: none;
   }
   .buttons :global(a:hover) {
     background: var(--color-accent-1);

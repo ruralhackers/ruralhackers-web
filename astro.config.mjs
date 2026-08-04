@@ -18,5 +18,13 @@ export default defineConfig({
     // `fallback` is deliberately unset. Setting it duplicates every English
     // page at /es/ and /gl/ serving English text — duplicate content.
   },
+  image: {
+    // Without this, `layout` on Image/Picture emits data-astro-image attributes
+    // with no stylesheet behind them, so the intrinsic width/height wins and
+    // images render at their raw size or collapse. Verified by the map on the
+    // home page rendering ~40px wide before this was set.
+    responsiveStyles: true,
+    layout: 'constrained',
+  },
   integrations: [mdx(), sitemap()],
 })

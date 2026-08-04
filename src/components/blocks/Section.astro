@@ -21,6 +21,11 @@ const { width = 'content', background = 'base', space = 60 } = Astro.props
   .w-full .inner { max-width: none; padding-inline: 0; }
   .bg-base { background: var(--color-base); }
   .bg-accent-5 { background: var(--color-accent-5); }
-  .bg-accent-1 { background: var(--color-accent-1); color: var(--color-base); }
+  /*
+   * Dark text on the orange band, not white. Measured on the live site: the
+   * "Follow us in real life" aside computes to color rgb(17,17,17) over
+   * rgb(229,101,41). White there was my invention.
+   */
+  .bg-accent-1 { background: var(--color-accent-1); color: var(--color-contrast); }
   .bg-contrast { background: var(--color-contrast); color: var(--color-base); }
 </style>

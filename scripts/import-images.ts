@@ -13,15 +13,16 @@ import { mkdir, copyFile, readFile, readdir, stat } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 
 const CONTENT = 'archive/content'
+const HTML = 'archive/html'
 const MEDIA = 'archive/media'
 const DEST = 'src/assets/images'
 
-const walk = async (dir: string): Promise<string[]> => {
+const walk = async (dir: string, ext: string): Promise<string[]> => {
   const out: string[] = []
   for (const e of await readdir(dir, { withFileTypes: true })) {
     const p = join(dir, e.name)
-    if (e.isDirectory()) out.push(...(await walk(p)))
-    else if (e.name.endsWith('.md')) out.push(p)
+    if (e.isDirectory()) out.push(...(await walk(p, ext)))
+    else if (e.name.endsWith(ext)) out.push(p)
   }
   return out
 }
@@ -37,11 +38,24 @@ const uploadsPath = (url: string): string | null => {
 }
 
 const referenced = new Set<string>()
-for (const file of await walk(CONTENT)) {
+
+// The markdown is the readable record but a lossy one: the two partner logos on
+// the home page appear in archive/html and in the media manifest, yet in no
+// markdown file, because turndown drops images inside some block wrappers. The
+// archived block html is the fuller reference, so both are scanned.
+for (const file of await walk(CONTENT, '.md')) {
   const body = await readFile(file, 'utf8')
   for (const m of body.matchAll(/!\[[^\]]*\]\(([^)\s]+)/g)) {
     const p = uploadsPath(m[1]!)
     if (p) referenced.add(p)
+  }
+}
+for (const file of await walk(HTML, '.html')) {
+  const body = await readFile(file, 'utf8')
+  for (const m of body.matchAll(/(?:src|data-src)="([^"]+)"/g)) {
+    const p = uploadsPath(m[1]!)
+    // Skip resized variants: Astro generates its own from the original.
+    if (p && !/-\d+x\d+\.[a-z0-9]+$/i.test(p)) referenced.add(p)
   }
 }
 

@@ -5,7 +5,10 @@ const dir = 'src/components/blocks'
 const files = readdirSync(dir).filter((f) => f.endsWith('.astro'))
 
 describe('block components', () => {
-  it('provides the ten primitives the archived markup needs', () => {
+  it('provides the primitives the archived markup needs', () => {
+    // PillLabel was added after comparing against the archived screenshots: the
+    // outlined pill labelling each section is the design's most recognisable
+    // recurring element, and a rebuild without it reads as a different site.
     expect(files.sort()).toEqual([
       'Buttons.astro',
       'Column.astro',
@@ -13,6 +16,7 @@ describe('block components', () => {
       'Cover.astro',
       'Figure.astro',
       'Gallery.astro',
+      'PillLabel.astro',
       'Prose.astro',
       'Quote.astro',
       'Section.astro',
