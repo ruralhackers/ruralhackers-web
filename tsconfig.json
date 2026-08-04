@@ -11,5 +11,7 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": ["scraper/src"]
+  // `src/lib` and `tests` hold plain TypeScript, so tsc checks them directly.
+  // The `.astro` files are checked by `astro check`, which understands them.
+  "include": ["scraper/src", "src/lib", "tests"]
 }
