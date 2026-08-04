@@ -1,0 +1,146 @@
+---
+title: Rural Hackers
+seoTitle: Rural Hackers – A movement for the revitalization of rural life
+seoDescription: A movement for the revitalization of rural life
+legacyUrl: https://ruralhackers.com/
+---
+
+import { Section, Columns, Column, Prose, Figure, Buttons, Quote } from '../../../components/blocks/index.ts'
+import mapaAnceu from '../../../assets/images/2025/02/Ilustracion_sin_titulo-1-scaled.jpg'
+import community from '../../../assets/images/2025/02/DSC02753.jpg'
+import eyLogo from '../../../assets/images/2025/02/ey_logo.png'
+
+{/*
+  Heading structure repaired. The live page has an h1 "Rural Hackers" at 48px and
+  a separate h2 "Rural Hackers" at 129.6px — the same words twice, the larger one
+  acting as a wordmark. Here the wordmark is the single h1, styled to the size it
+  renders at today. Same pixels, one heading.
+*/}
+
+<Section width="wide" space={70}>
+  <h1 class="wordmark">Rural Hackers</h1>
+  <Prose font="display" size="x-large">
+    A movement for the revitalization of **rural life** //
+  </Prose>
+</Section>
+
+<Section space={60}>
+  <Prose>
+    Rural Hackers is an international organization dedicated to fostering innovation
+    and creativity at the intersection of technology, rural living and art. We provide
+    a platform for interdisciplinary collaboration, empowering people to challenge
+    traditional thinking and create groundbreaking projects that inspire positive change.
+
+    **Rural Hackers** is based on the power of inspiration. Our aim is to create a place
+    where you can find people who become your reference for change.
+  </Prose>
+</Section>
+
+<Section width="wide" background="accent-5" space={70}>
+  <Columns align="center">
+    <Column>
+      ## The Context
+
+      <Prose>
+        Rural areas of Galicia (Spain) are becoming severely depopulated. This fact
+        jeopardizes a way of living, endangers a whole tradition, and disconnects us
+        from our roots. We envision technology, arts and creativity as twisters. They
+        can bring steamy change to rural areas and help to build new ecosystems.
+      </Prose>
+    </Column>
+    <Column>
+      <Figure src={mapaAnceu} alt="Illustrated map of Anceu and the surrounding valley" />
+    </Column>
+  </Columns>
+</Section>
+
+<Section space={70}>
+  ## This is our motto
+
+  <Quote cite="Rosario — Anceu, Ponte Caldelas">
+    “You can make a **difference**. You can always **contribute**. Let’s make this
+    happen **together**.”
+  </Quote>
+</Section>
+
+<Section width="wide" space={70}>
+  ## Stuff we do
+
+  <Columns gap={40}>
+    <Column>
+      ### Creative Residencies
+
+      <Prose>
+        One-month experience at Anceu coliving to develop projects on tech, arts or
+        creativity.
+      </Prose>
+      <Buttons><a href="/rural-hackers-residencies/">Learn more</a></Buttons>
+    </Column>
+    <Column>
+      ### Rural Digital Projects
+
+      <Prose>
+        We develop open source tech solutions to fight against rural challenges.
+      </Prose>
+      <Buttons><a href="/rural-digital-projects/">Learn more</a></Buttons>
+    </Column>
+    <Column>
+      ### Sharing Knowledge Events
+
+      <Prose>
+        Monthly initiatives to learn traditional and innovative knowledge.
+      </Prose>
+      <Buttons><a href="/sharing-knowledge-events/">Learn more</a></Buttons>
+    </Column>
+  </Columns>
+</Section>
+
+<Section width="wide" space={70}>
+  ## Our hackers
+
+  <Columns align="center">
+    <Column>
+      <Prose font="display" size="x-large">
+        We build trough the power of the local villagers of Anceu and our international
+        community. Together, we create a future where every person’s effort leads to
+        lasting impact.
+      </Prose>
+      <Prose>
+        Our actions are fueled by the hacking mindset: problems are opportunities,
+        obstacles are growth, reality is transformation.
+      </Prose>
+    </Column>
+    <Column>
+      <Figure src={community} alt="Rural Hackers participants gathered outdoors in Anceu" />
+    </Column>
+  </Columns>
+</Section>
+
+<Section space={70}>
+  ## We are proud of our partners
+
+  <Prose>
+    Our collaborators join us on a journey that transcends logos, KPIs, and numerical
+    outcomes. They focus on people, fostering connections and enriching experiences
+    that drive rural innovation in villages.
+  </Prose>
+  <Figure src={eyLogo} alt="Eleven Yellow" width={180} />
+</Section>
+
+<Section background="accent-1" space={60}>
+  ## Follow us in real life
+
+  <Prose>
+    Have you imagined the possibility of getting to know each other? That would be
+    fantastic.
+  </Prose>
+  <Buttons><a href="/contact/">Contact</a></Buttons>
+</Section>
+
+<style>
+  {`.wordmark {
+    font-size: clamp(3rem, 9vw, 8.1rem);
+    line-height: 0.9;
+    margin: 0 0 var(--space-30);
+  }`}
+</style>

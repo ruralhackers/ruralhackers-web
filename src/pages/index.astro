@@ -1,6 +1,18 @@
 ---
+import { getCollection, getEntry, render } from 'astro:content'
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { localesFor } from '../lib/entries.ts'
+
+const entry = await getEntry('pages', 'en/home')
+if (!entry) throw new Error('src/content/pages/en/home.mdx is missing')
+const ids = (await getCollection('pages')).map((e) => e.id)
+const { Content } = await render(entry)
 ---
-<BaseLayout title="Rural Hackers" path="/">
-  <h1>Rural Hackers</h1>
+<BaseLayout
+  title={entry.data.seoTitle ?? entry.data.title}
+  description={entry.data.seoDescription}
+  path="/"
+  availableLocales={localesFor(ids, 'home')}
+>
+  <Content />
 </BaseLayout>

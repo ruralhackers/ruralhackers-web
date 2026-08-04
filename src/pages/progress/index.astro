@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { Section, Columns, Column } from '../../components/blocks/index.ts'
+import { splitId } from '../../lib/entries.ts'
+import { DEFAULT_LOCALE } from '../../lib/i18n.ts'
+
+// The old nav pointed "Progress" at a dead `#`. The years collection makes a
+// real index free, which is also how 2026 stops being unreachable.
+const years = (await getCollection('years'))
+  .filter((e) => splitId(e.id).locale === DEFAULT_LOCALE)
+  .sort((a, b) => b.data.year - a.data.year)
+---
+<BaseLayout title="Progress — Rural Hackers" path="/progress/">
+  <Section width="wide">
+    <h1>Progress</h1>
+    <Columns>
+      {years.map((y) => (
+        <Column>
+          <h2><a href={`/progress/${y.data.year}/`}>{y.data.year}</a></h2>
+          {y.data.seoDescription && <p>{y.data.seoDescription}</p>}
+        </Column>
+      ))}
+    </Columns>
+  </Section>
+</BaseLayout>

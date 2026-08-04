@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { localesFor, pathFor, splitId } from '../lib/entries.ts'
+import { DEFAULT_LOCALE } from '../lib/i18n.ts'
+
+export async function getStaticPaths() {
+  const kinds = ['pages', 'programmes', 'posts'] as const
+  const paths = []
+  for (const kind of kinds) {
+    const all = await getCollection(kind)
+    const ids = all.map((e) => e.id)
+    for (const entry of all) {
+      const { locale, slug } = splitId(entry.id)
+      if (locale !== DEFAULT_LOCALE) continue
+      const path = pathFor(kind, slug)
+      // The front page and the blog index have their own routes.
+      if (path === '/' || path === '/blog/') continue
+      paths.push({
+        params: { slug: path.replace(/^\/|\/$/g, '') },
+        props: { entry, path, availableLocales: localesFor(ids, slug) },
+      })
+    }
+  }
+  return paths
+}
+
+const { entry, path, availableLocales } = Astro.props
+const { Content } = await render(entry)
+---
+<BaseLayout
+  title={entry.data.seoTitle ?? entry.data.title}
+  description={entry.data.seoDescription}
+  path={path}
+  availableLocales={availableLocales}
+>
+  <Content />
+</BaseLayout>

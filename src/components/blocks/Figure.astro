@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets'
+import { Picture } from 'astro:assets'
 
 interface Props {
   src: ImageMetadata
@@ -14,8 +14,19 @@ const { src, alt, caption, width } = Astro.props
   and phase 2 is the moment that stops being free — the type forces a decision,
   and `alt=""` is a valid, deliberate answer for decoration.
 */}
+{/*
+  Picture, not Image: only Picture accepts `formats`, so only Picture emits the
+  avif and webp sources. `layout="constrained"` is what generates the srcset and
+  sizes, so the browser can pick a width instead of always taking the largest.
+*/}
 <figure>
-  <Image src={src} alt={alt} width={width} formats={['avif', 'webp']} />
+  <Picture
+    src={src}
+    alt={alt}
+    width={width}
+    formats={['avif', 'webp']}
+    layout="constrained"
+  />
   {caption && <figcaption>{caption}</figcaption>}
 </figure>
 

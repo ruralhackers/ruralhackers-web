@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { Section } from '../../components/blocks/index.ts'
+import { pathFor, splitId } from '../../lib/entries.ts'
+import { DEFAULT_LOCALE } from '../../lib/i18n.ts'
+
+// The blog page owns a url and a title; wordpress generated this list from a
+// template, which is why its entry has no body.
+const posts = (await getCollection('posts'))
+  .filter((e) => splitId(e.id).locale === DEFAULT_LOCALE)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+---
+<BaseLayout title="Blog — Rural Hackers" path="/blog/">
+  <Section>
+    <h1>Blog</h1>
+    <ul>
+      {posts.map((p) => {
+        const { slug } = splitId(p.id)
+        return (
+          <li>
+            <a href={pathFor('posts', slug)}>{p.data.title}</a>{' '}
+            <time datetime={p.data.date.toISOString()}>
+              {p.data.date.toISOString().slice(0, 10)}
+            </time>
+          </li>
+        )
+      })}
+    </ul>
+  </Section>
+</BaseLayout>

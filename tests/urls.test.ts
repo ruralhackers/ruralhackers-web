@@ -33,8 +33,15 @@ describe('oldToNew', () => {
 describe('the url surface', () => {
   it('accounts for all 22 archived urls', () => {
     expect(PRESERVED.length + REDIRECTS.length).toBe(22)
-    expect(PRESERVED).toHaveLength(13)
-    expect(REDIRECTS).toHaveLength(9)
+    expect(PRESERVED).toHaveLength(11)
+    expect(REDIRECTS).toHaveLength(11)
+  })
+
+  it('retires the two demo blog posts to /blog/, keeping the real one', () => {
+    // Both were unedited theme copy about a fictional florist.
+    expect(oldToNew('/the-delicate-charm-of-bloodwort-blooms/')).toBe('/blog/')
+    expect(oldToNew('/the-story-of-sunflowers-and-their-little-visitors/')).toBe('/blog/')
+    expect(oldToNew('/speakers-at-festival-creativa/')).toBeNull()
   })
 
   it('covers every url in the archived inventory', () => {
