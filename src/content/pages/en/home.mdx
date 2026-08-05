@@ -203,11 +203,20 @@ import logoAnceu from '../../../assets/images/2025/02/Anceu-Coliving-Logo_Primar
 
 <style>
   {`
+  /*
+   * Weight 700, not 400. The live heading wraps its text in strong, so the h2
+   * itself computes 400 while the strong inside renders at 700 — reading the
+   * heading's own computed weight got this wrong.
+   *
+   * No backticks in here: this block is a template literal, and a backtick in a
+   * comment closes it, which fails the build with an unrelated-looking parse
+   * error about the # in a hex colour.
+   */
   .wordmark {
     font-family: var(--font-body);
     font-size: clamp(3.5rem, 9vw, 129.6px);
     line-height: 0.9;
-    font-weight: 400;
+    font-weight: 700;
     color: var(--color-accent-1);
     margin: 0 0 var(--space-30);
   }

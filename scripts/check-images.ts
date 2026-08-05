@@ -22,6 +22,7 @@ const PAGES: ReadonlyArray<{ archived: string; built: string }> = [
     built: 'dist/privacy-policy/index.html',
   },
   { archived: 'archive/html/pages/ruralwo.html', built: 'dist/ruralwo/index.html' },
+  { archived: 'archive/html/pages/hacker-days.html', built: 'dist/hacker-days/index.html' },
   {
     archived: 'archive/html/pages/sharing-knowledge-events.html',
     built: 'dist/sharing-knowledge-events/index.html',

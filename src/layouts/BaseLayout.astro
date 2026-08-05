@@ -92,7 +92,14 @@ const {
         background: var(--color-base);
         padding: var(--space-20);
       }
-      main { max-width: var(--wide-size); margin: 0 auto; padding: 0 var(--space-40); }
+      /*
+       * Full width, with no padding of its own. Each Section constrains its own
+       * inner content, so the colour bands have to be able to reach the viewport
+       * edges. Constraining main to --wide-size left a white gutter down both
+       * sides of every grey, black and orange band: measured 50+1340 where the
+       * live site is 0+1440.
+       */
+      main { width: 100%; }
     </style>
   </body>
 </html>
