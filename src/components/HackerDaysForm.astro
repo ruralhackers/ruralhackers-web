@@ -15,11 +15,11 @@
   </p>
 
   <p>
-    <label for="hd-name">Name</label>
+    <label for="hd-name">Name <span class="req" aria-hidden="true">*</span></label>
     <input id="hd-name" type="text" name="name" required />
   </p>
   <p>
-    <label for="hd-email">Email</label>
+    <label for="hd-email">Email <span class="req" aria-hidden="true">*</span></label>
     <input id="hd-email" type="email" name="email" required />
   </p>
   <p>
@@ -30,7 +30,7 @@
     <label for="hd-contribution">How would you like to contribute?</label>
     <textarea id="hd-contribution" name="contribution" rows="5" required></textarea>
   </p>
-  <p><button type="submit">Submit</button></p>
+  <p class="actions"><button type="submit">Submit</button></p>
 </form>
 
 <style>
@@ -45,12 +45,18 @@
     background: var(--color-base);
     color: var(--color-contrast);
   }
+  label { font-weight: 700; font-size: var(--size-small); }
+  .req { color: #d32f2f; }
+  .actions { display: block; }
   button {
     font-family: var(--font-body);
-    border: 2px solid currentColor;
-    background: none;
+    font-size: var(--size-small);
+    border: 0;
+    border-radius: 999px;
+    background: var(--color-contrast);
+    color: var(--color-base);
     padding: var(--space-20) var(--space-40);
     cursor: pointer;
   }
-  button:hover { background: var(--color-accent-1); color: var(--color-base); }
+  button:hover { background: var(--color-accent-1); }
 </style>

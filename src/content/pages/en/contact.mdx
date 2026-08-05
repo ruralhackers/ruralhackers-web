@@ -5,18 +5,33 @@ seoDescription: If you have any questions or just want to say hello, please don�
 legacyUrl: https://ruralhackers.com/contact/
 ---
 
-import { Section, Prose } from '../../../components/blocks/index.ts'
+import { Section, Columns, Column, Prose, Figure } from '../../../components/blocks/index.ts'
 import ContactForm from '../../../components/ContactForm.astro'
+import phonePhoto from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-31-30.png'
 
-<Section space={70}>
-  # Follow us in real life
+{/*
+  Grey band across the whole page, two columns: the heading, the sentence and the
+  form at left, a 635x800 photograph at right. The h1 is 48px.
 
-  <Prose>
-    If you have any questions or just want to say hello, please don’t hesitate to
-    contact us. We’ll get back to you soon.
-  </Prose>
-</Section>
+  One deliberate difference: the live Submit button is WPForms' unstyled grey
+  default, which does not match any other button on the site. This uses the site's
+  own dark pill, as every other call to action does.
+*/}
 
-<Section space={40}>
-  <ContactForm />
+<Section background="accent-5" width="wide" space={70}>
+  <Columns gap={50}>
+    <Column width="48%">
+      # Follow us in real life
+
+      <Prose>
+        If you have any questions or just want to say hello, please don’t hesitate to
+        contact us. We’ll get back to you soon.
+      </Prose>
+
+      <ContactForm />
+    </Column>
+    <Column width="46%">
+      <Figure src={phonePhoto} alt="A hand holding a phone up against the ferns in Anceu" />
+    </Column>
+  </Columns>
 </Section>

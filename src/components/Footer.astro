@@ -11,7 +11,8 @@ import logo from '../assets/logo-footer.png'
 */}
 <footer>
   <div class="row">
-    <Image class="mark" src={logo} alt="Rural Hackers" width={64} height={64} layout="fixed" />
+    {/* 296x422, not square: forcing 64x64 cropped the wordmark to "Rural". */}
+    <Image class="mark" src={logo} alt="Rural Hackers" width={70} height={100} layout="fixed" />
     <ul>
       {SOCIAL.map((s) => (
         <li><a href={s.href} rel="noopener me" target="_blank">{s.label}</a></li>

@@ -13,7 +13,11 @@ import huggingPhoto from '../../../assets/images/2025/02/Screenshot-from-2025-02
 import cardResidencies from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-35-37.png'
 import cardProjects from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-28-59.png'
 import cardEvents from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-34-27.png'
-import communityPhoto from '../../../assets/images/2025/02/DSC02753.jpg'
+import hackerA from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-31-36.png'
+import hackerB from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-34-36.png'
+import hackerC from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-33-58.png'
+import hackerD from '../../../assets/images/2025/02/DSC02753.jpg'
+import mindsetPhoto from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-36-57.png'
 import logoEy from '../../../assets/images/2025/02/ey_logo.png'
 import logoMontes from '../../../assets/images/2025/02/comunidad_montes-removebg-preview.webp'
 import logoCasaDoPobo from '../../../assets/images/2025/02/cropped-casa_do_pobo_de_anceu-removebg-preview.webp'
@@ -132,25 +136,33 @@ import logoAnceu from '../../../assets/images/2025/02/Anceu-Coliving-Logo_Primar
   </Columns>
 </Section>
 
+{/* "Our hackers" is 153.6px, and four 313x313 portraits sit under the statement. */}
 <Section background="accent-5" width="wide" space={60}>
   <h2 class="huge">Our hackers</h2>
-  <Prose size="large">
+  <h2 class="statement">
     We build trough the power of the local villagers of Anceu and our international
     community. Together, we create a future where every person’s effort leads to
     lasting impact.
-  </Prose>
+  </h2>
+  <div class="hackers">
+    <Figure src={hackerA} alt="A Rural Hackers participant in the workshop" />
+    <Figure src={hackerB} alt="Two participants working together outdoors" />
+    <Figure src={hackerC} alt="A participant presenting their project" />
+    <Figure src={hackerD} alt="The Rural Hackers community gathered outdoors" />
+  </div>
 </Section>
 
+{/* One 645x900 photograph on the black band, with the statement at 32px. */}
 <Section background="contrast" width="wide" space={50}>
   <Columns align="center" gap={50}>
     <Column width="46%">
-      <Figure src={communityPhoto} alt="The Rural Hackers community gathered outdoors" />
+      <Figure src={mindsetPhoto} alt="Three participants outside the Anceu workshop" />
     </Column>
     <Column width="44%">
-      <Prose size="large">
-        Our actions are fueled by the hacking mindset: problems are opportunities,
+      <p class="statement">
+        Our actions are fueled by the hacking mindset, problems are opportunities,
         obstacles are growth, reality is transformation.
-      </Prose>
+      </p>
     </Column>
   </Columns>
 </Section>
@@ -158,8 +170,9 @@ import logoAnceu from '../../../assets/images/2025/02/Anceu-Coliving-Logo_Primar
 <Section width="wide" space={50}>
   <Columns align="center" gap={50}>
     <Column width="40%">
-      <PillLabel>We are proud of our partners</PillLabel>
-      <Prose size="small">
+      {/* 32px OffBit Trial, not a pill and not Inter. */}
+      <h2 class="display-title">We are proud of our partners</h2>
+      <Prose>
         Our collaborators join us on a journey that transcends logos, KPIs, and numerical
         outcomes. They focus on people, fostering connections and enriching experiences
         that drive rural innovation in villages.
@@ -231,7 +244,32 @@ import logoAnceu from '../../../assets/images/2025/02/Anceu-Coliving-Logo_Primar
     margin: var(--space-30) 0 var(--space-20);
   }
 
-  .huge { font-size: clamp(3rem, 8vw, 7rem); line-height: 0.95; margin: 0 0 var(--space-40); }
+  /* 153.6px at 1440 on the live page. */
+  .huge {
+    font-family: var(--font-body);
+    font-size: clamp(3rem, 10.7vw, 153.6px);
+    font-weight: 700;
+    line-height: 0.9;
+    margin: 0 0 var(--space-40);
+  }
+
+  /* 32px OffBit Trial — the partners heading is the display face, not Inter. */
+  .display-title {
+    font-family: var(--font-display);
+    font-size: var(--size-x-large);
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    margin: 0 0 var(--space-30);
+  }
+
+  /* Four 313x313 portraits in a row under the "Our hackers" statement. */
+  .hackers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-30);
+    margin-top: var(--space-50);
+  }
+  @media (max-width: 781px) { .hackers { grid-template-columns: repeat(2, 1fr); } }
 
   .logos {
     display: grid;
