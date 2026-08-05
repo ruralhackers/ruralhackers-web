@@ -20,6 +20,11 @@ const { src, alt, caption, width, duotone = false } = Astro.props
   Picture, not Image: only Picture accepts `formats`, so only Picture emits the
   avif and webp sources. `layout="constrained"` is what generates the srcset and
   sizes, so the browser can pick a width instead of always taking the largest.
+
+  fallbackFormat is jpeg because Astro otherwise keeps the source format for the
+  <img> fallback, and many of these photographs are stored as PNG. That put 110 MB
+  of PNG into dist across 122 files, some of them 2.9 MB each, for an image every
+  current browser will take as avif anyway.
 */}
 <figure class:list={[duotone && 'duotone']}>
   <Picture
@@ -27,6 +32,7 @@ const { src, alt, caption, width, duotone = false } = Astro.props
     alt={alt}
     width={width}
     formats={['avif', 'webp']}
+    fallbackFormat="jpeg"
     layout="constrained"
   />
   {caption && <figcaption>{caption}</figcaption>}

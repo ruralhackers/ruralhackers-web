@@ -81,17 +81,34 @@ const paragraphs = [...html.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)]
   .map((m) => ({ at: m.index!, text: strip(m[1]!) }))
   .filter((p) => p.text.length > 0)
 
-const takenImages = new Set<number>()
+/**
+ * Each image picks its own nearest heading, rather than each heading grabbing the
+ * nearest free image.
+ *
+ * Assigning greedily in heading order let one milestone steal its neighbour's
+ * photograph: on creative-residencies, "Asi e Nito Comic" ended up illustrated
+ * with the "As Indianas" still. Letting the image choose is stable, because the
+ * distance from an image to its own heading is always shorter than to any other.
+ */
+const claimed = new Map<number, number>() // heading index -> image position
+for (const im of images) {
+  let best = -1
+  let bestDist = Infinity
+  headings.forEach((h, i) => {
+    const d = Math.abs(im.at - h.at)
+    if (d < bestDist) {
+      bestDist = d
+      best = i
+    }
+  })
+  if (best >= 0 && !claimed.has(best)) claimed.set(best, im.at)
+}
+const byPos = new Map(images.map((im) => [im.at, im.url]))
+
 const milestones: Milestone[] = headings.map((h, i) => {
   const next = headings[i + 1]?.at ?? html.length
-  const prev = headings[i - 1]?.at ?? 0
-  // Nearest unclaimed image, searching this heading's own span first and then
-  // back towards the previous heading, which is where an image-left one sits.
-  const candidates = images
-    .filter((im) => !takenImages.has(im.at) && im.at > prev && im.at < next)
-    .sort((a, b) => Math.abs(a.at - h.at) - Math.abs(b.at - h.at))
-  const img = candidates[0]
-  if (img) takenImages.add(img.at)
+  const pos = claimed.get(i)
+  const img = pos === undefined ? undefined : { url: byPos.get(pos)! }
 
   return {
     title: h.title,

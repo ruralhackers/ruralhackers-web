@@ -31,6 +31,11 @@ const PAGES: ReadonlyArray<{ archived: string; built: string }> = [
     archived: 'archive/html/pages/rural-hackers-residencies.html',
     built: 'dist/rural-hackers-residencies/index.html',
   },
+  { archived: 'archive/html/pages/rural-digital-projects.html', built: 'dist/rural-digital-projects/index.html' },
+  {
+    archived: 'archive/html/pages/creative-residencies.html',
+    built: 'dist/creative-residencies/index.html',
+  },
   { archived: 'archive/html/pages/2023-2.html', built: 'dist/progress/2023/index.html' },
   { archived: 'archive/html/pages/2024-2.html', built: 'dist/progress/2024/index.html' },
   { archived: 'archive/html/pages/2025-2.html', built: 'dist/progress/2025/index.html' },

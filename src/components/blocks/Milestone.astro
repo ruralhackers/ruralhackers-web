@@ -13,8 +13,14 @@ interface Props {
    * 508px wide, and forcing squares there made the page 113% of the live height.
    */
   crop?: 'square' | 'natural'
+  /**
+   * The first milestone on a page carries its title, so it is the h1. Every page
+   * needs exactly one, and the generated pages had none until this existed.
+   */
+  heading?: 'h1' | 'h2'
 }
-const { title, src, alt, side = 'right', crop = 'square' } = Astro.props
+const { title, src, alt, side = 'right', crop = 'square', heading = 'h2' } = Astro.props
+const Heading = heading
 ---
 {/*
   One entry on a "Progress" year page: a 32px heading with its copy, and a ~750px
@@ -28,7 +34,7 @@ const { title, src, alt, side = 'right', crop = 'square' } = Astro.props
 */}
 <div class:list={['milestone', `img-${side}`]}>
   <div class="body">
-    <h2 class="statement">{title}</h2>
+    <Heading class="statement">{title}</Heading>
     <slot />
   </div>
   <div class:list={['media', `crop-${crop}`]}><Figure src={src} alt={alt} /></div>

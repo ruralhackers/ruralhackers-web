@@ -39,9 +39,13 @@ import logoAnceu from '../../../assets/images/2025/02/Anceu-Coliving-Logo_Primar
     {/* 717px of text against a 573px map at 1440, measured on the live site. */}
     <Column width="54%">
       <h1 class="wordmark">Rural Hackers</h1>
-      <p class="tagline">
-        A movement for the revitalization of <strong>rural life</strong> //
-      </p>
+      {/*
+        On one line on purpose. Split across lines, MDX treats the contents as a
+        markdown block and wraps them in their own <p>, and a <p> inside a <p> is
+        closed immediately by the parser — the class ends up on an empty element
+        and the text lands in an unstyled sibling.
+      */}
+      <p class="tagline">A movement for the revitalization of <strong>rural life</strong> //</p>
     </Column>
     <Column width="42%">
       <Figure src={mapAnceu} alt="Illustrated map of Anceu village and its valley" />
@@ -159,10 +163,8 @@ import logoAnceu from '../../../assets/images/2025/02/Anceu-Coliving-Logo_Primar
       <Figure src={mindsetPhoto} alt="Three participants outside the Anceu workshop" />
     </Column>
     <Column width="44%">
-      <p class="statement">
-        Our actions are fueled by the hacking mindset, problems are opportunities,
-        obstacles are growth, reality is transformation.
-      </p>
+      {/* One line: see the note on the tagline about nested <p> in mdx. */}
+      <p class="statement">Our actions are fueled by the hacking mindset, problems are opportunities, obstacles are growth, reality is transformation.</p>
     </Column>
   </Columns>
 </Section>

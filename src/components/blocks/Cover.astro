@@ -11,7 +11,8 @@ interface Props {
 const { src, alt = '', minHeight = '60vh', overlay = 40 } = Astro.props
 ---
 <div class="cover" style={`--cover-min: ${minHeight}; --cover-overlay: ${overlay / 100}`}>
-  {src && <Picture class="bg" src={src} alt={alt} formats={['avif', 'webp']} layout="full-width" />}
+  {src && <Picture class="bg" src={src} alt={alt} formats={['avif', 'webp']}
+    fallbackFormat="jpeg" layout="full-width" />}
   <div class="content"><slot /></div>
 </div>
 

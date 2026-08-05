@@ -1,31 +1,68 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { Section } from '../../components/blocks/index.ts'
+import { Section, Prose } from '../../components/blocks/index.ts'
 import { pathFor, splitId } from '../../lib/entries.ts'
 import { DEFAULT_LOCALE } from '../../lib/i18n.ts'
 
-// The blog page owns a url and a title; wordpress generated this list from a
-// template, which is why its entry has no body.
+/*
+ * The blog page owns a url and a title; WordPress generated this list from a
+ * template, which is why its content entry has no body.
+ *
+ * The live index lists three posts, each as a 32px heading with an 18px excerpt.
+ * Two of those three were unedited Twenty Twenty-Five demo copy about a fictional
+ * florist and are deliberately not ported, so this list is one entry long. That is
+ * the decision, not a gap.
+ */
 const posts = (await getCollection('posts'))
   .filter((e) => splitId(e.id).locale === DEFAULT_LOCALE)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+
+const withExcerpt = await Promise.all(
+  posts.map(async (p) => {
+    const { Content } = await render(p)
+    return { entry: p, Content }
+  }),
+)
 ---
 <BaseLayout title="Blog — Rural Hackers" path="/blog/">
-  <Section>
-    <h1>Blog</h1>
-    <ul>
-      {posts.map((p) => {
-        const { slug } = splitId(p.id)
+  <Section width="wide" space={50}>
+    <h1 class="section-title">Blog</h1>
+
+    <div class="posts">
+      {withExcerpt.map(({ entry }) => {
+        const { slug } = splitId(entry.id)
         return (
-          <li>
-            <a href={pathFor('posts', slug)}>{p.data.title}</a>{' '}
-            <time datetime={p.data.date.toISOString()}>
-              {p.data.date.toISOString().slice(0, 10)}
-            </time>
-          </li>
+          <article>
+            <h2 class="statement">
+              <a href={pathFor('posts', slug)}>{entry.data.title}</a>
+            </h2>
+            <p class="meta">
+              <time datetime={entry.data.date.toISOString()}>
+                {entry.data.date.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })}
+              </time>
+            </p>
+            {entry.data.seoDescription && (
+              <Prose size="small">{entry.data.seoDescription}</Prose>
+            )}
+          </article>
         )
       })}
-    </ul>
+    </div>
   </Section>
 </BaseLayout>
+
+<style>
+  .posts { display: grid; gap: var(--space-60); max-width: 645px; }
+  .posts h2 { margin: 0 0 var(--space-20); }
+  .posts a:hover { color: var(--color-accent-1); text-decoration: none; }
+  .meta {
+    font-size: var(--size-small);
+    color: var(--color-accent-4);
+    margin: 0 0 var(--space-20);
+  }
+</style>

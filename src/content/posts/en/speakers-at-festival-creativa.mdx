@@ -1,0 +1,60 @@
+---
+title: Speakers at Festival Creativa
+seoTitle: Speakers at Festival Creativa - Rural Hackers
+seoDescription: Rural Hackers took the stage at Creativa Festival 2025 in Vigo.
+date: 2025-04-29
+author: Rural Hackers
+legacyUrl: https://ruralhackers.com/speakers-at-festival-creativa/
+---
+
+import { Section, Prose, Buttons } from '../../../components/blocks/index.ts'
+
+{/*
+  The only one of the three WordPress posts that is genuinely about Rural Hackers.
+  The other two were unedited Twenty Twenty-Five demo copy about a fictional
+  florist and are dropped, with their urls redirecting to /blog/.
+
+  The live page is 2084px tall, but most of that is WordPress's comment form —
+  "Leave a Reply", name, email, website, the akismet field. A static site has no
+  comments, and the rewritten privacy policy says so, so it is deliberately absent
+  rather than missing. The byline and the "More posts" link are reproduced.
+
+  It carries no featured image on the live site.
+*/}
+
+<Section space={60}>
+  <div class="post">
+    <h1 class="section-title">Speakers at Festival Creativa</h1>
+
+    {/* One line: multi-line content in an inline element gets wrapped in its own <p>. */}
+    <p class="byline">Written by Rural Hackers in <a href="/blog/">Blog</a> · <time datetime="2025-04-29">29 April 2025</time></p>
+
+    <Prose>
+      We’re excited to share that Rural Hackers took the stage at Creativa Festival 2025 in
+      Vigo — an inspiring gathering where art, creativity, and music met in powerful ways.
+      Our co-founder, Nacho, was invited to speak about how art and tech are transforming
+      rural life — not just as tools, but as bridges between generations, places, and ideas.
+      At Rural Hackers, we believe creativity shouldn’t be limited to cities. Rural villages
+      hold deep cultural memory and resilience — and when connected with new technologies,
+      they become fertile ground for bold experimentation and community-driven innovation.
+    </Prose>
+  </div>
+</Section>
+
+<Section width="wide" space={60}>
+  <p class="mini">More posts</p>
+  <Buttons><a href="/blog/">Back to the blog</a></Buttons>
+</Section>
+
+<style>
+  {`
+  .post { max-width: 645px; }
+  .byline {
+    font-size: var(--size-small);
+    color: var(--color-accent-4);
+    margin: 0 0 var(--space-40);
+  }
+  .byline a { text-decoration: underline; }
+  .mini { font-size: 14px; font-weight: 700; margin: 0 0 var(--space-30); }
+  `}
+</style>
