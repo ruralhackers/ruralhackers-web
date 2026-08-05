@@ -1,0 +1,44 @@
+---
+import Figure from './Figure.astro'
+
+interface Props {
+  title: string
+  src: ImageMetadata
+  alt: string
+  /** Which side the photograph sits on. The year pages alternate down the page. */
+  side?: 'left' | 'right'
+}
+const { title, src, alt, side = 'right' } = Astro.props
+---
+{/*
+  One entry on a "Progress" year page: a 32px heading with its copy, and a ~750px
+  photograph on one side. The live pages are a run of these, alternating sides,
+  each on the base background with 50px of padding.
+
+  It exists because the year pages are eighteen of these each. Writing them out
+  by hand invites exactly the transcription errors the screenshot comparison keeps
+  finding, and a schema-shaped component is what makes "add a 2027 milestone" one
+  small edit.
+*/}
+<div class:list={['milestone', `img-${side}`]}>
+  <div class="body">
+    <h2 class="statement">{title}</h2>
+    <slot />
+  </div>
+  <div class="media"><Figure src={src} alt={alt} /></div>
+</div>
+
+<style>
+  .milestone {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-50);
+    align-items: center;
+    padding-block: var(--space-50);
+  }
+  .img-left .media { order: -1; }
+  @media (max-width: 781px) {
+    .milestone { grid-template-columns: 1fr; }
+    .img-left .media { order: 0; }
+  }
+</style>

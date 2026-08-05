@@ -27,6 +27,10 @@ const PAGES: ReadonlyArray<{ archived: string; built: string }> = [
     archived: 'archive/html/pages/sharing-knowledge-events.html',
     built: 'dist/sharing-knowledge-events/index.html',
   },
+  { archived: 'archive/html/pages/2023-2.html', built: 'dist/progress/2023/index.html' },
+  { archived: 'archive/html/pages/2024-2.html', built: 'dist/progress/2024/index.html' },
+  { archived: 'archive/html/pages/2025-2.html', built: 'dist/progress/2025/index.html' },
+  { archived: 'archive/html/pages/2025-2-2.html', built: 'dist/progress/2026/index.html' },
 ]
 
 /** Strip WordPress's -WIDTHxHEIGHT variant suffix and the extension. */
