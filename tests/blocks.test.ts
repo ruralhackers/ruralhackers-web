@@ -16,6 +16,8 @@ describe('block components', () => {
       'Cover.astro',
       'Figure.astro',
       'Gallery.astro',
+      // One entry on a Progress year page. The four year pages are 67 of these.
+      'Milestone.astro',
       'PillLabel.astro',
       'Prose.astro',
       'Quote.astro',
