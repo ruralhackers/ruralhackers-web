@@ -1,27 +1,32 @@
 /*
- * Font urls are relative on purpose: base.css is imported by BaseLayout, so Vite
- * resolves and fingerprints these. An absolute `/src/assets/...` would 404 in
- * production, since Astro does not serve the source tree.
+ * woff2, subset to Latin. The originals WordPress served are a 854 KB .ttf and two
+ * .otf files, and measuring a first load showed the .ttf alone was 854 KB of a
+ * 1050 KB page — 81% of it, for a single font. Netlify would serve that faster but
+ * it is still 854 KB on the wire.
  *
- * `format('truetype')` rather than `format('truetype-variations')`: browsers that
- * do not recognise the latter skip the whole `src`, and the variable axes work
- * either way.
+ * Subsetting to Latin-1, Latin Extended-A and the typographic punctuation the copy
+ * uses takes Inter to 117 KB, keeping both variable axes. The site is English,
+ * Spanish and Galician, so nothing outside those ranges is ever typeset. The full
+ * originals stay in src/assets/fonts and in the archive.
+ *
+ * Urls are relative so Vite resolves and fingerprints them; an absolute
+ * `/src/assets/...` would 404 in production.
  */
 @font-face {
   font-family: Inter;
-  src: url('../assets/fonts/Inter-VariableFont_opszwght.ttf') format('truetype');
+  src: url('../assets/fonts/Inter-VariableFont_opszwght.woff2') format('woff2');
   font-weight: 100 900;
   font-display: swap;
 }
 @font-face {
   font-family: "OffBit Trial";
-  src: url('../assets/fonts/OffBitTrial-101.otf') format('opentype');
+  src: url('../assets/fonts/OffBitTrial-101.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "OffBit Trial";
-  src: url('../assets/fonts/OffBitTrial-101Bold.otf') format('opentype');
+  src: url('../assets/fonts/OffBitTrial-101Bold.woff2') format('woff2');
   font-weight: 700;
   font-display: swap;
 }

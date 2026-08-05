@@ -14,6 +14,16 @@ const canonical = new URL(localePath(locale, path), Astro.site).href
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
+
+{/*
+  The same four sizes the live site links, generated from the logo by
+  scripts/make-favicons.ts. They live in public/ so their paths stay stable — a
+  browser asking for /favicon.png will not look in /_astro/.
+*/}
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+<link rel="icon" href="/favicon-192x192.png" sizes="192x192" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="msapplication-TileImage" content="/mstile-270x270.png" />
 {description && <meta name="description" content={description} />}
 <link rel="canonical" href={canonical} />
 {/* hreflang only for locales that actually exist, so we never advertise a 404. */}
