@@ -307,6 +307,19 @@ import closingPhoto from '../../../assets/images/2025/04/R1-06716-028A.jpg'
     margin: var(--space-30) 0 var(--space-20);
   }
   .cards.past h3 { font-size: var(--size-large); }
+  /*
+   * Uniform 3:2 crop. The source files are named _3x2 but several are stored at
+   * other ratios, and letting each card size to its own image left ragged rows —
+   * the page came out 126% of the original's height on that alone.
+   *
+   * Plain selector, no :global() — that is an Astro feature and inside an mdx
+   * <style> it is invalid css, so the rule was silently dropped.
+   */
+  .cards figure img {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    width: 100%;
+  }
   .card.plain { border-top: 1px solid var(--color-accent-4); padding-top: var(--space-30); }
   .card.plain h3 { margin-top: 0; }
 

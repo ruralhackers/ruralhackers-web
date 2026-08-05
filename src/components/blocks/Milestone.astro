@@ -7,8 +7,14 @@ interface Props {
   alt: string
   /** Which side the photograph sits on. The year pages alternate down the page. */
   side?: 'left' | 'right'
+  /**
+   * How the photograph is framed. 2024, 2025 and 2026 crop every one to a square —
+   * 750x750 on the live pages. 2023 does not: about half keep their own ratio at
+   * 508px wide, and forcing squares there made the page 113% of the live height.
+   */
+  crop?: 'square' | 'natural'
 }
-const { title, src, alt, side = 'right' } = Astro.props
+const { title, src, alt, side = 'right', crop = 'square' } = Astro.props
 ---
 {/*
   One entry on a "Progress" year page: a 32px heading with its copy, and a ~750px
@@ -25,7 +31,7 @@ const { title, src, alt, side = 'right' } = Astro.props
     <h2 class="statement">{title}</h2>
     <slot />
   </div>
-  <div class="media"><Figure src={src} alt={alt} /></div>
+  <div class:list={['media', `crop-${crop}`]}><Figure src={src} alt={alt} /></div>
 </div>
 
 <style>
@@ -35,6 +41,11 @@ const { title, src, alt, side = 'right' } = Astro.props
     gap: var(--space-50);
     align-items: center;
     padding-block: var(--space-50);
+  }
+  .crop-square :global(figure img) {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
   }
   .img-left .media { order: -1; }
   @media (max-width: 781px) {

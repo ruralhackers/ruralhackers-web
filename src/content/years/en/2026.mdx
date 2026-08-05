@@ -18,9 +18,22 @@ import hero from '../../../assets/images/2026/07/IMG_20260620_124841.jpg'
   Served at /2025-2-2/ on WordPress — a slug collision on a page titled 2026.
 */}
 
+{/*
+  645x486 on the live page — a 4:3 landscape crop of a portrait phone photograph.
+  Left at its own ratio it rendered 1037px tall against the live section's 486.
+*/}
 <Section width="wide" space={20}>
-  <Figure src={hero} alt="Neighbours sharing a communal meal in Anceu" />
+  <div class="hero">
+    <Figure src={hero} alt="Neighbours sharing a communal meal in Anceu" />
+  </div>
 </Section>
+
+<style>
+  {`
+  .hero { max-width: 645px; }
+  .hero figure img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+  `}
+</style>
 
 <Section space={50}>
   <h1 class="statement">
