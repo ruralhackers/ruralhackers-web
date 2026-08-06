@@ -1,0 +1,55 @@
+---
+title: Relatores no Festival Creativa
+seoTitle: Relatores no Festival Creativa - Rural Hackers
+seoDescription: Rural Hackers subiu ao escenario do Festival Creativa 2025 en Vigo.
+date: 2025-04-29
+author: Rural Hackers
+legacyUrl: https://ruralhackers.com/speakers-at-festival-creativa/
+---
+
+import { Section, Prose, Buttons } from '../../../components/blocks/index.ts'
+
+{/*
+  The only one of the three WordPress posts that is genuinely about Rural Hackers.
+  The other two were unedited Twenty Twenty-Five demo copy about a fictional
+  florist and are dropped, with their urls redirecting to /blog/.
+
+  The live page is 2084px tall, but most of that is WordPress's comment form —
+  "Leave a Reply", name, email, website, the akismet field. A static site has no
+  comments, and the rewritten privacy policy says so, so it is deliberately absent
+  rather than missing. The byline and the "More posts" link are reproduced.
+
+  It carries no featured image on the live site.
+*/}
+
+<Section space={60}>
+  <div class="post">
+    <h1 class="section-title">Relatores no Festival Creativa</h1>
+
+    {/* One line: multi-line content in an inline element gets wrapped in its own <p>. */}
+    <p class="byline">Escrito por Rural Hackers en <a href="/gl/blog/">Blog</a> · <time datetime="2025-04-29">29 April 2025</time></p>
+
+    <Prose>
+      Fainos ilusión contar que Rural Hackers subiu ao escenario do Festival Creativa 2025 en Vigo, un encontro inspirador onde a arte, a creatividade e a música se cruzaron con forza. Convidaron a Nacho, cofundador, a falar de como a arte e a tecnoloxía están a transformar a vida rural: non só como ferramentas, senón como pontes entre xeracións, lugares e ideas. En Rural Hackers cremos que a creatividade non debería quedar nas cidades. As aldeas gardan unha memoria cultural fonda e moita resiliencia, e ao conectalas con tecnoloxías novas vólvense terreo fértil para experimentar sen medo e para innovar desde a comunidade.
+    </Prose>
+  </div>
+</Section>
+
+<Section width="wide" space={60}>
+  <p class="mini">Máis entradas</p>
+  <Buttons><a href="/blog/">Volver ao blog</a></Buttons>
+</Section>
+
+<style>
+  {`
+  .post { max-width: 645px; }
+  .byline {
+    font-size: var(--size-small);
+    color: var(--color-accent-4);
+    margin: 0 0 var(--space-40);
+  }
+  .byline a { text-decoration: underline; }
+  .mini { font-size: 14px; font-weight: 700; margin: 0 0 var(--space-30); }
+  `}
+</style>
+
