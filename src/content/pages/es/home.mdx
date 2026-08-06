@@ -1,0 +1,246 @@
+---
+title: Rural Hackers
+seoTitle: Rural Hackers – Un movimiento para la revitalización de la vida rural
+seoDescription: Un movimiento para la revitalización de la vida rural
+---
+
+import { Section, Columns, Column, Prose, PillLabel, Figure, Buttons } from '../../../components/blocks/index.ts'
+import mapAnceu from '../../../assets/images/2025/02/Ilustracion_sin_titulo-1-scaled.jpg'
+import ropePhoto from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-37-24.png'
+import goatPhoto from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-29-52.png'
+import huggingPhoto from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-33-22.png'
+import cardResidencies from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-35-37.png'
+import cardProjects from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-28-59.png'
+import cardEvents from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-34-27.png'
+import hackerA from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-31-36.png'
+import hackerB from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-34-36.png'
+import hackerC from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-33-58.png'
+import hackerD from '../../../assets/images/2025/02/DSC02753.jpg'
+import mindsetPhoto from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-36-57.png'
+import logoEy from '../../../assets/images/2025/02/ey_logo.png'
+import logoMontes from '../../../assets/images/2025/02/comunidad_montes-removebg-preview.webp'
+import logoCasaDoPobo from '../../../assets/images/2025/02/cropped-casa_do_pobo_de_anceu-removebg-preview.webp'
+import logoAnceu from '../../../assets/images/2025/02/Anceu-Coliving-Logo_Primary-01.png'
+
+{/*
+  TRADUCCIÓN QUE NECESITA REVISIÓN.
+
+  Mismo layout que la home inglesa; sólo cambia el texto. Dos avisos:
+
+  La cita de Rosario está traducida, y es la frase de una persona real de Anceu.
+  Casi con certeza la dijo en gallego o en castellano, no en inglés, así que aquí
+  hay una traducción de una traducción. Preguntadle sus palabras y sustituidlas.
+
+  "Rural Hackers", "Hacker Days", "Creative Residencies" y los demás nombres de
+  programa se dejan en inglés porque así se llaman.
+
+  Y los enlaces salen a las páginas en inglés a propósito: de momento sólo existe
+  la home en castellano, así que apuntar a /es/contact/ daría un 404. Cuando esas
+  páginas se traduzcan, hay que volver aquí y prefijar los enlaces.
+*/}
+
+<Section width="full" space={20}>
+  <Columns align="center" gap={40}>
+    <Column width="54%">
+      <h1 class="wordmark">Rural Hackers</h1>
+      <p class="tagline">Un movimiento para la revitalización de la <strong>vida rural</strong> //</p>
+    </Column>
+    <Column width="42%">
+      <Figure src={mapAnceu} alt="Mapa ilustrado de la aldea de Anceu y su valle" />
+    </Column>
+  </Columns>
+</Section>
+
+<Section background="accent-5" space={70}>
+  <div class="centered">
+    ## Rural Hackers
+
+    <Prose>
+      Rural Hackers es una organización internacional dedicada a impulsar la innovación y
+      la creatividad en el cruce entre tecnología, vida rural y arte. Ofrecemos una
+      plataforma para la colaboración interdisciplinar, y damos a las personas medios para
+      cuestionar lo establecido y crear proyectos que inspiren un cambio positivo.
+
+      **Rural Hackers** se sostiene sobre la fuerza de la inspiración. Queremos crear un
+      lugar donde encuentres a las personas que se conviertan en tu referencia de cambio.
+    </Prose>
+  </div>
+</Section>
+
+<Section width="wide" space={80}>
+  <Columns align="center" gap={50}>
+    <Column width="46%">
+      <div class="stack">
+        <Figure src={ropePhoto} alt="Una participante levanta una cuerda enrollada contra el cielo" />
+        <div class="stack-inset">
+          <Figure src={goatPhoto} alt="Una cabra en un prado de Anceu" />
+        </div>
+      </div>
+    </Column>
+    <Column width="44%">
+      <PillLabel>El contexto</PillLabel>
+      <Prose>
+        Las zonas rurales de Galicia se están despoblando gravemente. Eso pone en riesgo
+        una forma de vivir, amenaza toda una tradición y nos desconecta de nuestras
+        raíces. Vemos la tecnología, las artes y la creatividad como remolinos: pueden
+        traer un cambio con fuerza al rural y ayudar a construir nuevos ecosistemas.
+      </Prose>
+    </Column>
+  </Columns>
+</Section>
+
+<Section background="accent-5" width="wide" space={70}>
+  <PillLabel>Este es nuestro lema</PillLabel>
+  <Columns align="center" gap={50}>
+    <Column width="52%">
+      <Prose font="display" size="xx-large">
+        “Puedes marcar la **diferencia**. Siempre puedes **aportar**. Hagamos que esto
+        pase **juntas**”
+      </Prose>
+      <Prose size="small">
+        Rosario — Anceu, Ponte Caldelas
+      </Prose>
+    </Column>
+    <Column width="38%">
+      <Figure src={huggingPhoto} alt="Dos vecinas abrazándose en Anceu" />
+    </Column>
+  </Columns>
+</Section>
+
+<Section width="wide" space={50}>
+  <PillLabel align="center">Lo que hacemos</PillLabel>
+  <Columns gap={40}>
+    <Column>
+      <Figure src={cardResidencies} alt="Una caravana pintada en el coliving de Anceu" />
+      <h3 class="card-title">Creative Residencies</h3>
+      <Prose size="small">
+        Un mes en el coliving de Anceu para desarrollar proyectos de tecnología, arte o
+        creatividad.
+      </Prose>
+      <Buttons><a href="/rural-hackers-residencies/">Saber más</a></Buttons>
+    </Column>
+    <Column>
+      <Figure src={cardProjects} alt="Una mano se acerca a una pantalla con una herramienta de datos rurales" />
+      <h3 class="card-title">Rural Digital Projects</h3>
+      <Prose size="small">
+        Desarrollamos soluciones tecnológicas de código abierto para los retos del rural.
+      </Prose>
+      <Buttons><a href="/rural-digital-projects/">Saber más</a></Buttons>
+    </Column>
+    <Column>
+      <Figure src={cardEvents} alt="Participantes sentados juntos en un taller al aire libre" />
+      <h3 class="card-title">Sharing Knowledge Events</h3>
+      <Prose size="small">
+        Iniciativas mensuales para aprender saberes tradicionales e innovadores.
+      </Prose>
+      <Buttons><a href="/sharing-knowledge-events/">Saber más</a></Buttons>
+    </Column>
+  </Columns>
+</Section>
+
+<Section background="accent-5" width="wide" space={60}>
+  <h2 class="huge">Nuestros hackers</h2>
+  <h2 class="statement">
+    Construimos con la fuerza de las vecinas y vecinos de Anceu y de nuestra comunidad
+    internacional. Juntas creamos un futuro donde el esfuerzo de cada persona deja huella.
+  </h2>
+  <div class="hackers">
+    <Figure src={hackerA} alt="Una participante en el taller de Rural Hackers" />
+    <Figure src={hackerB} alt="Dos participantes trabajando juntos al aire libre" />
+    <Figure src={hackerC} alt="Una participante presentando su proyecto" />
+    <Figure src={hackerD} alt="La comunidad de Rural Hackers reunida al aire libre" />
+  </div>
+</Section>
+
+<Section background="contrast" width="wide" space={50}>
+  <Columns align="center" gap={50}>
+    <Column width="46%">
+      <Figure src={mindsetPhoto} alt="Tres participantes a la puerta del taller de Anceu" />
+    </Column>
+    <Column width="44%">
+      <p class="statement">Nos mueve la mentalidad hacker: los problemas son oportunidades, los obstáculos son crecimiento, la realidad es transformación.</p>
+    </Column>
+  </Columns>
+</Section>
+
+<Section width="wide" space={50}>
+  <Columns align="center" gap={50}>
+    <Column width="40%">
+      <h2 class="display-title">Orgullosas de nuestras entidades colaboradoras</h2>
+      <Prose>
+        Quienes colaboran con nosotras se suman a un camino que va más allá de logos, KPIs
+        y cifras. Se fijan en las personas, tejen conexiones y enriquecen experiencias que
+        impulsan la innovación rural en las aldeas.
+      </Prose>
+    </Column>
+    <Column width="52%">
+      <div class="logos">
+        <Figure src={logoEy} alt="Eleven Yellow" width={200} />
+        <Figure src={logoMontes} alt="Comunidade de Montes de Anceu" width={200} />
+        <Figure src={logoCasaDoPobo} alt="Casa do Pobo de Anceu" width={200} />
+        <Figure src={logoAnceu} alt="Anceu Coliving" width={200} />
+      </div>
+    </Column>
+  </Columns>
+</Section>
+
+<Section background="accent-1" space={50}>
+  <div class="centered">
+    ## Vernos en persona
+
+    <Prose>
+      ¿Te imaginas que nos conociéramos? Sería fantástico.
+    </Prose>
+    <Buttons align="center"><a href="/contact/">Contacto</a></Buttons>
+  </div>
+</Section>
+
+<style>
+  {`
+  .wordmark {
+    font-family: var(--font-body);
+    font-size: clamp(3.5rem, 9vw, 129.6px);
+    line-height: 0.9;
+    font-weight: 700;
+    color: var(--color-accent-1);
+    margin: 0 0 var(--space-30);
+  }
+  .tagline {
+    font-family: var(--font-display);
+    font-size: clamp(1.125rem, 2.1vw, 30px);
+    line-height: 1.4;
+    color: var(--color-accent-1);
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .centered { text-align: center; max-width: var(--content-size); margin-inline: auto; }
+  .centered h2 { font-size: 48px; }
+  .stack { position: relative; }
+  .stack-inset { width: 42%; margin-top: -18%; margin-left: 34%; position: relative; z-index: 1; }
+  .card-title {
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent-4);
+    margin: var(--space-30) 0 var(--space-20);
+  }
+  .huge {
+    font-family: var(--font-body);
+    font-size: clamp(3rem, 10.7vw, 153.6px);
+    font-weight: 700;
+    line-height: 0.9;
+    margin: 0 0 var(--space-40);
+  }
+  .display-title {
+    font-family: var(--font-display);
+    font-size: var(--size-x-large);
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    margin: 0 0 var(--space-30);
+  }
+  .hackers { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-30); margin-top: var(--space-50); }
+  @media (max-width: 781px) { .hackers { grid-template-columns: repeat(2, 1fr); } }
+  .logos { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-50); align-items: center; justify-items: center; }
+  `}
+</style>

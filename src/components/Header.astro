@@ -1,8 +1,10 @@
 ---
 import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
 import { NAV } from '../lib/nav.ts'
 import LanguageLinks from './LanguageLinks.astro'
-import { localePath, type Locale } from '../lib/i18n.ts'
+import { localePath, DEFAULT_LOCALE, type Locale } from '../lib/i18n.ts'
+import { pathFor, splitId } from '../lib/entries.ts'
 import logo from '../assets/logo.png'
 
 interface Props {
@@ -11,7 +13,32 @@ interface Props {
   availableLocales: readonly Locale[]
 }
 const { locale, path, availableLocales } = Astro.props
-const href = (h: string, external?: boolean) => (external ? h : localePath(locale, h))
+
+/*
+ * Which paths actually exist in this locale.
+ *
+ * Prefixing every nav item with the current locale was wrong: on /es/ the whole
+ * menu pointed at /es/contact/, /es/progress/2023/ and the rest, none of which are
+ * translated, so every item in the header was a 404. A link is prefixed only when
+ * there is a page behind it.
+ */
+const kinds = ['pages', 'programmes', 'years', 'posts'] as const
+const translated = new Set<string>()
+for (const kind of kinds) {
+  for (const entry of await getCollection(kind)) {
+    const { locale: l, slug } = splitId(entry.id)
+    if (l !== locale) continue
+    translated.add(kind === 'years' ? pathFor(kind, String(entry.data.year)) : pathFor(kind, slug))
+  }
+}
+// /progress/ is a route rather than an entry; it exists per locale if any year does.
+if ([...translated].some((p) => p.startsWith('/progress/'))) translated.add('/progress/')
+
+const href = (h: string, external?: boolean) => {
+  if (external) return h
+  if (locale === DEFAULT_LOCALE) return h
+  return translated.has(h) ? localePath(locale, h) : h
+}
 ---
 {/*
   Measured on the live site at 1440px: the logo renders 120x120, the nav sits
@@ -19,7 +46,7 @@ const href = (h: string, external?: boolean) => (external ? h : localePath(local
   and its items are 18px Inter. The header itself has no padding of its own.
 */}
 <header>
-  <a class="logo" href={localePath(locale, '/')} aria-label="Rural Hackers — home">
+  <a class="logo" href={href('/')} aria-label="Rural Hackers — home">
     <Image src={logo} alt="" width={120} height={120} layout="fixed" />
   </a>
 
