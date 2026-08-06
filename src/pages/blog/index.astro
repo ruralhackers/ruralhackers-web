@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import { Section, Prose } from '../../components/blocks/index.ts'
-import { pathFor, splitId } from '../../lib/entries.ts'
+import { localesFor, pathFor, splitId } from '../../lib/entries.ts'
 import { DEFAULT_LOCALE } from '../../lib/i18n.ts'
 
 /*
@@ -18,6 +18,10 @@ const posts = (await getCollection('posts'))
   .filter((e) => splitId(e.id).locale === DEFAULT_LOCALE)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 
+// The blog entry itself is translated, so the page must advertise those locales.
+const pageIds = (await getCollection('pages')).map((e) => e.id)
+const availableLocales = localesFor(pageIds, 'blog')
+
 const withExcerpt = await Promise.all(
   posts.map(async (p) => {
     const { Content } = await render(p)
@@ -25,7 +29,7 @@ const withExcerpt = await Promise.all(
   }),
 )
 ---
-<BaseLayout title="Blog — Rural Hackers" path="/blog/">
+<BaseLayout title="Blog — Rural Hackers" path="/blog/" availableLocales={availableLocales}>
   <Section width="wide" space={50}>
     <h1 class="section-title">Blog</h1>
 

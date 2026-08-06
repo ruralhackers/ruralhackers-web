@@ -1,5 +1,14 @@
 import { describe, it, expect } from 'vitest'
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
+import { LOCALES } from '../src/lib/i18n.ts'
+
+/** Where the English build of a given entry lands, or null if it has its own route. */
+const builtPathFor = (kind: string, slug: string): string | null => {
+  if (kind === 'years') return `dist/progress/${slug}/index.html`
+  if (slug === 'home') return 'dist/index.html'
+  if (slug === 'blog') return 'dist/blog/index.html'
+  return `dist/${slug}/index.html`
+}
 
 describe('prefixed locale homes', () => {
   it('builds /es/ and /gl/, which the language links fall back to', () => {
@@ -39,20 +48,34 @@ describe('prefixed locale homes', () => {
     }
   })
 
-  it('advertises only english on a page that is english-only', () => {
-    // /hacker-days/ exists in en/ alone, so it must not claim es or gl alternates.
-    // This used to check /about/, which has since been translated — the assertion
-    // moved rather than being relaxed.
-    const page = readFileSync('dist/hacker-days/index.html', 'utf8')
-    expect(page).toContain('rel="alternate" hreflang="en"')
-    expect(page).not.toContain('rel="alternate" hreflang="es"')
-  })
-
-  it('advertises all three on a page that has been translated', () => {
-    const about = readFileSync('dist/about/index.html', 'utf8')
-    for (const l of ['en', 'es', 'gl']) {
-      expect(about).toContain(`rel="alternate" hreflang="${l}"`)
+  it('advertises exactly the locales each page exists in', () => {
+    /*
+     * Checked as an invariant rather than against a named page. Two earlier
+     * versions of this test pinned /about/ and then /hacker-days/ as the
+     * english-only example, and each broke the moment that page was translated —
+     * the test was tracking the translation backlog instead of the rule.
+     */
+    const kinds = ['pages', 'programmes', 'years', 'posts'] as const
+    const offenders: string[] = []
+    for (const kind of kinds) {
+      const dir = `src/content/${kind}`
+      const enFiles = readdirSync(`${dir}/en`).filter((f) => f.endsWith('.mdx'))
+      for (const f of enFiles) {
+        const slug = f.replace(/\.mdx$/, '')
+        const locales = LOCALES.filter((l) => existsSync(`${dir}/${l}/${slug}.mdx`))
+        const built = builtPathFor(kind, slug)
+        if (!built || !existsSync(built)) continue
+        const html = readFileSync(built, 'utf8')
+        for (const l of LOCALES) {
+          const claims = html.includes(`rel="alternate" hreflang="${l}"`)
+          const exists = locales.includes(l)
+          if (claims !== exists) {
+            offenders.push(`${built}: hreflang ${l} ${claims ? 'claimed' : 'missing'}, file ${exists ? 'exists' : 'absent'}`)
+          }
+        }
+      }
     }
+    expect(offenders).toEqual([])
   })
 
   it('keeps the galician tagline in the wording Rural Hackers use themselves', () => {

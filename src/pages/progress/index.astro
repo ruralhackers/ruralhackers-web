@@ -3,15 +3,19 @@ import { getCollection } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import { Section, Columns, Column } from '../../components/blocks/index.ts'
 import { splitId } from '../../lib/entries.ts'
-import { DEFAULT_LOCALE } from '../../lib/i18n.ts'
+import { DEFAULT_LOCALE, LOCALES } from '../../lib/i18n.ts'
 
 // The old nav pointed "Progress" at a dead `#`. The years collection makes a
 // real index free, which is also how 2026 stops being unreachable.
+const allYears = await getCollection('years')
+// /progress/ exists in a locale as soon as that locale has a year.
+const availableLocales = LOCALES.filter((l) => allYears.some((e) => splitId(e.id).locale === l))
+
 const years = (await getCollection('years'))
   .filter((e) => splitId(e.id).locale === DEFAULT_LOCALE)
   .sort((a, b) => b.data.year - a.data.year)
 ---
-<BaseLayout title="Progress — Rural Hackers" path="/progress/">
+<BaseLayout title="Progress — Rural Hackers" path="/progress/" availableLocales={availableLocales}>
   <Section width="wide">
     <h1>Progress</h1>
     <Columns>
