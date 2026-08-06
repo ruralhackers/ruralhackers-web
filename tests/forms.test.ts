@@ -42,8 +42,12 @@ describe('HackerDaysForm', () => {
     }
   })
 
-  it('reproduces the source label verbatim, including its stale year', () => {
-    expect(hackerDays).toContain('Why would you like to be part of Hacker Days 2025?')
+  it('asks about the current edition, not the one the live site is stuck on', () => {
+    // The live form still says 2025. Updated at the owners' request; asserted
+    // against the current year so it fails again next January rather than
+    // quietly going stale a second time.
+    const year = new Date().getFullYear()
+    expect(hackerDays).toContain(`Why would you like to be part of Hacker Days ${year}?`)
   })
 
   it('does not reproduce the wpforms honeypot label', () => {
