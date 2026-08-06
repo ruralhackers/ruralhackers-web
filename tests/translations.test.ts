@@ -17,9 +17,9 @@ const NAMES = new Set([
   'WordPress.com',
   'Blog',
   'Blog - Rural Hackers',
-  '2026',
-  '2026 - Rural Hackers',
   'Rosario — Anceu, Ponte Caldelas',
+  'Anceu Fest',
+  'Rural Hackers, Anceu Fest',
   // Event and project names Rural Hackers coined themselves.
   'Hacker Days',
   'Hacker Days - Rural Hackers',
@@ -86,6 +86,8 @@ describe('translated content', () => {
     for (const { file, en } of pairs) {
       const english = new Set(stringsOf(readFileSync(en, 'utf8')))
       for (const s of stringsOf(readFileSync(file, 'utf8'))) {
+        // A year page's own title is a number in every language.
+        if (/^\d{4}( - Rural Hackers)?$/.test(s)) continue
         if (english.has(s) && !NAMES.has(s)) offenders.push(`${file}: ${s.slice(0, 60)}…`)
       }
     }
