@@ -1,0 +1,146 @@
+---
+import { NAV } from '../lib/nav.ts'
+import LanguageLinks from './LanguageLinks.astro'
+import type { Locale } from '../lib/i18n.ts'
+
+interface Props {
+  locale: Locale
+  path: string
+  availableLocales: readonly Locale[]
+  href: (h: string, external?: boolean) => string
+}
+const { locale, path, availableLocales, href } = Astro.props
+---
+{/*
+  The mobile menu, reproducing the pattern the WordPress original had and this port
+  had dropped: below the theme's 782px breakpoint the stacked desktop nav was
+  served as-is.
+
+  Built on <details> so it works with no JavaScript at all — the site ships none —
+  and is keyboard operable for free. A seven-line script adds Escape-to-close,
+  which <details> does not do natively; without it the menu still opens and closes
+  from the button.
+
+  The original's button is 24x24. This one is 44x44 with a 24px icon inside,
+  because 24 is under the minimum touch target and there is no reason to port that.
+*/}
+<details class="mobile">
+  <summary aria-label="Menu">
+    <svg class="icon open" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+    </svg>
+    <svg class="icon close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+    </svg>
+  </summary>
+
+  <div class="panel">
+    <nav aria-label="Main">
+      <ul>
+        {NAV.map((item) => (
+          <li>
+            <a
+              href={href(item.href, item.external)}
+              {...(item.external ? { rel: 'noopener', target: '_blank' } : {})}
+            >{item.label}</a>
+            {/* Children are listed rather than nested behind a hover, which does
+                not exist on touch. The original expands them here too. */}
+            {item.children && (
+              <ul class="sub">
+                {item.children.map((child) => (
+                  <li><a href={href(child.href, child.external)}>{child.label}</a></li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="langs-wrap">
+      <LanguageLinks locale={locale} path={path} availableLocales={availableLocales} />
+    </div>
+  </div>
+</details>
+
+<style>
+  .mobile { display: none; }
+  @media (max-width: 781px) { .mobile { display: block; } }
+
+  .mobile summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 44x44, where the original's button is 24x24. */
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .mobile summary::-webkit-details-marker { display: none; }
+  .mobile .close { display: none; }
+  .mobile[open] .open { display: none; }
+  .mobile[open] .close { display: block; }
+  /*
+   * Lifted above the panel while open. The panel is fixed and covers the header,
+   * so without this the close button sits behind it and the only way out is the
+   * Escape key — which is exactly the sort of thing that works fine for whoever
+   * built it and traps everyone else.
+   */
+  .mobile[open] summary {
+    position: fixed;
+    top: var(--space-30);
+    right: var(--space-30);
+    z-index: 21;
+  }
+
+  .panel {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    background: var(--color-base);
+    padding: 88px var(--space-40) var(--space-50);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .panel nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--space-20);
+  }
+  .panel nav a {
+    display: block;
+    /* Comfortable rows rather than 18px text crammed together. */
+    min-height: 44px;
+    line-height: 44px;
+    font-size: var(--size-x-large);
+  }
+  .panel .sub {
+    gap: 0;
+    margin-top: var(--space-20);
+  }
+  .panel .sub a {
+    font-size: var(--size-large);
+    color: var(--color-accent-4);
+  }
+
+  .langs-wrap { display: flex; justify-content: flex-end; margin-top: var(--space-50); }
+</style>
+
+<script is:inline>
+  // Progressive enhancement only: <details> has no Escape-to-close of its own.
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return
+    const open = document.querySelector('details.mobile[open]')
+    if (!open) return
+    open.removeAttribute('open')
+    open.querySelector('summary')?.focus()
+  })
+</script>

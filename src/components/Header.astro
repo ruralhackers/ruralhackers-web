@@ -3,6 +3,7 @@ import { Image } from 'astro:assets'
 import { getCollection } from 'astro:content'
 import { NAV } from '../lib/nav.ts'
 import LanguageLinks from './LanguageLinks.astro'
+import MobileNav from './MobileNav.astro'
 import { localePath, DEFAULT_LOCALE, type Locale } from '../lib/i18n.ts'
 import { pathFor, splitId } from '../lib/entries.ts'
 import logo from '../assets/logo.png'
@@ -49,6 +50,9 @@ const href = (h: string, external?: boolean) => {
   <a class="logo" href={href('/')} aria-label="Rural Hackers — home">
     <Image src={logo} alt="" width={120} height={120} layout="fixed" />
   </a>
+
+  {/* Below 782px the desktop column is hidden and this takes over. */}
+  <MobileNav locale={locale} path={path} availableLocales={availableLocales} href={href} />
 
   <div class="right">
     {/* Above the nav, in the same right-aligned column. */}
@@ -112,7 +116,9 @@ const href = (h: string, external?: boolean) => {
   }
 
   @media (max-width: 781px) {
-    header { padding-inline: var(--space-30); }
+    header { padding-inline: var(--space-30); align-items: center; }
     .logo :global(img) { width: 72px; height: 72px; }
+    /* The stacked desktop column gives way to the menu button. */
+    .right { display: none; }
   }
 </style>

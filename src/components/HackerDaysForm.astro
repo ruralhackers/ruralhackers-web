@@ -3,9 +3,8 @@
  * Replaces WPForms 716. Four real fields, all required; WPForms' field_4 was a
  * honeypot with a per-request randomised label.
  *
- * The motivation label says "Hacker Days 2025" on the live site and it is now
- * 2026. Reproduced verbatim on purpose — correcting site copy is the owners'
- * call, not the port's. Flagged for them.
+ * The motivation label said "Hacker Days 2025" on the live site; updated to the
+ * current edition at the owners' request.
  */
 ---
 <form name="hacker-days" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
@@ -23,7 +22,7 @@
     <input id="hd-email" type="email" name="email" required />
   </p>
   <p>
-    <label for="hd-motivation">Why would you like to be part of Hacker Days 2025?</label>
+    <label for="hd-motivation">Why would you like to be part of Hacker Days 2026?</label>
     <textarea id="hd-motivation" name="motivation" rows="5" required></textarea>
   </p>
   <p>
