@@ -12,7 +12,7 @@
 export const FRONTMATTER = ['title', 'seoTitle', 'seoDescription', 'summary'] as const
 
 export interface Slot {
-  kind: 'frontmatter' | 'attr' | 'prose'
+  kind: 'frontmatter' | 'attr' | 'prose' | 'heading' | 'link'
   key: string
   text: string
 }
@@ -32,6 +32,26 @@ export function slots(src: string): Slot[] {
     for (const para of m[1]!.split(/\n\s*\n/)) {
       const text = para.trim().replace(/\s+/g, ' ')
       if (text.length > 2 && !text.startsWith('<')) out.push({ kind: 'prose', key: 'prose', text })
+    }
+  }
+  /*
+   * Headings sit outside <Prose>, as literal <h2>/<h3> in the layout markup or as
+   * markdown `##`. The first version of this file did not collect them, which is
+   * how "Key points of Hacker Days" and a dozen others stayed English in pages
+   * whose every paragraph had been translated.
+   */
+  for (const m of src.matchAll(/<h([1-6])\b[^>]*>([^<>]+)<\/h\1>/g)) {
+    const text = m[2]!.trim().replace(/\s+/g, ' ')
+    if (text.length > 1) out.push({ kind: 'heading', key: `h${m[1]}`, text })
+  }
+  for (const m of src.matchAll(/^[ \t]*(#{1,6}) +(.+?)[ \t]*$/gm)) {
+    out.push({ kind: 'heading', key: m[1]!, text: m[2]! })
+  }
+  // Button labels — "Apply", "Read more" — are the other bare text in the layout.
+  for (const m of src.matchAll(/<Buttons[^>]*>([\s\S]*?)<\/Buttons>/g)) {
+    for (const a of m[1]!.matchAll(/<a\b[^>]*>([^<>]+)<\/a>/g)) {
+      const text = a[1]!.trim().replace(/\s+/g, ' ')
+      if (text.length > 1) out.push({ kind: 'link', key: 'button', text })
     }
   }
   return out

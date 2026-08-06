@@ -5,6 +5,40 @@ import { stringsOf } from '../src/lib/mdx-strings.ts'
 
 const KINDS = ['pages', 'programmes', 'years', 'posts'] as const
 
+/** Strings that are the same in English, Spanish and Galician because they are names. */
+const NAMES = new Set([
+  'Rural Hackers',
+  'Anceu Coliving',
+  'Anceu Maker Space',
+  'Casa do Pobo de Anceu',
+  'Comunidade de Montes de Anceu',
+  'Eleven Yellow',
+  'WordPress Pontevedra',
+  'WordPress.com',
+  'Blog',
+  'Blog - Rural Hackers',
+  '2026',
+  '2026 - Rural Hackers',
+  'Rosario — Anceu, Ponte Caldelas',
+  // Event and project names Rural Hackers coined themselves.
+  'Hacker Days',
+  'Hacker Days - Rural Hackers',
+  'RuralWO',
+  'RuralWO - Rural Hackers',
+  'A Fuchiqueira',
+  'Rural Hackers, A Fuchiqueira',
+  'Anceu Monsters',
+  'Rural Hackers, Anceu Monsters',
+  'TecnoArranxo',
+  'Rural Hackers, TecnoArranxo',
+  'Green Misions',
+  'Entre Culturas',
+  'Nova Lonxevidade Rural',
+  'AventuraTech',
+  'FemTech',
+  'CanTech',
+])
+
 /*
  * A translated file that still holds English is the failure mode this whole
  * pipeline is meant to prevent, and it is exactly the one that happened: because
@@ -32,20 +66,23 @@ describe('translated content', () => {
     expect(pairs.length).toBeGreaterThan(10)
   })
 
-  it('holds no english paragraph, title or alt text', () => {
+  it('holds no english paragraph, heading, title or alt text', () => {
     /*
      * Compared string-for-string against the English source rather than by
-     * language detection. Short strings are exempt because a good few are
-     * genuinely identical in all three — "Rural Hackers", "Anceu Coliving",
-     * "FemTech" — and forcing those to differ would mean inventing translations
-     * for proper nouns.
+     * language detection, and with no length floor — an earlier version exempted
+     * anything under forty characters and so passed on a page whose every heading
+     * ("Open source", "Adapt the Model", "How to get involved") was still English.
+     *
+     * What is genuinely identical in all three languages is names, so names are
+     * listed rather than inferred. Adding one is a decision: Rural Hackers coin
+     * their event names — Hacker Days, FemTech, A Fuchiqueira — and those stay,
+     * while the descriptive programme names are translated.
      */
-    const MIN = 40
     const offenders: string[] = []
     for (const { file, en } of pairs) {
-      const english = new Set(stringsOf(readFileSync(en, 'utf8')).filter((s) => s.length >= MIN))
+      const english = new Set(stringsOf(readFileSync(en, 'utf8')))
       for (const s of stringsOf(readFileSync(file, 'utf8'))) {
-        if (english.has(s)) offenders.push(`${file}: ${s.slice(0, 60)}…`)
+        if (english.has(s) && !NAMES.has(s)) offenders.push(`${file}: ${s.slice(0, 60)}…`)
       }
     }
     expect(offenders).toEqual([])
