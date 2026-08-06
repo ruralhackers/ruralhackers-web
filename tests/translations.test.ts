@@ -34,6 +34,8 @@ const NAMES = new Set([
   'Green Misions',
   'Entre Culturas',
   'Nova Lonxevidade Rural',
+  'Rural IA',
+  'Rural Hackers, Rural IA',
   'Maker Space',
   'Galicia Ilustrada',
   'Rural Hackers Magazine',
