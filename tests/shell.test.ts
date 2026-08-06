@@ -8,9 +8,16 @@ describe('the built front page', () => {
     expect(html).toContain('lang="en"')
   })
 
-  it('renders the language dropdown with all three languages', () => {
-    expect(html).toContain('Change language')
+  it('offers all three languages as links, not behind a dropdown', () => {
+    // Three languages do not need a menu: a dropdown costs two interactions and
+    // hides that Spanish and Galician exist at all, which is the opposite of what
+    // a newly multilingual site wants.
+    expect(html).toContain('aria-label="Language"')
     for (const label of ['EN', 'ES', 'GL']) expect(html).toContain(`>${label}<`)
+  })
+
+  it('marks the language being read', () => {
+    expect(html).toMatch(/hreflang="en"[^>]*lang="en"[^>]*aria-current="true"/)
   })
 
   it('sends untranslated locales to their home rather than a 404', () => {

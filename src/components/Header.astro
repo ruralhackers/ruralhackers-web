@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import { NAV } from '../lib/nav.ts'
-import LanguageDropdown from './LanguageDropdown.astro'
+import LanguageLinks from './LanguageLinks.astro'
 import { localePath, type Locale } from '../lib/i18n.ts'
 import logo from '../assets/logo.png'
 
@@ -24,6 +24,9 @@ const href = (h: string, external?: boolean) => (external ? h : localePath(local
   </a>
 
   <div class="right">
+    {/* Above the nav, in the same right-aligned column. */}
+    <LanguageLinks locale={locale} path={path} availableLocales={availableLocales} />
+
     <nav aria-label="Main">
       <ul>
         {NAV.map((item) => (
@@ -43,7 +46,6 @@ const href = (h: string, external?: boolean) => (external ? h : localePath(local
         ))}
       </ul>
     </nav>
-    <LanguageDropdown locale={locale} path={path} availableLocales={availableLocales} />
   </div>
 </header>
 
@@ -57,7 +59,7 @@ const href = (h: string, external?: boolean) => (external ? h : localePath(local
     padding: 0 var(--space-40);
   }
   .logo { display: block; line-height: 0; }
-  .right { display: flex; align-items: flex-start; gap: var(--space-30); padding-top: var(--space-20); }
+  .right { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-20); padding-top: var(--space-20); }
 
   nav ul {
     display: flex;

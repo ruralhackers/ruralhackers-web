@@ -1,0 +1,72 @@
+---
+import { dropdownTargets, type Locale } from '../lib/i18n.ts'
+
+interface Props {
+  locale: Locale
+  path: string
+  availableLocales: readonly Locale[]
+}
+const { locale, path, availableLocales } = Astro.props
+const targets = dropdownTargets(locale, path, availableLocales)
+---
+{/*
+  Three links rather than a dropdown, because there are three languages.
+  A dropdown costs two interactions — open, then choose — and hides which
+  languages exist until you open it. Spanish and Galician are new here, so being
+  visible without interaction is the point.
+
+  Each link is 44px tall, which the previous <summary> was not: it measured 39x40,
+  under the 44x44 minimum, in both dimensions.
+
+  `nav` with a label rather than a bare list, so a screen reader announces it as a
+  landmark separate from the main navigation, and aria-current marks the language
+  being read right now.
+*/}
+<nav class="langs" aria-label="Language">
+  <ul>
+    {targets.map((t) => (
+      <li>
+        <a
+          href={t.href}
+          hreflang={t.locale}
+          lang={t.locale}
+          aria-current={t.isCurrent ? 'true' : undefined}
+        >{t.label}</a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .langs ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: var(--size-small);
+  }
+  /* The separator is a pseudo-element so it is never read out or tabbed to. */
+  .langs li + li::before {
+    content: '·';
+    color: var(--color-accent-4);
+    padding-inline: 2px;
+  }
+  .langs a {
+    display: inline-flex;
+    align-items: center;
+    /* 44px tall and at least 44px wide: the minimum comfortable touch target. */
+    min-height: 44px;
+    min-width: 44px;
+    justify-content: center;
+    padding-inline: var(--space-20);
+    color: var(--color-accent-4);
+  }
+  .langs a:hover { color: var(--color-contrast); text-decoration: none; }
+  .langs a[aria-current='true'] {
+    color: var(--color-accent-1);
+    font-weight: 700;
+  }
+</style>
