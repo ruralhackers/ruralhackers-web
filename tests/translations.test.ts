@@ -2,48 +2,10 @@ import { describe, it, expect } from 'vitest'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { LOCALES, DEFAULT_LOCALE } from '../src/lib/i18n.ts'
 import { stringsOf } from '../src/lib/mdx-strings.ts'
+import { NAMES, staysEnglish } from '../src/lib/names.ts'
 
 const KINDS = ['pages', 'programmes', 'years', 'posts'] as const
 
-/** Strings that are the same in English, Spanish and Galician because they are names. */
-const NAMES = new Set([
-  'Rural Hackers',
-  'Anceu Coliving',
-  'Anceu Maker Space',
-  'Casa do Pobo de Anceu',
-  'Comunidade de Montes de Anceu',
-  'Eleven Yellow',
-  'WordPress Pontevedra',
-  'WordPress.com',
-  'Blog',
-  'Blog - Rural Hackers',
-  'Rosario — Anceu, Ponte Caldelas',
-  'Anceu Fest',
-  'Rural Hackers, Anceu Fest',
-  // Event and project names Rural Hackers coined themselves.
-  'Hacker Days',
-  'Hacker Days - Rural Hackers',
-  'RuralWO',
-  'RuralWO - Rural Hackers',
-  'A Fuchiqueira',
-  'Rural Hackers, A Fuchiqueira',
-  'Anceu Monsters',
-  'Rural Hackers, Anceu Monsters',
-  'TecnoArranxo',
-  'Rural Hackers, TecnoArranxo',
-  'Green Misions',
-  'Entre Culturas',
-  'Nova Lonxevidade Rural',
-  'Rural IA',
-  'Rural Hackers, Rural IA',
-  'Maker Space',
-  'Galicia Ilustrada',
-  'Rural Hackers Magazine',
-  'Reframe Cam',
-  'AventuraTech',
-  'FemTech',
-  'CanTech',
-])
 
 /*
  * A translated file that still holds English is the failure mode this whole
@@ -79,20 +41,32 @@ describe('translated content', () => {
      * anything under forty characters and so passed on a page whose every heading
      * ("Open source", "Adapt the Model", "How to get involved") was still English.
      *
-     * What is genuinely identical in all three languages is names, so names are
-     * listed rather than inferred. Adding one is a decision: Rural Hackers coin
-     * their event names — Hacker Days, FemTech, A Fuchiqueira — and those stay,
-     * while the descriptive programme names are translated.
+     * What is genuinely identical in all three languages is names, and those are
+     * listed in src/lib/names.ts rather than inferred here — that file is the
+     * policy, this is the enforcement.
      */
     const offenders: string[] = []
     for (const { file, en } of pairs) {
       const english = new Set(stringsOf(readFileSync(en, 'utf8')))
       for (const s of stringsOf(readFileSync(file, 'utf8'))) {
-        // A year page's own title, and a sum of money, are numbers in every language.
-        if (/^\d{4}( - Rural Hackers)?$/.test(s) || /^[\d.,]+ euros?$/.test(s)) continue
-        if (english.has(s) && !NAMES.has(s)) offenders.push(`${file}: ${s.slice(0, 60)}…`)
+        if (english.has(s) && !staysEnglish(s)) offenders.push(`${file}: ${s.slice(0, 60)}…`)
       }
     }
     expect(offenders).toEqual([])
+  })
+
+  it('lists no name that has left the site', () => {
+    /*
+     * staysEnglish() is a blanket exemption, so a stale entry is a hole in the
+     * check above: rename a project and its old name would keep excusing itself
+     * forever. Every name must still be findable in the English content.
+     */
+    const english = KINDS.flatMap((kind) =>
+      readdirSync(`src/content/${kind}/${DEFAULT_LOCALE}`)
+        .filter((f) => f.endsWith('.mdx'))
+        .map((f) => readFileSync(`src/content/${kind}/${DEFAULT_LOCALE}/${f}`, 'utf8')),
+    ).join('\n')
+    const stale = NAMES.filter((n) => !english.toLowerCase().includes(n.toLowerCase()))
+    expect(stale).toEqual([])
   })
 })
