@@ -13,7 +13,7 @@
  * absent, keeps the English and is reported, so nothing is silently half-done.
  */
 import { readFileSync } from 'node:fs'
-import { slots } from '../src/lib/mdx-strings.ts'
+import { slots, FRONTMATTER } from '../src/lib/mdx-strings.ts'
 
 const [, , mode, file, mapFile] = process.argv
 if (!mode || !file) {
@@ -70,6 +70,27 @@ if (mode === 'extract') {
     })
     if (hits === 0) notFound.push(en)
   }
+  /*
+   * A translation may introduce ": " where the English had an em dash, and an
+   * unquoted yaml scalar containing that is a parse error, not a warning. Quote
+   * the frontmatter values that now need it rather than making every translation
+   * dodge the punctuation.
+   */
+  out = out.replace(/^---\n([\s\S]*?)\n---/, (block, body: string) =>
+    block.replace(
+      body,
+      body
+        .split('\n')
+        .map((line) => {
+          const m = new RegExp(`^(${FRONTMATTER.join('|')}): (.+)$`).exec(line)
+          if (!m) return line
+          const value = m[2]!
+          if (/^["']/.test(value) || !/: |^[[{&*!|>%@`#-]/.test(value)) return line
+          return `${m[1]}: "${value.replace(/"/g, '\\"')}"`
+        })
+        .join('\n'),
+    ),
+  )
   console.log(out)
   if (untranslated.length > 0) {
     console.error(`${untranslated.length} left in English:`)

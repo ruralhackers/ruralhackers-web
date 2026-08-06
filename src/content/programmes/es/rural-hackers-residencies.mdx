@@ -1,0 +1,284 @@
+---
+title: Residencias Rural Hackers
+seoTitle: Residencias Rural Hackers - Rural Hackers
+seoDescription: "Crea con la aldea, no solo en ella: residencias creativas y tecnológicas en Anceu, Galicia."
+order: 1
+summary: Una experiencia de un mes en el coliving de Anceu para desarrollar proyectos de tecnología, arte o creatividad.
+legacyUrl: https://ruralhackers.com/rural-hackers-residencies/
+---
+
+import { Section, Prose, Figure, Buttons } from '../../../components/blocks/index.ts'
+import incRoom from '../../../assets/images/2026/01/Room-102-4-768x512.jpg.webp'
+import incCommunity from '../../../assets/images/2026/01/IMG_20240523_171814.jpg-edited.webp'
+import incSession from '../../../assets/images/2026/01/Screenshot-from-2025-02-17-14-33-22-edited-1.png'
+import incMaker from '../../../assets/images/2026/01/IMG_20240511_172631-edited-1.jpg'
+import incEvent from '../../../assets/images/2025/02/Entre-Culturas-3-106-1.jpg'
+import incDaily from '../../../assets/images/2026/01/IMG_5352-1-768x512.jpg.webp'
+import pastCami from '../../../assets/images/2026/01/cami_3x21.jpg'
+import pastRogelio from '../../../assets/images/2026/01/rogelilo_3x2.jpg'
+import pastRaices from '../../../assets/images/2026/01/pandereterias_3x2.jpg'
+import pastSeen from '../../../assets/images/2026/01/carlos_3x2_more_topcrop_with_watercolor.jpg'
+import pastMery from '../../../assets/images/2026/01/mery_3x2.jpg'
+import pastMagazine from '../../../assets/images/2026/01/revista_3x2_crop.jpg'
+import pastReframe from '../../../assets/images/2026/01/foto3_3x2_mid_thirds.jpg'
+import pastRaquel from '../../../assets/images/2026/01/raquel_3x2_topcrop.jpg'
+import pastChano from '../../../assets/images/2026/01/chano_3x2_crop.jpg'
+import pastTextile from '../../../assets/images/2026/01/foto_3x2.jpg'
+import pastLotte from '../../../assets/images/2026/01/foto2_3x21.jpg'
+import pastMural from '../../../assets/images/2025/06/IMG_6047-scaled.jpg'
+import closingPhoto from '../../../assets/images/2025/04/R1-06716-028A.jpg'
+
+{/*
+  Probed layout: base/90 centred intro, accent-5/30 with six 427x284 cards, base/50
+  with the two programmes, accent-5/50 with twelve 413x~250 past residencies, then
+  the closing call to action.
+
+  Card titles are 18px OffBit Trial in the "included" grid and 22px in the past
+  ones. Two of the images exist only as their -768x512 variant: the site never
+  served an original, so those are the real filenames rather than a mistake.
+*/}
+
+<Section space={70}>
+  <div class="centered">
+    <h1 class="statement">Crea con la aldea, no solo en ella</h1>
+    <Prose>
+      Nuestro objetivo es sencillo pero radical: **generar impacto local a través de proyectos creativos y tecnológicos que nacen de un diálogo profundo con Anceu, su gente, su paisaje, su historia y sus ritmos.**
+
+      Creemos que el rural no es solo un telón de fondo tranquilo: es un **colaborador activo**. Las mañanas silenciosas, las comidas compartidas, los paseos por el bosque y las conversaciones con la comunidad local encienden ideas que las ciudades suelen ahogar. La lentitud se vuelve estrategia. El aislamiento se vuelve concentración. La comunidad se vuelve coautora.
+
+      Tu trabajo puede acabar en un camino del bosque, en la plaza principal, dentro de la Casa do Pobo o a lo largo de un muro de piedra. Lo que importa es que lo **vea, lo use o lo viva la gente que llama hogar a Anceu**.
+    </Prose>
+  </div>
+</Section>
+
+<Section background="accent-5" width="wide" space={40}>
+  <div class="centered">
+    <h2 class="statement">Qué incluye</h2>
+  </div>
+  <div class="cards three">
+    <div class="card">
+      <Figure src={incRoom} alt="Una habitación privada en Anceu Coliving" />
+      <h3>Alojamiento privado</h3>
+      <Prose size="small">Habitación individual en Anceu Coliving con baño privado</Prose>
+    </div>
+    <div class="card">
+      <Figure src={incCommunity} alt="Residentes compartiendo una comida" />
+      <h3>Comunidad creativa</h3>
+      <Prose size="small">
+        Formar parte de una comunidad de creadoras, gente de la tecnología y mentes abiertas de todo el mundo
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={incSession} alt="Una sesión de mentoría entre dos residentes" />
+      <h3>1 sesión semanal de 1 hora</h3>
+      <Prose size="small">
+        Un marco para pulir tu idea, resolver problemas y asegurarte de que tu proyecto dialoga con el contexto local
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={incMaker} alt="El maker space de Anceu con una impresora 3D en marcha" />
+      <h3>Maker Space</h3>
+      <Prose size="small">
+        Acceso completo a nuestro Maker Space (impresora 3D, cortadora de vinilo, máquina de reciclaje de plástico, chapadora)
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={incEvent} alt="Una residente presentando su trabajo a la aldea" />
+      <h3>Evento final para mostrar tu creación</h3>
+      <Prose size="small">
+        Cada residencia de Rural Hackers culmina en un momento público: una exposición, una instalación, un taller, una proyección o una intervención.
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={incDaily} alt="Pan, café y aceite de oliva puestos para el desayuno" />
+      <h3>Lo básico del día a día</h3>
+      <Prose size="small">Café, té, leche, pan fresco y aceite de oliva</Prose>
+    </div>
+  </div>
+</Section>
+
+<Section width="wide" space={50}>
+  <div class="centered">
+    <h2 class="statement">Programas de residencia</h2>
+  </div>
+  <div class="cards two">
+    <div class="card plain">
+      <h3>Residencia autofinanciada (estancia de pago)</h3>
+      <Prose size="small">
+        - Una invitación a vivir y trabajar en nuestra comunidad creativa rural: las residentes cubren su estancia, se suman a nuestra red local y desarrollan un proyecto conectado con el lugar y con la gente.
+        - **Precio: 1.600 € al mes.**
+        - **Solicitudes:** Abiertas **todo el año**: puedes apuntarte cuando quieras.
+      </Prose>
+      <Buttons>
+        <a href="https://forms.gle/ZuZwGiwG8J4vUL45A" rel="noopener" target="_blank">Solicitar plaza</a>
+      </Buttons>
+    </div>
+    <div class="card plain">
+      <h3>Residencia financiada (residentes invitadas)</h3>
+      <Prose size="small">
+        - Residencias financiadas a través de programas como **Culture Moves Europe**, **Erasmus+** y acuerdos con entidades culturales públicas y privadas.
+        - **Precio: gratuito.**
+        - **Solicitudes:** Abrimos **convocatorias con regularidad**: sigue nuestra web y nuestras redes para estar al tanto de las próximas oportunidades.
+      </Prose>
+    </div>
+  </div>
+</Section>
+
+<Section background="accent-5" width="wide" space={50}>
+  <h2 class="statement">Residencias Rural Hackers anteriores</h2>
+  <Prose>
+    Estos proyectos no ocurrieron solo _en_ Anceu: ocurrieron _con_ la comunidad de la aldea de Anceu.
+  </Prose>
+
+  <div class="cards three past">
+    <div class="card">
+      <Figure src={pastCami} alt="Una obra instalada en un camino de Anceu" />
+      <h3>Galicia Ilustrada</h3>
+      <Prose size="small">
+        [Cam](https://www.camstass.com/), de Bélgica, se sumergió en la cultura local y entrevistó a vecinas y vecinos. Esa información la inspiró a crear tres piezas de arte, hoy instaladas en los caminos de Anceu.
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={pastRogelio} alt="Una instalación a la orilla del lago hecha con madera reciclada" />
+      <h3>Un homenaje a nuestro vecino Rogelio</h3>
+      <Prose size="small">
+        [Shona](https://www.instagram.com/reels/DKVEuaatE6p/), de Nueva York, creó una instalación a la orilla del lago con madera reciclada y el bosque como lienzo. La pieza rinde homenaje a Rogelio, un vecino que nos apoya muchísimo y que atesora un profundo conocimiento de la tierra.
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={pastRaices} alt="Músicos dirigiendo un taller de ritmo" />
+      <h3>Proyecto Raíces</h3>
+      <Prose size="small">
+        [Hugo y Alessandro](https://www.instagram.com/p/DIg23zpKkWj/), de Cuba e Italia, músicos de la Escuela Reina Sofía de Madrid, dirigieron talleres de ritmos cubanos e italianos y cerraron con un concierto en directo.
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={pastSeen} alt="El retrato pintado de una vecina" />
+      <h3>El regalo de ser vista</h3>
+      <Prose size="small">
+        [Kristinka](https://www.instagram.com/kristinka.lazar._.atelier/), de Croacia, pintó los retratos de 80 vecinas y vecinos durante [2024](/progress/2024/). Su objetivo era ir más allá de la apariencia y capturar la historia y el carácter únicos de cada persona.
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={pastMery} alt="Una instalación con plantas autóctonas del valle" />
+      <h3>Donde el arte se encuentra con la naturaleza</h3>
+      <Prose size="small">
+        [Mery](https://www.behance.net/mariajaboska), de Polonia, emprendió un viaje interior para descubrir la flora local. Recogiendo el saber de la vecindad sobre las plantas autóctonas, creó una instalación que muestra la riqueza botánica de la zona.
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={pastMagazine} alt="Un ejemplar de la Rural Hackers Magazine" />
+      <h3>Rural Hackers Magazine</h3>
+      <Prose size="small">
+        [Cora y Feli](https://www.instagram.com/p/DHQqE7LMkQN/), de Alemania, se sumergieron en la cultura local, recogieron historias y exploraron el impacto de nuestros proyectos. La revista refleja esa conexión profunda con la comunidad: está llena de calor y hospitalidad.
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={pastReframe} alt="Un soporte de móvil impreso en 3D montado como punto de captura" />
+      <h3>Reframe Cam</h3>
+      <Prose size="small">
+        Ovi, de Rumanía, instaló puntos de captura con soportes de móvil impresos en 3D para que la vecindad pueda hacer fotos y subirlas mediante códigos QR a un servidor compartido. Esto nos ayuda a seguir los cambios del entorno a lo largo del tiempo.
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={pastRaquel} alt="Tela teñida con materiales recogidos en el bosque" />
+      <h3>Los colores naturales del bosque</h3>
+      <Prose size="small">
+        [Raquel](https://www.instagram.com/reels/DIwz-EnNlAZ/), de Portugal, exploró el tinte natural con materiales recogidos en el bosque. Además, dirigió talleres en la Casa do Pobo. La residencia culminó en una obra colectiva que celebra la naturaleza y la tradición.
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={pastChano} alt="Una página del cómic Asi e Nito" />
+      <h3>Cómic Asi e Nito</h3>
+      <Prose size="small">
+        [Chano](https://www.instagram.com/p/C8U0L3vsBZo/), artista gallego, creó un cómic inspirado en la aldea de Anceu. La historia sigue a dos alienígenas traviesos que aterrizan en la Tierra y empiezan a liarla entre la vecindad de una pequeña aldea.
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={pastTextile} alt="Una instalación textil entre los árboles" />
+      <h3>Arte textil en la naturaleza</h3>
+      <Prose size="small">
+        Shona, de Nueva York, creó una instalación en lo profundo del bosque con textiles reciclados. La pieza es un homenaje a **Se**, una de las personas que más activamente sostiene la vida cultural y social de la aldea.
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={pastLotte} alt="Una pieza textil hecha durante la residencia" />
+      <h3>Upcycling y defensa de la sostenibilidad</h3>
+      <Prose size="small">
+        [Lotte](https://www.instagram.com/atelier_luuu/), de los Países Bajos, conectó con artistas locales. Organizó sesiones sobre creatividad con la vecindad. Esos intercambios dieron forma a su proceso. Su pieza textil final refleja la inspiración recogida de la comunidad.
+      </Prose>
+    </div>
+    <div class="card">
+      <Figure src={pastMural} alt="Un mural de iconos gallegos pintado en Ventín" />
+      <h3>Un mural para la aldea de Ventín</h3>
+      <Prose size="small">
+        [Shona](https://www.instagram.com/reels/DLVLHsQIVF_/), de Estados Unidos, creó un mural que celebra los iconos gallegos —de los hórreos y los torques a los petroglifos y la vaca gallega— y que se cerró con una comida compartida con toda la comunidad.
+      </Prose>
+    </div>
+  </div>
+</Section>
+
+{/* 48px quote with a 645x645 photograph beneath it. */}
+<Section width="wide" space={60}>
+  <div class="closing">
+    <p class="big-quote">Create with impact in rural Galicia</p>
+    <Figure src={closingPhoto} alt="Una residente trabajando en el valle de Anceu" />
+  </div>
+</Section>
+
+<Section background="accent-1" space={50}>
+  <div class="centered">
+    <h2 class="section-title">Contacta con nosotras</h2>
+    <Prose>
+      Súmate a nuestras residencias: construye tu proyecto con la comunidad, con el paisaje y con ideas que viajan más allá de la aldea.
+    </Prose>
+    <Buttons align="center">
+      <a href="https://forms.gle/ZuZwGiwG8J4vUL45A" rel="noopener" target="_blank">Súmate</a>
+    </Buttons>
+  </div>
+</Section>
+
+<style>
+  {`
+  .centered { text-align: center; max-width: var(--content-size); margin-inline: auto; }
+
+  .closing { max-width: 645px; margin-inline: auto; }
+  .big-quote {
+    font-size: var(--size-xx-large);
+    line-height: 1.2;
+    margin: 0 0 var(--space-40);
+  }
+
+  .cards { display: grid; gap: var(--space-40); }
+  .cards.three { grid-template-columns: repeat(3, 1fr); }
+  .cards.two { grid-template-columns: repeat(2, 1fr); }
+  .cards h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 18px;
+    margin: var(--space-30) 0 var(--space-20);
+  }
+  .cards.past h3 { font-size: var(--size-large); }
+  /*
+   * Uniform 3:2 crop. The source files are named _3x2 but several are stored at
+   * other ratios, and letting each card size to its own image left ragged rows —
+   * the page came out 126% of the original's height on that alone.
+   *
+   * Plain selector, no :global() — that is an Astro feature and inside an mdx
+   * <style> it is invalid css, so the rule was silently dropped.
+   */
+  .cards figure img {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    width: 100%;
+  }
+  .card.plain { border-top: 1px solid var(--color-accent-4); padding-top: var(--space-30); }
+  .card.plain h3 { margin-top: 0; }
+
+  @media (max-width: 1100px) { .cards.three { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 700px) {
+    .cards.three, .cards.two { grid-template-columns: 1fr; }
+  }
+  `}
+</style>
+
