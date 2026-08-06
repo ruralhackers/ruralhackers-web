@@ -1,0 +1,15 @@
+# Generated from src/lib/urls.ts — see tests/urls.test.ts
+/2023-2/   /progress/2023/   301
+/2024-2/   /progress/2024/   301
+/2025-2/   /progress/2025/   301
+/2025-2-2/   /progress/2026/   301
+/privacy-policy-2/   /privacy-policy/   301
+/category/uncategorized/   /blog/   301
+/category/uncategorized-en/   /blog/   301
+/author/nacho/   /blog/   301
+/author/agustinanceu-com/   /blog/   301
+/the-delicate-charm-of-bloodwort-blooms/   /blog/   301
+/the-story-of-sunflowers-and-their-little-visitors/   /blog/   301
+
+# English lives at the root; a guessed /en/ prefix folds back onto it.
+/en/*   /:splat   301
