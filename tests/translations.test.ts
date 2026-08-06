@@ -1,0 +1,53 @@
+import { describe, it, expect } from 'vitest'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
+import { LOCALES, DEFAULT_LOCALE } from '../src/lib/i18n.ts'
+import { stringsOf } from '../src/lib/mdx-strings.ts'
+
+const KINDS = ['pages', 'programmes', 'years', 'posts'] as const
+
+/*
+ * A translated file that still holds English is the failure mode this whole
+ * pipeline is meant to prevent, and it is exactly the one that happened: because
+ * `extract` collapses whitespace and `apply` used a literal search, every
+ * paragraph wrapped over more than one line was skipped — and skipped silently,
+ * because `apply` only reported keys with no translation, never keys it failed
+ * to find. Thirty-two paragraphs across four files shipped in English.
+ *
+ * The tool now reports misses and exits non-zero. This is the belt to that
+ * braces: it reads the files as they are on disk, so it catches the case however
+ * it got there.
+ */
+describe('translated content', () => {
+  const pairs: { file: string; en: string; locale: string }[] = []
+  for (const kind of KINDS) {
+    for (const f of readdirSync(`src/content/${kind}/${DEFAULT_LOCALE}`).filter((f) => f.endsWith('.mdx'))) {
+      for (const locale of LOCALES.filter((l) => l !== DEFAULT_LOCALE)) {
+        const file = `src/content/${kind}/${locale}/${f}`
+        if (existsSync(file)) pairs.push({ file, en: `src/content/${kind}/${DEFAULT_LOCALE}/${f}`, locale })
+      }
+    }
+  }
+
+  it('has some translated files to check, so an empty sweep cannot pass', () => {
+    expect(pairs.length).toBeGreaterThan(10)
+  })
+
+  it('holds no english paragraph, title or alt text', () => {
+    /*
+     * Compared string-for-string against the English source rather than by
+     * language detection. Short strings are exempt because a good few are
+     * genuinely identical in all three — "Rural Hackers", "Anceu Coliving",
+     * "FemTech" — and forcing those to differ would mean inventing translations
+     * for proper nouns.
+     */
+    const MIN = 40
+    const offenders: string[] = []
+    for (const { file, en } of pairs) {
+      const english = new Set(stringsOf(readFileSync(en, 'utf8')).filter((s) => s.length >= MIN))
+      for (const s of stringsOf(readFileSync(file, 'utf8'))) {
+        if (english.has(s)) offenders.push(`${file}: ${s.slice(0, 60)}…`)
+      }
+    }
+    expect(offenders).toEqual([])
+  })
+})
