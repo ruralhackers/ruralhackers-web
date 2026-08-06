@@ -1,0 +1,34 @@
+---
+title: Contacto
+seoTitle: Contacto - Rural Hackers
+seoDescription: Si tienes cualquier duda o simplemente quieres saludar, escríbenos.
+---
+
+import { Section, Columns, Column, Prose, Figure } from '../../../components/blocks/index.ts'
+import ContactForm from '../../../components/ContactForm.astro'
+import phonePhoto from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-31-30.png'
+
+{/*
+  TRADUCCIÓN QUE NECESITA REVISIÓN.
+
+  Las etiquetas del formulario siguen en inglés porque el componente ContactForm
+  es compartido y todavía no está localizado. Cuando lo esté, hay que volver aquí.
+*/}
+
+<Section background="accent-5" width="wide" space={70}>
+  <Columns gap={50}>
+    <Column width="48%">
+      # Vernos en persona
+
+      <Prose>
+        Si tienes cualquier duda o simplemente quieres saludar, no lo dudes: escríbenos.
+        Te contestamos pronto.
+      </Prose>
+
+      <ContactForm locale="es" />
+    </Column>
+    <Column width="46%">
+      <Figure src={phonePhoto} alt="Una mano sostiene un móvil en alto entre los helechos de Anceu" />
+    </Column>
+  </Columns>
+</Section>

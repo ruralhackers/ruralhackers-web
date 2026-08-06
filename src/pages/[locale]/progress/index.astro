@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import { Section, Columns, Column } from '../../../components/blocks/index.ts'
+import { splitId } from '../../../lib/entries.ts'
+import { DEFAULT_LOCALE, LOCALES, type Locale } from '../../../lib/i18n.ts'
+import { ui } from '../../../lib/ui.ts'
+
+export async function getStaticPaths() {
+  const all = await getCollection('years')
+  const prefixed = LOCALES.filter((l) => l !== DEFAULT_LOCALE)
+  // Only where that locale has at least one year, so the index is never empty.
+  return prefixed
+    .filter((locale) => all.some((e) => splitId(e.id).locale === locale))
+    .map((locale) => ({ params: { locale }, props: { locale } }))
+}
+
+const { locale } = Astro.props as { locale: Locale }
+const t = ui(locale)
+const years = (await getCollection('years'))
+  .filter((e) => splitId(e.id).locale === locale)
+  .sort((a, b) => b.data.year - a.data.year)
+---
+<BaseLayout title={`${t.progress} — Rural Hackers`} locale={locale} path="/progress/">
+  <Section width="wide">
+    <h1>{t.progress}</h1>
+    <Columns>
+      {years.map((y) => (
+        <Column>
+          <h2><a href={`/${locale}/progress/${y.data.year}/`}>{y.data.year}</a></h2>
+          {y.data.seoDescription && <p>{y.data.seoDescription}</p>}
+        </Column>
+      ))}
+    </Columns>
+  </Section>
+</BaseLayout>

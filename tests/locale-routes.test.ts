@@ -40,10 +40,19 @@ describe('prefixed locale homes', () => {
   })
 
   it('advertises only english on a page that is english-only', () => {
-    // /about/ exists in en/ alone, so it must not claim es or gl alternates.
+    // /hacker-days/ exists in en/ alone, so it must not claim es or gl alternates.
+    // This used to check /about/, which has since been translated — the assertion
+    // moved rather than being relaxed.
+    const page = readFileSync('dist/hacker-days/index.html', 'utf8')
+    expect(page).toContain('rel="alternate" hreflang="en"')
+    expect(page).not.toContain('rel="alternate" hreflang="es"')
+  })
+
+  it('advertises all three on a page that has been translated', () => {
     const about = readFileSync('dist/about/index.html', 'utf8')
-    expect(about).toContain('rel="alternate" hreflang="en"')
-    expect(about).not.toContain('rel="alternate" hreflang="es"')
+    for (const l of ['en', 'es', 'gl']) {
+      expect(about).toContain(`rel="alternate" hreflang="${l}"`)
+    }
   })
 
   it('keeps the galician tagline in the wording Rural Hackers use themselves', () => {

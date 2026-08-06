@@ -1,4 +1,11 @@
 ---
+import { ui } from '../lib/ui.ts'
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n.ts'
+
+interface Props { locale?: Locale }
+const { locale = DEFAULT_LOCALE } = Astro.props
+const t = ui(locale)
+const year = new Date().getFullYear()
 /**
  * Replaces WPForms 716. Four real fields, all required; WPForms' field_4 was a
  * honeypot with a per-request randomised label.
@@ -10,26 +17,26 @@
 <form name="hacker-days" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
   <input type="hidden" name="form-name" value="hacker-days" />
   <p class="hidden">
-    <label>Do not fill this in <input name="bot-field" /></label>
+    <label>{t.formHoneypot} <input name="bot-field" /></label>
   </p>
 
   <p>
-    <label for="hd-name">Name <span class="req" aria-hidden="true">*</span></label>
+    <label for="hd-name">{t.formName} <span class="req" aria-hidden="true">*</span></label>
     <input id="hd-name" type="text" name="name" required />
   </p>
   <p>
-    <label for="hd-email">Email <span class="req" aria-hidden="true">*</span></label>
+    <label for="hd-email">{t.formEmail} <span class="req" aria-hidden="true">*</span></label>
     <input id="hd-email" type="email" name="email" required />
   </p>
   <p>
-    <label for="hd-motivation">Why would you like to be part of Hacker Days 2026?</label>
+    <label for="hd-motivation">{t.formMotivation} {year}?</label>
     <textarea id="hd-motivation" name="motivation" rows="5" required></textarea>
   </p>
   <p>
-    <label for="hd-contribution">How would you like to contribute?</label>
+    <label for="hd-contribution">{t.formContribution}</label>
     <textarea id="hd-contribution" name="contribution" rows="5" required></textarea>
   </p>
-  <p class="actions"><button type="submit">Submit</button></p>
+  <p class="actions"><button type="submit">{t.formSubmit}</button></p>
 </form>
 
 <style>

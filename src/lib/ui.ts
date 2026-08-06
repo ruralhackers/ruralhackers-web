@@ -29,6 +29,14 @@ export interface UiStrings {
   residencies: string
   writtenBy: string
   in: string
+  /** Form fields. Both forms are shared components, so they need these too. */
+  formName: string
+  formEmail: string
+  formMessage: string
+  formSubmit: string
+  formHoneypot: string
+  formMotivation: string
+  formContribution: string
 }
 
 const en: UiStrings = {
@@ -50,6 +58,13 @@ const en: UiStrings = {
   residencies: 'Residencies',
   writtenBy: 'Written by',
   in: 'in',
+  formName: 'Name',
+  formEmail: 'Email',
+  formMessage: 'Comment or Message',
+  formSubmit: 'Submit',
+  formHoneypot: 'Do not fill this in',
+  formMotivation: 'Why would you like to be part of Hacker Days',
+  formContribution: 'How would you like to contribute?',
 }
 
 const es: UiStrings = {
@@ -71,6 +86,13 @@ const es: UiStrings = {
   residencies: 'Residencias',
   writtenBy: 'Escrito por',
   in: 'en',
+  formName: 'Nombre',
+  formEmail: 'Correo electrónico',
+  formMessage: 'Comentario o mensaje',
+  formSubmit: 'Enviar',
+  formHoneypot: 'No rellenes esto',
+  formMotivation: '¿Por qué te gustaría formar parte de Hacker Days',
+  formContribution: '¿Cómo te gustaría contribuir?',
 }
 
 const gl: UiStrings = {
@@ -92,6 +114,13 @@ const gl: UiStrings = {
   residencies: 'Residencias',
   writtenBy: 'Escrito por',
   in: 'en',
+  formName: 'Nome',
+  formEmail: 'Correo electrónico',
+  formMessage: 'Comentario ou mensaxe',
+  formSubmit: 'Enviar',
+  formHoneypot: 'Non enchas isto',
+  formMotivation: 'Por que che gustaría formar parte de Hacker Days',
+  formContribution: 'Como che gustaría contribuír?',
 }
 
 const STRINGS: Readonly<Record<Locale, UiStrings>> = { en, es, gl }

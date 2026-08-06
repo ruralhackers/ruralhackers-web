@@ -1,4 +1,10 @@
 ---
+import { ui } from '../lib/ui.ts'
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n.ts'
+
+interface Props { locale?: Locale }
+const { locale = DEFAULT_LOCALE } = Astro.props
+const t = ui(locale)
 /**
  * Replaces WPForms 526. Three real fields; WPForms' fourth was a honeypot with a
  * per-request randomised label, which Netlify's own honeypot supersedes.
@@ -7,23 +13,23 @@
 <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
   <input type="hidden" name="form-name" value="contact" />
   <p class="hidden">
-    <label>Do not fill this in <input name="bot-field" /></label>
+    <label>{t.formHoneypot} <input name="bot-field" /></label>
   </p>
 
   {/* The live form marks required fields with a red asterisk after the label. */}
   <p>
-    <label for="contact-name">Name <span class="req" aria-hidden="true">*</span></label>
+    <label for="contact-name">{t.formName} <span class="req" aria-hidden="true">*</span></label>
     <input id="contact-name" type="text" name="name" required />
   </p>
   <p>
-    <label for="contact-email">Email <span class="req" aria-hidden="true">*</span></label>
+    <label for="contact-email">{t.formEmail} <span class="req" aria-hidden="true">*</span></label>
     <input id="contact-email" type="email" name="email" required />
   </p>
   <p>
-    <label for="contact-message">Comment or Message</label>
+    <label for="contact-message">{t.formMessage}</label>
     <textarea id="contact-message" name="message" rows="6"></textarea>
   </p>
-  <p class="actions"><button type="submit">Submit</button></p>
+  <p class="actions"><button type="submit">{t.formSubmit}</button></p>
 </form>
 
 <style>

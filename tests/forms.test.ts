@@ -43,11 +43,11 @@ describe('HackerDaysForm', () => {
   })
 
   it('asks about the current edition, not the one the live site is stuck on', () => {
-    // The live form still says 2025. Updated at the owners' request; asserted
-    // against the current year so it fails again next January rather than
-    // quietly going stale a second time.
+    // Read from the built page rather than the source: the label is composed from
+    // the ui dictionary now, so the source no longer contains the sentence.
+    const built = readFileSync('dist/hacker-days/index.html', 'utf8')
     const year = new Date().getFullYear()
-    expect(hackerDays).toContain(`Why would you like to be part of Hacker Days ${year}?`)
+    expect(built).toContain(`Why would you like to be part of Hacker Days ${year}?`)
   })
 
   it('does not reproduce the wpforms honeypot label', () => {
