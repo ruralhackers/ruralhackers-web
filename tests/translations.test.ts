@@ -86,8 +86,8 @@ describe('translated content', () => {
     for (const { file, en } of pairs) {
       const english = new Set(stringsOf(readFileSync(en, 'utf8')))
       for (const s of stringsOf(readFileSync(file, 'utf8'))) {
-        // A year page's own title is a number in every language.
-        if (/^\d{4}( - Rural Hackers)?$/.test(s)) continue
+        // A year page's own title, and a sum of money, are numbers in every language.
+        if (/^\d{4}( - Rural Hackers)?$/.test(s) || /^[\d.,]+ euros?$/.test(s)) continue
         if (english.has(s) && !NAMES.has(s)) offenders.push(`${file}: ${s.slice(0, 60)}…`)
       }
     }
