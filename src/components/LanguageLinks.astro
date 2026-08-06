@@ -1,5 +1,6 @@
 ---
 import { dropdownTargets, type Locale } from '../lib/i18n.ts'
+import { ui } from '../lib/ui.ts'
 
 interface Props {
   locale: Locale
@@ -8,6 +9,7 @@ interface Props {
 }
 const { locale, path, availableLocales } = Astro.props
 const targets = dropdownTargets(locale, path, availableLocales)
+const strings = ui(locale)
 ---
 {/*
   Three links rather than a dropdown, because there are three languages.
@@ -22,7 +24,7 @@ const targets = dropdownTargets(locale, path, availableLocales)
   landmark separate from the main navigation, and aria-current marks the language
   being read right now.
 */}
-<nav class="langs" aria-label="Language">
+<nav class="langs" aria-label={strings.language}>
   <ul>
     {targets.map((t) => (
       <li>

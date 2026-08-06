@@ -1,5 +1,6 @@
 ---
-import { NAV } from '../lib/nav.ts'
+import { navFor } from '../lib/nav.ts'
+import { ui } from '../lib/ui.ts'
 import LanguageLinks from './LanguageLinks.astro'
 import type { Locale } from '../lib/i18n.ts'
 
@@ -10,6 +11,8 @@ interface Props {
   href: (h: string, external?: boolean) => string
 }
 const { locale, path, availableLocales, href } = Astro.props
+const t = ui(locale)
+const NAV = navFor(locale)
 ---
 {/*
   The mobile menu, reproducing the pattern the WordPress original had and this port
@@ -25,7 +28,7 @@ const { locale, path, availableLocales, href } = Astro.props
   because 24 is under the minimum touch target and there is no reason to port that.
 */}
 <details class="mobile">
-  <summary aria-label="Menu">
+  <summary aria-label={t.menu}>
     <svg class="icon open" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
     </svg>
@@ -35,7 +38,7 @@ const { locale, path, availableLocales, href } = Astro.props
   </summary>
 
   <div class="panel">
-    <nav aria-label="Main">
+    <nav aria-label={t.mainNav}>
       <ul>
         {NAV.map((item) => (
           <li>

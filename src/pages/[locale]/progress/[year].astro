@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import { localesFor, splitId } from '../../../lib/entries.ts'
+import { DEFAULT_LOCALE, LOCALES } from '../../../lib/i18n.ts'
+
+export async function getStaticPaths() {
+  const all = await getCollection('years')
+  const ids = all.map((e) => e.id)
+  const prefixed = LOCALES.filter((l) => l !== DEFAULT_LOCALE)
+  return all
+    .filter((e) => prefixed.includes(splitId(e.id).locale))
+    .map((entry) => {
+      const { locale, slug } = splitId(entry.id)
+      return {
+        params: { locale, year: String(entry.data.year) },
+        props: {
+          entry,
+          locale,
+          path: `/progress/${entry.data.year}/`,
+          availableLocales: localesFor(ids, slug),
+        },
+      }
+    })
+}
+
+const { entry, locale, path, availableLocales } = Astro.props
+const { Content } = await render(entry)
+---
+<BaseLayout
+  title={entry.data.seoTitle ?? entry.data.title}
+  description={entry.data.seoDescription}
+  locale={locale}
+  path={path}
+  availableLocales={availableLocales}
+>
+  <Content />
+</BaseLayout>

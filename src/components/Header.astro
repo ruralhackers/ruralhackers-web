@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets'
 import { getCollection } from 'astro:content'
-import { NAV } from '../lib/nav.ts'
+import { navFor } from '../lib/nav.ts'
+import { ui } from '../lib/ui.ts'
 import LanguageLinks from './LanguageLinks.astro'
 import MobileNav from './MobileNav.astro'
 import { localePath, DEFAULT_LOCALE, type Locale } from '../lib/i18n.ts'
@@ -14,6 +15,8 @@ interface Props {
   availableLocales: readonly Locale[]
 }
 const { locale, path, availableLocales } = Astro.props
+const t = ui(locale)
+const NAV = navFor(locale)
 
 /*
  * Which paths actually exist in this locale.
@@ -47,7 +50,7 @@ const href = (h: string, external?: boolean) => {
   and its items are 18px Inter. The header itself has no padding of its own.
 */}
 <header>
-  <a class="logo" href={href('/')} aria-label="Rural Hackers — home">
+  <a class="logo" href={href('/')} aria-label={t.homeLabel}>
     <Image src={logo} alt="" width={120} height={120} layout="fixed" />
   </a>
 
@@ -58,7 +61,7 @@ const href = (h: string, external?: boolean) => {
     {/* Above the nav, in the same right-aligned column. */}
     <LanguageLinks locale={locale} path={path} availableLocales={availableLocales} />
 
-    <nav aria-label="Main">
+    <nav aria-label={t.mainNav}>
       <ul>
         {NAV.map((item) => (
           <li>

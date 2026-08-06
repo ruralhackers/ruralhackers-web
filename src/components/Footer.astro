@@ -1,7 +1,15 @@
 ---
 import { Image } from 'astro:assets'
 import { SOCIAL } from '../lib/nav.ts'
+import { ui } from '../lib/ui.ts'
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n.ts'
 import logo from '../assets/logo-footer.png'
+
+interface Props {
+  locale?: Locale
+}
+const { locale = DEFAULT_LOCALE } = Astro.props
+const t = ui(locale)
 ---
 {/*
   Read from the archived footer: the transparent logo at left, the three social
@@ -20,8 +28,8 @@ import logo from '../assets/logo-footer.png'
     </ul>
   </div>
   <div class="row fine">
-    <p>© Copyright {new Date().getFullYear()}.</p>
-    <p>Designed with ❤️ from Anceu village</p>
+    <p>© {t.copyright} {new Date().getFullYear()}.</p>
+    <p>{t.designedWith}</p>
   </div>
 </footer>
 

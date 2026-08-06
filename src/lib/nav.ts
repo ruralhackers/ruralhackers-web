@@ -1,3 +1,6 @@
+import type { Locale } from './i18n.ts'
+import { ui } from './ui.ts'
+
 export type NavItem = {
   label: string
   href: string
@@ -13,10 +16,12 @@ export type NavItem = {
  * /2025-2-2/, but no navigation linked it. Generating this from content is what
  * stops that recurring.
  */
-export const NAV: readonly NavItem[] = [
-  { label: 'Contact', href: '/contact/' },
+export function navFor(locale: Locale): readonly NavItem[] {
+  const t = ui(locale)
+  return [
+  { label: t.contact, href: '/contact/' },
   {
-    label: 'Progress',
+    label: t.progress,
     href: '/progress/',
     children: [
       { label: '2023', href: '/progress/2023/' },
@@ -26,12 +31,16 @@ export const NAV: readonly NavItem[] = [
     ],
   },
   {
-    label: 'Volunteering',
+    label: t.volunteering,
     href: 'https://drive.google.com/file/d/1CLBQpPOobUIOcbqR8wh7uMyHpMaJ0YEf/view',
     external: true,
   },
-  { label: 'Residencies', href: '/rural-hackers-residencies/' },
-]
+  { label: t.residencies, href: '/rural-hackers-residencies/' },
+  ]
+}
+
+/** The English navigation, kept for the tests that pin its shape. */
+export const NAV = navFor('en')
 
 export const SOCIAL: readonly { label: string; href: string }[] = [
   { label: 'Instagram', href: 'https://instagram.com/ruralhackers' },
