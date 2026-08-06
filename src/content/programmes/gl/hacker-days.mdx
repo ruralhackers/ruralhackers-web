@@ -1,0 +1,221 @@
+---
+title: Hacker Days
+seoTitle: Hacker Days - Rural Hackers
+seoDescription: Unha semana de traballo colectivo construíndo prototipos para retos reais do rural, en Anceu, Galicia.
+order: 4
+summary: Unha semana construíndo prototipos que funcionan para retos reais do rural.
+legacyUrl: https://ruralhackers.com/hacker-days/
+---
+
+import { Section, Columns, Column, Prose, Figure, Quote, Buttons } from '../../../components/blocks/index.ts'
+import HackerDaysForm from '../../../components/HackerDaysForm.astro'
+import keyProblems from '../../../assets/images/2025/02/IMG_20240511_172631.jpg'
+import keyCollab from '../../../assets/images/2025/02/IMG_4457.jpg'
+import keyProto from '../../../assets/images/2025/02/IMG_2451.jpg'
+import keyCommunity from '../../../assets/images/2025/02/Entre-Culturas-Ed-II-7-1.jpg'
+import keyOpen from '../../../assets/images/2025/02/IMG_5679.jpg'
+import whyPhoto from '../../../assets/images/2025/02/Screenshot-from-2025-02-17-14-28-41.png'
+
+{/*
+  Probed layout: base/90 centred intro, accent-5/50 with five 228x171 cards,
+  base/70 with three 32px pull quotes beside a 627x627 photograph, accent-5/70
+  with the four event facts, base/70 with the form.
+
+  "Why matters" is 14px — a label, not a heading, despite being marked up as an h2.
+  The card titles are 18px OffBit Trial and their copy is 18px Inter.
+
+  TWO STALE DATES LEFT ON PURPOSE. The body and the "Cando" fact both say
+  "September 1-7, 2025". The form's question was updated to the current year
+  because it is generic, but these are a specific claim about when an edition
+  happens — moving them to 2026 would be inventing dates nobody gave me. Replace
+  both with the real ones.
+*/}
+
+<Section space={70}>
+  <div class="centered">
+    <h1 class="section-title">Hacker Days</h1>
+    <Prose>
+      **Hacker Days** is a hands-on, collaborative event organized by **Rural Hackers**
+      that brings together technologists, designers, and rural enthusiasts to co-create
+      innovative solutions for pressing challenges in rural communities. Over the course
+      of **one week**, participants work in teams to develop functional prototypes — such
+      as apps, tools, or systems — that address specific local needs, like water
+      management, biodiversity monitoring, or digital inclusion. The event emphasizes
+      **community involvement**, ensuring that solutions are practical, sustainable, and
+      rooted in the realities of rural life. The next edition of Hacker Days will take
+      place from **September 1 to 7, 2025**, at [Anceu Coliving](https://anceu.com) in
+      Galicia, Spain, focusing on creating a digital solution to simplify water
+      consumption tracking for the local water association. This event is open to anyone
+      passionate about using technology and creativity to make a tangible impact in rural
+      areas.
+    </Prose>
+  </div>
+</Section>
+
+<Section background="accent-5" width="wide" space={50}>
+  <h2 class="statement">Key points of Hacker Days</h2>
+
+  <div class="keys">
+    <div class="key">
+      <Figure src={keyProblems} alt="Participantes traballando nunha mesa de Hacker Days" />
+      <h3>Focus on Real Problems</h3>
+      <Prose size="small">
+        Hacker Days tackles tangible issues faced by rural areas, such as **community
+        water management**, **biodiversity monitoring**, or **digital inclusion**.
+      </Prose>
+    </div>
+    <div class="key">
+      <Figure src={keyCollab} alt="Un equipo traballando arredor dun portátil" />
+      <h3>Collaborative Environment</h3>
+      <Prose size="small">
+        Participants work in teams, combining their skills in **technology, design, and
+        community engagement** to prototype solutions.
+      </Prose>
+    </div>
+    <div class="key">
+      <Figure src={keyProto} alt="Un prototipo en montaxe" />
+      <h3>Hands-On Prototyping</h3>
+      <Prose size="small">
+        Over the course of a week, participants develop functional prototypes that can be
+        put to use.
+      </Prose>
+    </div>
+    <div class="key">
+      <Figure src={keyCommunity} alt="Veciñas e veciños de Anceu participando no evento" />
+      <h3>Community-Centered</h3>
+      <Prose size="small">
+        Local residents, like **Rogelio** and **Rosabel**, actively participate, ensuring
+        solutions are practical and rooted in the community’s reality.
+      </Prose>
+    </div>
+    <div class="key">
+      <Figure src={keyOpen} alt="Código nunha pantalla durante Hacker Days" />
+      <h3>Open source</h3>
+      <Prose size="small">
+        All solutions are developed as **open-source projects**, allowing other rural
+        communities to adapt and use them.
+      </Prose>
+    </div>
+  </div>
+</Section>
+
+<Section width="wide" space={60}>
+  <Columns align="center" gap={50}>
+    <Column width="46%">
+      {/* 14px, so a label rather than a heading, even though the markup says h2. */}
+      <p class="mini-label">Why matters</p>
+      <div class="whys">
+        <p class="why">Bridges the Urban-Rural Gap</p>
+        <p class="why">Promotes Digital Inclusion</p>
+        <p class="why">Empower local communities</p>
+      </div>
+    </Column>
+    <Column width="46%">
+      <Figure src={whyPhoto} alt="Unha demostración dun prototipo de Hacker Days" />
+    </Column>
+  </Columns>
+</Section>
+
+<Section background="accent-5" width="wide" space={60}>
+  <div class="centered">
+    <h2 class="statement">Upcoming Hacker Days Event (2025)</h2>
+  </div>
+  <div class="facts">
+    <Quote cite="Cando">“September 1-7, 2025.”</Quote>
+    <Quote cite="Onde">Anceu, Galicia. Spain</Quote>
+    <Quote cite="Obxectivo">
+      Develop a digital solution for **community water management** in Anceu village
+    </Quote>
+    <Quote cite="Quen">
+      Developers, designers, UX experts, marketeers, communicators, and rural enthusiasts.
+      No prior experience in rural issues is required — just a willingness to collaborate
+      and learn.
+    </Quote>
+  </div>
+</Section>
+
+<Section width="wide" space={60}>
+  <h2 class="statement">How to get involved</h2>
+
+  <Columns gap={50}>
+    <Column width="46%">
+      <HackerDaysForm locale="gl" />
+    </Column>
+    <Column width="46%">
+      <div class="ways">
+        <div class="way">
+          <h3>Join as a Participant</h3>
+          <Prose>
+            Apply to be part of the next Hacker Days event in the form. No matter your
+            background, your skills can make a difference.
+          </Prose>
+        </div>
+        <div class="way">
+          <h3>Support as a Partner</h3>
+          <Prose>
+            Companies like **SiteGround**, **Eleven Yellow** and **WordPress.com** have
+            already supported Hacker Days. If your organization wants to contribute, reach
+            out in [hello@ruralhackers.com](mailto:hello@ruralhackers.com).
+          </Prose>
+        </div>
+        <div class="way">
+          <h3>Adapt the Model</h3>
+          <Prose>
+            Hacker Days is open-source. If you’re part of another rural community, you can
+            replicate this model to solve local challenges.
+          </Prose>
+        </div>
+      </div>
+    </Column>
+  </Columns>
+</Section>
+
+<Section background="accent-1" space={50}>
+  <div class="centered">
+    <h2 class="statement">Follow us in real life</h2>
+    <Prose>
+      Have you imagine the possibility of getting to know each other? That will be
+      fantastic.
+    </Prose>
+    <Buttons align="center"><a href="/contact/">Contact</a></Buttons>
+  </div>
+</Section>
+
+<style>
+  {`
+  .centered { text-align: center; max-width: var(--content-size); margin-inline: auto; }
+
+  /* Five cards: a 228x171 photograph, an 18px display title, 18px copy. */
+  .keys { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-30); }
+  .keys h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 400;
+    margin: var(--space-30) 0 var(--space-20);
+  }
+  @media (max-width: 1100px) { .keys { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .keys { grid-template-columns: 1fr; } }
+
+  .mini-label {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: none;
+    margin: 0 0 var(--space-40);
+  }
+  .whys { display: grid; gap: var(--space-40); }
+  .why {
+    font-size: var(--size-x-large);
+    line-height: 1.2;
+    margin: 0;
+    padding-inline-start: var(--space-40);
+    border-inline-start: 4px solid var(--color-accent-1);
+  }
+
+  .facts { display: grid; gap: var(--space-40); max-width: 820px; margin-inline: auto; }
+
+  .ways { display: grid; gap: var(--space-40); }
+  .way { border-top: 1px solid var(--color-accent-4); padding-top: var(--space-30); }
+  .way h3 { margin: 0 0 var(--space-20); }
+  `}
+</style>
+
