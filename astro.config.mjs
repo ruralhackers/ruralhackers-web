@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
-import sitemap from '@astrojs/sitemap'
 
 export default defineConfig({
   site: 'https://ruralhackers.com',
@@ -26,5 +25,5 @@ export default defineConfig({
     responsiveStyles: true,
     layout: 'constrained',
   },
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx()],
 })

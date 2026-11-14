@@ -18,8 +18,9 @@
     "archive:verify": "node scraper/src/cli.ts verify",
     "archive:report": "node scraper/src/cli.ts report",
     "archive:checksums": "node scraper/src/cli.ts checksums",
+    "mirror": "node scripts/mirror-live.ts",
     "dev": "astro dev",
-    "build": "bun scripts/write-redirects.ts && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "test:site": "vitest run --config vitest.site.config.ts"

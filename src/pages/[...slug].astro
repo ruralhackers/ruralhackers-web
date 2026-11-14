@@ -1,38 +1,24 @@
 ---
-import { getCollection, render } from 'astro:content'
-import BaseLayout from '../layouts/BaseLayout.astro'
-import { localesFor, pathFor, splitId } from '../lib/entries.ts'
-import { DEFAULT_LOCALE } from '../lib/i18n.ts'
+/**
+ * Every page is the live ruralhackers.com html, mirrored by
+ * scripts/mirror-live.ts into mirror/pages/. It is emitted as it is, plus the
+ * new content kept in mirror/additions/ (see src/lib/additions.ts).
+ */
+import { applyAdditions, addProgress2026 } from '../lib/additions.ts'
+import { build2026 } from '../lib/year-2026.ts'
 
-export async function getStaticPaths() {
-  const kinds = ['pages', 'programmes', 'posts'] as const
-  const paths = []
-  for (const kind of kinds) {
-    const all = await getCollection(kind)
-    const ids = all.map((e) => e.id)
-    for (const entry of all) {
-      const { locale, slug } = splitId(entry.id)
-      if (locale !== DEFAULT_LOCALE) continue
-      const path = pathFor(kind, slug)
-      // The front page and the blog index have their own routes.
-      if (path === '/' || path === '/blog/') continue
-      paths.push({
-        params: { slug: path.replace(/^\/|\/$/g, '') },
-        props: { entry, path, availableLocales: localesFor(ids, slug) },
-      })
-    }
-  }
-  return paths
+export function getStaticPaths() {
+  const files = import.meta.glob<string>('../../mirror/pages/**/index.html', {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+  })
+  return Object.entries(files).map(([file, html]) => {
+    const slug = file.replace('../../mirror/pages/', '').replace(/\/?index\.html$/, '')
+    return { params: { slug: slug || undefined }, props: { html: addProgress2026(applyAdditions(slug, html)) } }
+  }).concat([{ params: { slug: '2026' }, props: { html: build2026() } }])
 }
 
-const { entry, path, availableLocales } = Astro.props
-const { Content } = await render(entry)
+const { html } = Astro.props
 ---
-<BaseLayout
-  title={entry.data.seoTitle ?? entry.data.title}
-  description={entry.data.seoDescription}
-  path={path}
-  availableLocales={availableLocales}
->
-  <Content />
-</BaseLayout>
+<Fragment set:html={html} />

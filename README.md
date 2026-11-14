@@ -4,6 +4,18 @@ Port of [ruralhackers.com](https://ruralhackers.com) from WordPress to Astro.
 Phase 1 archives the existing site; phase 2 rebuilds it from that archive with
 English, Spanish and Galician.
 
+## The site is the live site
+
+Every page is ruralhackers.com as it is served today, mirrored by
+`bun run mirror` (`scripts/mirror-live.ts`): the html goes to `mirror/pages/`,
+every stylesheet, font, image and script it needs to `public/wp-content/` and
+`public/wp-includes/` at its original path. Astro emits each page untouched;
+`tests/mirror.test.ts` checks the build byte for byte against the mirror.
+
+Nothing is added to the original. The only removals are Google Analytics / Site
+Kit and links to WordPress endpoints (feeds, oEmbed, wp-json) a static host has
+not got. Re-run `bun run mirror` to pick up edits made in WordPress.
+
 ## Archiving
 
 ```

@@ -1,0 +1,7 @@
+---
+/** The live site's own 404 page, mirrored like every other page. */
+import raw from '../../mirror/pages/404.html?raw'
+import { addProgress2026 } from '../lib/additions.ts'
+const html = addProgress2026(raw)
+---
+<Fragment set:html={html} />
