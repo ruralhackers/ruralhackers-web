@@ -2,9 +2,12 @@
 /**
  * Every page is the live ruralhackers.com html, mirrored by
  * scripts/mirror-live.ts into mirror/pages/. It is emitted as it is, plus the
- * new content kept in mirror/additions/ (see src/lib/additions.ts).
+ * new content kept in mirror/additions/ (see src/lib/additions.ts) and the
+ * search metadata of src/lib/seo.ts, which also drops the theme's demo pages
+ * and the author and category archives.
  */
 import { applyAdditions, addProgress2026 } from '../lib/additions.ts'
+import { improveSeo, REMOVED } from '../lib/seo.ts'
 import { build2026 } from '../lib/year-2026.ts'
 
 export function getStaticPaths() {
@@ -13,10 +16,11 @@ export function getStaticPaths() {
     import: 'default',
     eager: true,
   })
-  return Object.entries(files).map(([file, html]) => {
-    const slug = file.replace('../../mirror/pages/', '').replace(/\/?index\.html$/, '')
-    return { params: { slug: slug || undefined }, props: { html: addProgress2026(applyAdditions(slug, html)) } }
-  }).concat([{ params: { slug: '2026' }, props: { html: build2026() } }])
+  return Object.entries(files)
+    .map(([file, html]) => [file.replace('../../mirror/pages/', '').replace(/\/?index\.html$/, ''), html] as const)
+    .filter(([slug]) => !(slug in REMOVED))
+    .map(([slug, html]) => ({ params: { slug: slug || undefined }, props: { html: improveSeo(slug, addProgress2026(applyAdditions(slug, html))) } }))
+    .concat([{ params: { slug: '2026' }, props: { html: improveSeo('2026', build2026()) } }])
 }
 
 const { html } = Astro.props

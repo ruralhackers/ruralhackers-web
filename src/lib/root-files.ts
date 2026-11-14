@@ -5,12 +5,14 @@
  *
  * robots.txt and the sitemaps are the live site's, mirrored verbatim into
  * mirror/root/ by scripts/mirror-live.ts, so every url search engines already
- * know keeps answering. The only changes: /2026/ joins the page sitemap, and the
- * pages this repo changed get a newer lastmod.
+ * know keeps answering. The changes: /2026/ joins the page sitemap, every page
+ * gets a newer lastmod (src/lib/seo.ts changes them all), and the pages and
+ * sitemaps src/lib/seo.ts removes or keeps out of search are left out.
  */
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { CHANGED_PAGES, UPDATED } from './additions.ts'
+import { UPDATED } from './additions.ts'
+import { INDEXED, REMOVED, REMOVED_SITEMAPS, PAGES, llmsTxt } from './seo.ts'
 import { YEAR_2026 } from './year-2026.ts'
 
 const DIR = 'mirror/root'
@@ -25,9 +27,18 @@ const bumpLastmod = (xml: string, loc: string) =>
     `$1${UPDATED}$2`,
   )
 
+/** Drops every <url> whose page is removed or not indexed, and bumps the rest. */
+const urlset = (xml: string) => {
+  let out = stripLeadingComment(xml).replace(/\t<url>\s*<loc>https:\/\/ruralhackers\.com\/([^<]*)<\/loc>[\s\S]*?<\/url>\n/g, (url, loc: string) => {
+    const page = loc.replace(/\/$/, '')
+    return page in REMOVED || (page in PAGES && !INDEXED.includes(page)) ? '' : url
+  })
+  for (const page of INDEXED) out = bumpLastmod(out, `${ORIGIN}/${page ? `${page}/` : ''}`)
+  return out
+}
+
 const pageSitemap = (xml: string) => {
-  let out = stripLeadingComment(xml)
-  for (const page of CHANGED_PAGES) out = bumpLastmod(out, `${ORIGIN}/${page}/`)
+  const out = urlset(xml)
   const images = YEAR_2026.images
     .map((src) => `\t\t<image:image>\n\t\t\t<image:loc>${ORIGIN}/wp-content/uploads/${src}</image:loc>\n\t\t</image:image>\n`)
     .join('')
@@ -35,7 +46,12 @@ const pageSitemap = (xml: string) => {
   return out.replace('</urlset>', `${entry}</urlset>`)
 }
 
-const sitemapIndex = (xml: string) => bumpLastmod(stripLeadingComment(xml), `${ORIGIN}/page-sitemap.xml`)
+const sitemapIndex = (xml: string) => {
+  let out = stripLeadingComment(xml)
+  for (const file of REMOVED_SITEMAPS) out = out.replace(new RegExp(`\\t<sitemap>\\s*<loc>${ORIGIN}/${file}</loc>[\\s\\S]*?</sitemap>\\n`), '')
+  for (const file of ['page-sitemap.xml', 'post-sitemap.xml']) out = bumpLastmod(out, `${ORIGIN}/${file}`)
+  return out
+}
 
 /**
  * WordPress's numeric page links, `/?p=ID` and `/?page_id=ID`, by id. Each id
@@ -47,7 +63,8 @@ export const wpIds = (): Record<string, string> => {
   for (const file of listPages()) {
     const html = readFileSync(join('mirror/pages', file), 'utf8')
     const id = /<link rel='shortlink' href='https:\/\/ruralhackers\.com\/\?p=(\d+)'/.exec(html)?.[1]
-    if (id) ids[id] = '/' + file.replace(/index\.html$/, '')
+    const page = file.replace(/\/?index\.html$/, '')
+    if (id) ids[id] = REMOVED[page] ?? `/${page ? `${page}/` : ''}`
   }
   return ids
 }
@@ -60,6 +77,8 @@ const redirects = () =>
     '/index.php / 301',
     '/feed/* / 301',
     '/comments/feed/* / 301',
+    ...Object.entries(REMOVED).flatMap(([page, to]) => [`/${page}/ ${to} 301`, `/${page} ${to} 301`]),
+    ...REMOVED_SITEMAPS.map((file) => `/${file} /sitemap_index.xml 301`),
   ].join('\n') + '\n'
 
 const listPages = (dir = 'mirror/pages', rel = ''): string[] =>
@@ -74,8 +93,9 @@ export function rootFiles(): Record<string, { body: string; type: string }> {
     if (name === 'robots.txt') files[name] = { body: raw, type: 'text/plain; charset=utf-8' }
     else if (name === 'page-sitemap.xml') files[name] = { body: pageSitemap(raw), type: 'application/xml; charset=utf-8' }
     else if (name === 'sitemap_index.xml') files[name] = { body: sitemapIndex(raw), type: 'application/xml; charset=utf-8' }
-    else files[name] = { body: stripLeadingComment(raw), type: 'application/xml; charset=utf-8' }
+    else if (!(REMOVED_SITEMAPS as readonly string[]).includes(name)) files[name] = { body: urlset(raw), type: 'application/xml; charset=utf-8' }
   }
+  files['llms.txt'] = { body: llmsTxt(), type: 'text/plain; charset=utf-8' }
   files['_redirects'] = { body: redirects(), type: 'text/plain; charset=utf-8' }
   files['_wp-ids.json'] = { body: JSON.stringify(wpIds(), null, 2) + '\n', type: 'application/json' }
   return files

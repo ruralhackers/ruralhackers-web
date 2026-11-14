@@ -35,10 +35,6 @@ const TITLES: Readonly<Record<string, { from: string; to: string; crumb: [string
   },
 }
 
-/** Every mirrored page this repo changes, by path. */
-export const CHANGED_PAGES: readonly string[] = [
-  ...new Set([...(existsSync(ADDITIONS) ? readdirSync(ADDITIONS) : []), ...Object.keys(TITLES)]),
-].sort()
 const FUNDING = 'We do what we do thanks to support'
 const GROUP = '<div class="wp-block-group alignfull'
 

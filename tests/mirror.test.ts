@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { applyAdditions, addProgress2026 } from '../src/lib/additions.ts'
+import { improveSeo, REMOVED } from '../src/lib/seo.ts'
 
 /** Every mirrored page, as its path relative to mirror/pages. */
 const pages = (dir = 'mirror/pages', rel = ''): string[] =>
@@ -9,16 +10,25 @@ const pages = (dir = 'mirror/pages', rel = ''): string[] =>
     e.isDirectory() ? pages(dir, join(rel, e.name)) : e.name.endsWith('.html') ? [join(rel, e.name)] : [],
   )
 
+/** The mirrored pages that are still built: all but the removed ones. */
+const built = () => pages().filter((p) => !(p.replace(/\/?index\.html$/, '') in REMOVED))
+
 describe('the build is the live site', () => {
   // `bun run build` must have run first.
   it('mirrors all 22 sitemap urls and the 404 page', () => {
     expect(pages().length).toBe(23)
   })
 
-  it.each(pages())('emits %s byte for byte, plus its additions', (page) => {
+  it.each(built())('emits %s byte for byte, plus its additions and search metadata', (page) => {
     const mirrored = readFileSync(join('mirror/pages', page), 'utf8')
     const slug = page.replace(/\/?index\.html$/, '')
-    expect(readFileSync(join('dist', page), 'utf8')).toBe(addProgress2026(page === '404.html' ? mirrored : applyAdditions(slug, mirrored)))
+    expect(readFileSync(join('dist', page), 'utf8')).toBe(
+      page === '404.html' ? addProgress2026(mirrored) : improveSeo(slug, addProgress2026(applyAdditions(slug, mirrored))),
+    )
+  })
+
+  it.each(Object.keys(REMOVED))('no longer builds %s', (page) => {
+    expect(existsSync(join('dist', page, 'index.html'))).toBe(false)
   })
 
   it('adds every new entry to its page', () => {
@@ -26,6 +36,7 @@ describe('the build is the live site', () => {
       ['2024-2', 'Open doors at Anceu Coliving'],
       ['2025-2', 'aTorna: oral tradition at the Casa do Pobo'],
       ['2025-2', 'Beautiful Bees'],
+      ['2025-2', 'Hacker Days 2025: Punto de Agua'],
       ['2026', 'A year of Fuchiqueiras'],
       ['2026', 'Rural Hacker Fest in Ventín'],
     ]) {
@@ -37,12 +48,12 @@ describe('the build is the live site', () => {
   it('puts the new entries before the funding band, not after it', () => {
     for (const page of ['2024-2', '2025-2']) {
       const html = readFileSync(join('dist', page, 'index.html'), 'utf8')
-      const lastNew = page === '2024-2' ? 'Open doors at Anceu Coliving' : 'Beautiful Bees</h2>'
+      const lastNew = page === '2024-2' ? 'Open doors at Anceu Coliving' : 'Hacker Days 2025: Punto de Agua</h2>'
       expect(html.indexOf(lastNew)).toBeLessThan(html.indexOf('We do what we do thanks to support'))
     }
   })
 
-  it.each(pages())('serves every file %s needs from this site', (page) => {
+  it.each(built())('serves every file %s needs from this site', (page) => {
     const html = readFileSync(join('dist', page), 'utf8')
     const refs = [...html.matchAll(/(?:src|href|srcset|data-src|data-srcset)="([^"]+)"/g)]
       .flatMap((m) => m[1]!.split(',').map((s) => s.trim().split(/\s+/)[0]!))
@@ -71,7 +82,7 @@ describe('the build is the live site', () => {
   })
 
   it('links 2026 from the Progress menu on every page', () => {
-    for (const page of pages()) {
+    for (const page of built()) {
       expect(readFileSync(join('dist', page), 'utf8')).toContain('href="/2026/"><span class="wp-block-navigation-item__label">2026</span>')
     }
   })
@@ -101,19 +112,19 @@ describe('root files', () => {
   it('serves every sitemap the index lists, as valid xml', () => {
     const index = readFileSync('dist/sitemap_index.xml', 'utf8')
     const listed = [...index.matchAll(/<loc>https:\/\/ruralhackers\.com\/([^<]+)<\/loc>/g)].map((m) => m[1]!)
-    expect(listed.length).toBe(4)
+    expect(listed).toEqual(['post-sitemap.xml', 'page-sitemap.xml'])
     for (const file of ['sitemap_index.xml', ...listed]) {
       expect(readFileSync(join('dist', file), 'utf8').startsWith('<?xml')).toBe(true)
     }
     expect(existsSync('dist/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl')).toBe(true)
   })
 
-  it('lists every built page exactly once across the sitemaps, /2026/ included', () => {
-    const locs = ['page', 'post', 'category', 'author']
+  it('lists every indexable built page exactly once across the sitemaps, /2026/ included', () => {
+    const locs = ['page', 'post']
       .flatMap((s) => [...readFileSync(`dist/${s}-sitemap.xml`, 'utf8').matchAll(/<url>\s*<loc>https:\/\/ruralhackers\.com(\/[^<]*)<\/loc>/g)].map((m) => m[1]!))
       .sort()
-    const built = [...pages().filter((p) => p !== '404.html').map((p) => '/' + p.replace(/index\.html$/, '')), '/2026/'].sort()
-    expect(locs).toEqual(built)
+    const indexable = [...built().filter((p) => p !== '404.html' && !p.startsWith('privacy-policy-2/')).map((p) => '/' + p.replace(/index\.html$/, '')), '/2026/'].sort()
+    expect(locs).toEqual(indexable)
   })
 
   it('maps every WordPress page id to a built page, for the Worker', () => {

@@ -17,6 +17,16 @@ Kit and links to WordPress endpoints (feeds, oEmbed, wp-json) a static host has
 not got. New content goes in `mirror/additions/` and `src/lib/year-2026.ts`, so
 it survives a re-mirror.
 
+Search and answer-engine metadata is the one systematic change, made at build
+time by `src/lib/seo.ts` so it also survives a re-mirror: a meta description
+and an h1 for every page, alt text for every image, a complete Organization
+(NGO) in the schema graph plus the Hacker Days 2025 Event and video, https
+everywhere, and `/llms.txt`. It also drops what was never Rural Hackers: the
+theme's demo About page and flower posts, the author and category archives,
+and the dead comment form; each removed url 301s (`REMOVED` in `seo.ts`), and
+the WordPress privacy boilerplate is `noindex`. A new page needs an entry in
+`PAGES` there, or the build fails.
+
 **Since 2026-11-14 ruralhackers.com is this site**, so `bun run mirror` would
 copy the static site from itself. WordPress is still on Hostinger
 (217.65.147.26) but no longer has a hostname; to mirror from it again, point a
