@@ -116,14 +116,22 @@ describe('root files', () => {
     expect(locs).toEqual(built)
   })
 
-  it('redirects the old WordPress page links to their pages', () => {
-    const redirects = readFileSync('dist/_redirects', 'utf8')
-    expect(redirects).toContain('/  p=737  /2025-2/  301!')
-    expect(redirects).toContain('/  page_id=737  /2025-2/  301!')
-    expect(redirects).toContain('/wp-sitemap.xml  /sitemap_index.xml  301')
-    for (const line of redirects.trim().split('\n')) {
-      const to = line.trim().split(/\s+/).at(-2)!
-      expect(existsSync(join('dist', to, to.endsWith('/') ? 'index.html' : ''))).toBe(true)
+  it('maps every WordPress page id to a built page, for the Worker', () => {
+    const ids = JSON.parse(readFileSync('dist/_wp-ids.json', 'utf8')) as Record<string, string>
+    expect(ids['737']).toBe('/2025-2/')
+    expect(Object.keys(ids).length).toBe(16)
+    for (const to of Object.values(ids)) expect(existsSync(join('dist', to, 'index.html'))).toBe(true)
+    expect(readFileSync('dist/.assetsignore', 'utf8')).toContain('_wp-ids.json')
+  })
+
+  it('redirects the other old WordPress addresses, in Cloudflare\'s format', () => {
+    const lines = readFileSync('dist/_redirects', 'utf8').trim().split('\n')
+    expect(lines).toContain('/wp-sitemap.xml /sitemap_index.xml 301')
+    for (const line of lines) {
+      const [from, to, code] = line.split(' ')
+      expect(from!.startsWith('/') && code === '301').toBe(true)
+      expect(existsSync(join('dist', to!, to!.endsWith('/') ? 'index.html' : ''))).toBe(true)
     }
   })
+
 })

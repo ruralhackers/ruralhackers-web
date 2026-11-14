@@ -1,0 +1,2 @@
+# Bundled into the Worker (src/worker.ts), not served.
+_wp-ids.json

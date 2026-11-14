@@ -16,6 +16,9 @@
  * It also keeps robots.txt and Yoast's sitemaps, verbatim, in mirror/root/
  * (search engines already know those urls), and the sitemaps' stylesheet.
  *
+ * Since 2026-11-14 ruralhackers.com serves the static site, not WordPress, so
+ * ORIGIN must point at WordPress's server again before this is useful (README).
+ *
  * Run: node scripts/mirror-live.ts              (pages, assets and root files)
  *      node scripts/mirror-live.ts --root-only  (only robots.txt and sitemaps)
  */

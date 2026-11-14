@@ -1,0 +1,10 @@
+# Read by Cloudflare at deploy, not served.
+#
+# WordPress's uploads, theme and core files, at their original paths. Not
+# fingerprinted, but an upload never changes once published (WordPress gives a
+# replacement a new name), so a week is safe, then revalidate in the background.
+/wp-content/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/wp-includes/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400

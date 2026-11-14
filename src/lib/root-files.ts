@@ -1,6 +1,7 @@
 /**
- * Files served at the site root: robots.txt, Yoast's sitemaps and Netlify's
- * _redirects.
+ * Files served at the site root: robots.txt, Yoast's sitemaps, and the two
+ * files Cloudflare reads at deploy: _redirects and _wp-ids.json (the latter is
+ * bundled into the Worker, never served; see .assetsignore).
  *
  * robots.txt and the sitemaps are the live site's, mirrored verbatim into
  * mirror/root/ by scripts/mirror-live.ts, so every url search engines already
@@ -37,28 +38,29 @@ const pageSitemap = (xml: string) => {
 const sitemapIndex = (xml: string) => bumpLastmod(stripLeadingComment(xml), `${ORIGIN}/page-sitemap.xml`)
 
 /**
- * Old WordPress addresses that still reach the site from links and bookmarks.
- * `?p=` and `?page_id=` are WordPress's numeric page links: each id comes from the
- * page's own shortlink. Query rules on "/" need `!` because index.html exists.
+ * WordPress's numeric page links, `/?p=ID` and `/?page_id=ID`, by id. Each id
+ * comes from the page's own shortlink. Cloudflare's _redirects cannot match a
+ * query string, so src/worker.ts redirects these.
  */
-const redirects = () => {
-  const lines: string[] = []
+export const wpIds = (): Record<string, string> => {
+  const ids: Record<string, string> = {}
   for (const file of listPages()) {
     const html = readFileSync(join('mirror/pages', file), 'utf8')
     const id = /<link rel='shortlink' href='https:\/\/ruralhackers\.com\/\?p=(\d+)'/.exec(html)?.[1]
-    if (!id) continue
-    const path = '/' + file.replace(/index\.html$/, '')
-    lines.push(`/  p=${id}  ${path}  301!`, `/  page_id=${id}  ${path}  301!`)
+    if (id) ids[id] = '/' + file.replace(/index\.html$/, '')
   }
-  lines.push(
-    '/wp-sitemap.xml  /sitemap_index.xml  301',
-    '/sitemap.xml  /sitemap_index.xml  301',
-    '/index.php  /  301',
-    '/feed/*  /  301',
-    '/comments/feed/*  /  301',
-  )
-  return lines.join('\n') + '\n'
+  return ids
 }
+
+/** Other old WordPress addresses that still reach the site from links and bookmarks. */
+const redirects = () =>
+  [
+    '/wp-sitemap.xml /sitemap_index.xml 301',
+    '/sitemap.xml /sitemap_index.xml 301',
+    '/index.php / 301',
+    '/feed/* / 301',
+    '/comments/feed/* / 301',
+  ].join('\n') + '\n'
 
 const listPages = (dir = 'mirror/pages', rel = ''): string[] =>
   readdirSync(join(dir, rel), { withFileTypes: true }).flatMap((e) =>
@@ -75,5 +77,6 @@ export function rootFiles(): Record<string, { body: string; type: string }> {
     else files[name] = { body: stripLeadingComment(raw), type: 'application/xml; charset=utf-8' }
   }
   files['_redirects'] = { body: redirects(), type: 'text/plain; charset=utf-8' }
+  files['_wp-ids.json'] = { body: JSON.stringify(wpIds(), null, 2) + '\n', type: 'application/json' }
   return files
 }

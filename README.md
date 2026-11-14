@@ -14,7 +14,30 @@ every stylesheet, font, image and script it needs to `public/wp-content/` and
 
 Nothing is added to the original. The only removals are Google Analytics / Site
 Kit and links to WordPress endpoints (feeds, oEmbed, wp-json) a static host has
-not got. Re-run `bun run mirror` to pick up edits made in WordPress.
+not got. New content goes in `mirror/additions/` and `src/lib/year-2026.ts`, so
+it survives a re-mirror.
+
+**Since 2026-11-14 ruralhackers.com is this site**, so `bun run mirror` would
+copy the static site from itself. WordPress is still on Hostinger
+(217.65.147.26) but no longer has a hostname; to mirror from it again, point a
+hostname at that IP first and change `ORIGIN` in `scripts/mirror-live.ts`.
+
+## Deploying
+
+A Cloudflare Worker with static assets (`wrangler.jsonc`), on the
+`ruralhackers.com` and `www.ruralhackers.com` custom domains:
+
+```
+bun run deploy      # astro build + wrangler deploy
+```
+
+- `src/worker.ts` runs only for `/`, to redirect WordPress's `/?p=ID` links.
+- `_redirects` and `_headers` (generated / in `public/`) handle the other old
+  WordPress urls and the cache of `/wp-content`.
+- `www` goes to the apex through a redirect rule on the zone, and the zone has
+  Always Use HTTPS on. Before the move the apex was an A record to Hostinger
+  (217.65.147.26) and `www` a CNAME to the apex: restoring those two records
+  (and removing the custom domains) rolls back.
 
 ## Archiving
 
