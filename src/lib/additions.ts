@@ -11,6 +11,8 @@
  *                                    support…" band that closes a year page
  *   <!-- insert: end-of-content -->  at the end of the page's post content
  *   <!-- insert: head -->            before </head>, for css the page lacks
+ *   <!-- insert-after: <text> -->     right after the first occurrence of <text>,
+ *                                    copied exactly from the mirrored html
  */
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
@@ -79,10 +81,18 @@ export function applyAdditions(page: string, html: string): string {
   if (!existsSync(dir)) return out
   for (const file of readdirSync(dir).filter((f) => f.endsWith('.html')).sort()) {
     const fragment = readFileSync(join(dir, file), 'utf8')
-    const where = /^<!-- insert: ([a-z-]+) -->/.exec(fragment)?.[1]
-    if (!where) throw new Error(`${dir}/${file}: first line must be <!-- insert: … -->`)
-    const at = insertionPoint(out, where, page)
-    out = out.slice(0, at) + fragment.replace(/^<!-- insert: [a-z-]+ -->\n/, '') + '\n\n\n\n' + out.slice(at)
+    const header = /^<!-- (insert: ([a-z-]+)|insert-after: (.+)) -->\n/.exec(fragment)
+    if (!header) throw new Error(`${dir}/${file}: first line must be <!-- insert: … --> or <!-- insert-after: … -->`)
+    const body = fragment.slice(header[0].length)
+    let at: number
+    if (header[3]) {
+      const found = out.indexOf(header[3])
+      if (found === -1) throw new Error(`${dir}/${file}: "${header[3]}" is not in the page`)
+      at = found + header[3].length
+    } else {
+      at = insertionPoint(out, header[2]!, page)
+    }
+    out = out.slice(0, at) + body + '\n\n\n\n' + out.slice(at)
   }
   return out
 }

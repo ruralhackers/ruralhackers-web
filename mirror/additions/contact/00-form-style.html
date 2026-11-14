@@ -1,0 +1,60 @@
+<!-- insert: head -->
+<style id="ruralhackers-contact-css">
+/* The contact form in the site's own language: Inter, the black pill button of
+   "Learn more" on the home page, the orange accent on focus, and fields that
+   read as fields on the grey band. WPForms reads these variables; the id plus
+   body gives them priority over its own inline block. */
+body #wpforms-526.wpforms-container {
+  --wpforms-label-color: #111111;
+  --wpforms-label-size-font-size: 15px;
+  --wpforms-label-size-line-height: 20px;
+  --wpforms-field-border-size: 1px;
+  --wpforms-field-border-radius: 10px;
+  --wpforms-field-border-color: #d4d4d4;
+  --wpforms-field-border-color-spare: #d4d4d4;
+  --wpforms-field-background-color: #ffffff;
+  --wpforms-field-text-color: #111111;
+  --wpforms-field-size-input-height: 50px;
+  --wpforms-field-size-input-spacing: 8px;
+  --wpforms-field-size-font-size: 16px;
+  --wpforms-field-size-line-height: 22px;
+  --wpforms-field-size-padding-h: 16px;
+  --wpforms-button-border-radius: 9999px;
+  --wpforms-button-border-size: 0px;
+  --wpforms-button-background-color: #111111;
+  --wpforms-button-border-color: #111111;
+  --wpforms-button-text-color: #ffffff;
+  --wpforms-button-size-font-size: 17px;
+  --wpforms-button-size-height: 54px;
+  --wpforms-button-size-padding-h: 36px;
+  --wpforms-button-size-margin-top: 8px;
+  margin-top: var(--wp--preset--spacing--40);
+}
+body #wpforms-526 .wpforms-field { padding: 0 0 22px; }
+body #wpforms-526 .wpforms-field-label { font-weight: 600; }
+body #wpforms-526 .wpforms-field-medium { max-width: 100%; width: 100%; }
+body #wpforms-526 textarea.wpforms-field-medium { height: 160px; padding-top: 14px; resize: vertical; }
+body #wpforms-526 input:focus,
+body #wpforms-526 textarea:focus {
+  border-color: #e56529;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #e56529 25%, transparent);
+  outline: none;
+}
+body #wpforms-526 .wpforms-submit-container { padding-top: 4px; }
+body #wpforms-526 button.wpforms-submit { font-family: Inter, sans-serif; font-weight: 400; transition: background-color .15s ease; }
+body #wpforms-526 button.wpforms-submit:hover,
+body #wpforms-526 button.wpforms-submit:focus-visible { background-color: #e56529; }
+body #wpforms-526 .wpforms-confirmation-container-full {
+  background: #ffffff; border: 1px solid #d4d4d4; border-radius: 10px; color: #111111; padding: 20px 24px;
+}
+
+.ruralhackers-contact-direct { margin-top: 18px; font-size: 15px; line-height: 1.6; color: #686868; }
+.ruralhackers-contact-direct a { color: #111111; text-decoration: underline; text-decoration-color: #e56529; text-underline-offset: 3px; }
+.ruralhackers-contact-direct a:hover { color: #e56529; }
+
+/* The photo: same height as the form column on wide screens, a short band on phones. */
+.is-style-section-1--2 .wp-block-columns > .wp-block-column:last-child img { width: 100%; object-fit: cover; }
+@media (max-width: 781px) {
+  .is-style-section-1--2 .wp-block-columns > .wp-block-column:last-child img { aspect-ratio: 4 / 3; height: auto; }
+}
+</style>
