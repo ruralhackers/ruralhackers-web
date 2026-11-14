@@ -106,10 +106,23 @@ const ENTRIES: Entry[] = [
       'As every year, the Rural Hacker Fest came back. This edition was held in the village of Ventín, where we had already painted our first collaborative mural beyond Anceu. Thanks to the neighbours of Ventín for trusting us with their village.',
     ],
   },
+  {
+    title: 'RURALI-ART',
+    body: [
+      'Two artistic residencies about the memory of Anceu. From 19 to 26 October, twelve artists spent a week with the neighbours recovering how the village lived its old festivals, and turned it into things anyone can use: an <a href="https://festas.anceu.com/">illustrated guide to the festivals</a>, a recovered phone booth, a card game for the sobremesa, panels for the Casa do Pobo and <a href="https://dance.anceu.com/">a website for dancing in the kitchen</a>.',
+      'A second group followed from 2 to 8 November, using AI tools for their own creative projects, and on 8 November both groups presented their work to the neighbours of Anceu. An activity subsidised by Spain’s Ministry of Culture.',
+    ],
+    image: {
+      src: '2026/11/rurali-art.jpg',
+      width: 1600,
+      height: 1200,
+      alt: 'RURALI-ART artists and neighbours in Anceu, looking at portraits drawn during the residency and taped to the glass door',
+    },
+  },
 ]
 
 const DESCRIPTION =
-  'AventuraTech, CanTech and FemTech, the European Union in the villages, a year of Fuchiqueiras and the Rural Hacker Fest in Ventín.'
+  'AventuraTech, CanTech and FemTech, the European Union in the villages, a year of Fuchiqueiras, the Rural Hacker Fest in Ventín and RURALI-ART.'
 
 const GIF = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
 const attr = (s: string) => s.replaceAll('&', '&amp;').replaceAll('"', '&quot;')

@@ -145,7 +145,7 @@ export const PAGES: Readonly<Record<string, Page>> = {
   '2025-2': {
     h1: 'Rural Hackers in 2025',
     description:
-      'Rural Hackers in 2025: Hacker Days and Punto de Agua, Fuchiqueira with Repair Café, Culture Moves Europe, Beautiful Bees, T3chFest and WordCamp Europe.',
+      'Rural Hackers in 2025: Hacker Days and Punto de Agua, Tech4Rural, Rural IA, Culture Moves Europe, Fuchiqueira, Beautiful Bees and WordCamp Europe.',
     schema: [HACKER_DAYS_VIDEO],
   },
   '2025-2-2': {
@@ -156,7 +156,7 @@ export const PAGES: Readonly<Record<string, Page>> = {
   '2026': {
     h1: 'Rural Hackers in 2026',
     description:
-      'Rural Hackers in 2026: AventuraTech, CanTech and FemTech, the European Union in the villages, a year of Fuchiqueiras and the Rural Hacker Fest in Ventín.',
+      'Rural Hackers in 2026: AventuraTech, CanTech and FemTech, the European Union in the villages, Fuchiqueiras, the Rural Hacker Fest and RURALI-ART.',
   },
   'speakers-at-festival-creativa': {
     h1: 'Speakers at Festival Creativa',

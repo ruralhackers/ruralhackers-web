@@ -67,12 +67,47 @@ const insertionPoint = (html: string, where: string, page: string): number => {
   throw new Error(`${page}: unknown insertion point "${where}"`)
 }
 
+/** One amount of a funding band, in the band's own markup. */
+const fundingColumn = (amount: string, from: string) => `<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<p class="has-text-align-center has-xx-large-font-size wp-block-paragraph" style="line-height:1.1">${amount}</p>
+
+
+
+<p class="has-text-align-center wp-block-paragraph" style="margin-top:var(--wp--preset--spacing--20);line-height:1.4">${from}</p>
+</div>`
+
+const CME = 'From public funding by Culture Moves Europe'
+
+/**
+ * Corrections to the mirrored text, [from, to], each of which must be found.
+ * The funding bands count what was carried out that year, at the amount
+ * granted: Culture Moves Europe granted 19.750 euros per edition (the live
+ * site said 15.000), and Tech4Rural and Rural IA both ran in 2025.
+ */
+const CORRECTIONS: Readonly<Record<string, [string, string][]>> = {
+  '2024-2': [[fundingColumn('15.000 euros', CME), fundingColumn('19.750 euros', CME)]],
+  '2025-2': [
+    [
+      fundingColumn('15.000 euros', CME),
+      [
+        fundingColumn('19.750 euros', CME),
+        fundingColumn('25.341 euros', 'From Erasmus+ for the Tech4Rural youth exchange'),
+        fundingColumn('10.000 euros', 'From the Santiago Chamber of Commerce for Rural IA'),
+      ].join('\n\n\n\n'),
+    ],
+  ],
+}
+
 /** The page's html with its additions applied. `page` is the path, e.g. "2025-2". */
 export function applyAdditions(page: string, html: string): string {
   const retitled = TITLES[page]
   let out = retitled
     ? html.replaceAll(retitled.from, retitled.to).replace(retitled.crumb[0], retitled.crumb[1])
     : html
+  for (const [from, to] of CORRECTIONS[page] ?? []) {
+    if (!out.includes(from)) throw new Error(`${page}: correction "${from.slice(0, 60)}" is not in the page`)
+    out = out.replace(from, to)
+  }
   const dir = join(ADDITIONS, page)
   if (!existsSync(dir)) return out
   for (const file of readdirSync(dir).filter((f) => f.endsWith('.html')).sort()) {

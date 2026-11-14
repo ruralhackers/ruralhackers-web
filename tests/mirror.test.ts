@@ -37,6 +37,8 @@ describe('the build is the live site', () => {
       ['2025-2', 'aTorna: oral tradition at the Casa do Pobo'],
       ['2025-2', 'Beautiful Bees'],
       ['2025-2', 'Hacker Days 2025: Punto de Agua'],
+      ['2025-2', 'Tech4Rural youth exchange'],
+      ['2026', 'RURALI-ART'],
       ['2026', 'A year of Fuchiqueiras'],
       ['2026', 'Rural Hacker Fest in Ventín'],
     ]) {
@@ -48,7 +50,7 @@ describe('the build is the live site', () => {
   it('puts the new entries before the funding band, not after it', () => {
     for (const page of ['2024-2', '2025-2']) {
       const html = readFileSync(join('dist', page, 'index.html'), 'utf8')
-      const lastNew = page === '2024-2' ? 'Open doors at Anceu Coliving' : 'Hacker Days 2025: Punto de Agua</h2>'
+      const lastNew = page === '2024-2' ? 'Open doors at Anceu Coliving' : 'Tech4Rural youth exchange</h2>'
       expect(html.indexOf(lastNew)).toBeLessThan(html.indexOf('We do what we do thanks to support'))
     }
   })
@@ -85,6 +87,18 @@ describe('the build is the live site', () => {
     for (const page of built()) {
       expect(readFileSync(join('dist', page), 'utf8')).toContain('href="/2026/"><span class="wp-block-navigation-item__label">2026</span>')
     }
+  })
+
+  it('counts the funding of what ran that year, at the amount granted', () => {
+    const band = (page: string) => {
+      const html = readFileSync(join('dist', page, 'index.html'), 'utf8')
+      return html.slice(html.indexOf('We do what we do thanks to support'), html.indexOf('</main>'))
+    }
+    expect(band('2024-2')).toContain('>19.750 euros</p>')
+    expect(band('2025-2')).toContain('>19.750 euros</p>')
+    expect(band('2025-2')).toContain('>25.341 euros</p>')
+    expect(band('2025-2')).toContain('>10.000 euros</p>')
+    for (const page of ['2024-2', '2025-2']) expect(band(page)).not.toContain('15.000 euros')
   })
 
   it('names the 2026 report for what it is, so it does not compete with /2026/', () => {
