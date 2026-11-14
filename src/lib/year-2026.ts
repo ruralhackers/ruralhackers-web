@@ -117,7 +117,7 @@ const attr = (s: string) => s.replaceAll('&', '&amp;').replaceAll('"', '&quot;')
 const imageColumn = ({ src, width, height, alt }: NonNullable<Entry['image']>) => {
   const url = `/wp-content/uploads/${src}`
   return `<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:56%">
-<figure class="wp-block-image size-full"><img decoding="async" src="${GIF}" data-src="${url}" alt="${attr(alt)}" class="lazyload" style="aspect-ratio:4/3;object-fit:cover"><noscript><img decoding="async" width="${width}" height="${height}" src="${url}" alt="${attr(alt)}" style="aspect-ratio:4/3;object-fit:cover" /></noscript></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="${width}" height="${height}" src="${GIF}" data-src="${url}" alt="${attr(alt)}" class="lazyload" style="aspect-ratio:4/3;object-fit:cover"><noscript><img decoding="async" width="${width}" height="${height}" src="${url}" alt="${attr(alt)}" style="aspect-ratio:4/3;object-fit:cover" /></noscript></figure>
 </div>
 `
 }
@@ -148,6 +148,11 @@ ${columns}</div>
 </div>`
     })
     .join('\n\n\n\n')
+}
+
+/** What the sitemap needs to know about /2026/. */
+export const YEAR_2026 = {
+  images: ENTRIES.flatMap((e) => (e.image ? [e.image.src] : [])),
 }
 
 /** The /2026/ page, built on the mirrored 2025 page. */

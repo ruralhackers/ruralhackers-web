@@ -13,7 +13,11 @@
  *   - links to WordPress endpoints a static host does not have (feeds, oEmbed,
  *     wp-json, xmlrpc)
  *
- * Run: node scripts/mirror-live.ts
+ * It also keeps robots.txt and Yoast's sitemaps, verbatim, in mirror/root/
+ * (search engines already know those urls), and the sitemaps' stylesheet.
+ *
+ * Run: node scripts/mirror-live.ts              (pages, assets and root files)
+ *      node scripts/mirror-live.ts --root-only  (only robots.txt and sitemaps)
  */
 import { mkdirSync, writeFileSync, existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -23,6 +27,7 @@ const SITEMAPS = ['post', 'page', 'category', 'author'].map((s) => `${ORIGIN}/${
 const ROOT = new URL('..', import.meta.url).pathname
 const PAGES_DIR = join(ROOT, 'mirror/pages')
 const PUBLIC_DIR = join(ROOT, 'public')
+const ROOT_FILES_DIR = join(ROOT, 'mirror/root')
 
 const UA =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36'
@@ -129,6 +134,31 @@ const save = async (url: string, outPath: string) => {
   writeFileSync(outPath, out, 'utf8')
   return out
 }
+
+/** robots.txt, the sitemap index, every sitemap it lists, and their stylesheet. */
+const saveRootFiles = async () => {
+  mkdirSync(ROOT_FILES_DIR, { recursive: true })
+  const save = async (name: string) => {
+    const res = await get(`${ORIGIN}/${name}`)
+    if (!res.ok) throw new Error(`${res.status} /${name}`)
+    const text = await res.text()
+    writeFileSync(join(ROOT_FILES_DIR, name), text, 'utf8')
+    console.log('root', name)
+    return text
+  }
+  await save('robots.txt')
+  const index = await save('sitemap_index.xml')
+  for (const m of index.matchAll(/<loc>https:\/\/ruralhackers\.com\/([^<]+\.xml)<\/loc>/g)) await save(m[1]!)
+  // The sitemaps style themselves with this; it is served where they point.
+  const xsl = await get(`${ORIGIN}/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl`)
+  if (!xsl.ok) throw new Error(`${xsl.status} main-sitemap.xsl`)
+  const xslPath = join(PUBLIC_DIR, 'wp-content/plugins/wordpress-seo/css/main-sitemap.xsl')
+  mkdirSync(dirname(xslPath), { recursive: true })
+  writeFileSync(xslPath, Buffer.from(await xsl.arrayBuffer()))
+}
+
+await saveRootFiles()
+if (process.argv.includes('--root-only')) process.exit(0)
 
 const urls = await sitemapUrls()
 const seen = new Set(urls)

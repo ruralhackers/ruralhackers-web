@@ -16,6 +16,27 @@ import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 
 const ADDITIONS = 'mirror/additions'
+
+/** When this repo last changed a mirrored page; the sitemap's lastmod for them. */
+export const UPDATED = '2026-11-14T00:00:00+00:00'
+
+/**
+ * Pages whose title changes. The live site titles both its 2026 report and,
+ * now, the /2026/ year page "2026 - Rural Hackers"; two pages with one title
+ * compete with each other, so the report is named for what it is.
+ */
+const TITLES: Readonly<Record<string, { from: string; to: string; crumb: [string, string] }>> = {
+  '2025-2-2': {
+    from: '2026 - Rural Hackers',
+    to: 'The European Union in the Villages - Rural Hackers',
+    crumb: ['"position":2,"name":"2026"', '"position":2,"name":"The European Union in the Villages"'],
+  },
+}
+
+/** Every mirrored page this repo changes, by path. */
+export const CHANGED_PAGES: readonly string[] = [
+  ...new Set([...(existsSync(ADDITIONS) ? readdirSync(ADDITIONS) : []), ...Object.keys(TITLES)]),
+].sort()
 const FUNDING = 'We do what we do thanks to support'
 const GROUP = '<div class="wp-block-group alignfull'
 
@@ -50,9 +71,12 @@ const insertionPoint = (html: string, where: string, page: string): number => {
 
 /** The page's html with its additions applied. `page` is the path, e.g. "2025-2". */
 export function applyAdditions(page: string, html: string): string {
+  const retitled = TITLES[page]
+  let out = retitled
+    ? html.replaceAll(retitled.from, retitled.to).replace(retitled.crumb[0], retitled.crumb[1])
+    : html
   const dir = join(ADDITIONS, page)
-  if (!existsSync(dir)) return html
-  let out = html
+  if (!existsSync(dir)) return out
   for (const file of readdirSync(dir).filter((f) => f.endsWith('.html')).sort()) {
     const fragment = readFileSync(join(dir, file), 'utf8')
     const where = /^<!-- insert: ([a-z-]+) -->/.exec(fragment)?.[1]

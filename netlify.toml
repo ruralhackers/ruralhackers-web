@@ -7,19 +7,23 @@
   BUN_VERSION = "1.3.14"
 
 # Astro fingerprints everything under _astro, so those are safe to cache forever.
-# This is what makes a second visit instant: 297 KB of fonts and images on a first
-# load, and nothing on a repeat one.
 [[headers]]
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# The favicons are not fingerprinted — they are referenced from <head> at fixed
-# paths — so they get a day rather than a year.
+# WordPress's uploads, theme and core files, at their original paths. Not
+# fingerprinted, but an upload never changes once published (WordPress gives a
+# replacement a new name), so a week is safe, then revalidate in the background.
 [[headers]]
-  for = "/*.png"
+  for = "/wp-content/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/wp-includes/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
 
 # Html must revalidate, or a deploy would not reach anyone holding a cached copy.
 [[headers]]

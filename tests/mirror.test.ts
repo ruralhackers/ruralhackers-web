@@ -76,7 +76,54 @@ describe('the build is the live site', () => {
     }
   })
 
-  it('leaves the 2026 report at /2025-2-2/ as the live site has it', () => {
-    expect(readFileSync('dist/2025-2-2/index.html', 'utf8')).toBe(addProgress2026(readFileSync('mirror/pages/2025-2-2/index.html', 'utf8')))
+  it('names the 2026 report for what it is, so it does not compete with /2026/', () => {
+    const html = readFileSync('dist/2025-2-2/index.html', 'utf8')
+    expect(html).toContain('<title>The European Union in the Villages - Rural Hackers</title>')
+    expect(html).not.toContain('2026 - Rural Hackers')
+  })
+
+  it('reserves the space of every new image before it loads', () => {
+    for (const page of ['2024-2', '2025-2', '2026']) {
+      const html = readFileSync(join('dist', page, 'index.html'), 'utf8')
+      for (const img of html.match(/<img [^>]*data-src="\/wp-content\/uploads\/2026\/11\/[^"]+"[^>]*>/g) ?? []) {
+        expect(img).toMatch(/ width="\d+" height="\d+"/)
+      }
+    }
+  })
+})
+
+describe('root files', () => {
+  it('serves the live robots.txt, pointing at the sitemap index', () => {
+    expect(readFileSync('dist/robots.txt', 'utf8')).toBe(readFileSync('mirror/root/robots.txt', 'utf8'))
+    expect(readFileSync('dist/robots.txt', 'utf8')).toContain('Sitemap: https://ruralhackers.com/sitemap_index.xml')
+  })
+
+  it('serves every sitemap the index lists, as valid xml', () => {
+    const index = readFileSync('dist/sitemap_index.xml', 'utf8')
+    const listed = [...index.matchAll(/<loc>https:\/\/ruralhackers\.com\/([^<]+)<\/loc>/g)].map((m) => m[1]!)
+    expect(listed.length).toBe(4)
+    for (const file of ['sitemap_index.xml', ...listed]) {
+      expect(readFileSync(join('dist', file), 'utf8').startsWith('<?xml')).toBe(true)
+    }
+    expect(existsSync('dist/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl')).toBe(true)
+  })
+
+  it('lists every built page exactly once across the sitemaps, /2026/ included', () => {
+    const locs = ['page', 'post', 'category', 'author']
+      .flatMap((s) => [...readFileSync(`dist/${s}-sitemap.xml`, 'utf8').matchAll(/<url>\s*<loc>https:\/\/ruralhackers\.com(\/[^<]*)<\/loc>/g)].map((m) => m[1]!))
+      .sort()
+    const built = [...pages().filter((p) => p !== '404.html').map((p) => '/' + p.replace(/index\.html$/, '')), '/2026/'].sort()
+    expect(locs).toEqual(built)
+  })
+
+  it('redirects the old WordPress page links to their pages', () => {
+    const redirects = readFileSync('dist/_redirects', 'utf8')
+    expect(redirects).toContain('/  p=737  /2025-2/  301!')
+    expect(redirects).toContain('/  page_id=737  /2025-2/  301!')
+    expect(redirects).toContain('/wp-sitemap.xml  /sitemap_index.xml  301')
+    for (const line of redirects.trim().split('\n')) {
+      const to = line.trim().split(/\s+/).at(-2)!
+      expect(existsSync(join('dist', to, to.endsWith('/') ? 'index.html' : ''))).toBe(true)
+    }
   })
 })
