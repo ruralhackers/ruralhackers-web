@@ -31,7 +31,13 @@ A Cloudflare Worker with static assets (`wrangler.jsonc`), on the
 bun run deploy      # astro build + wrangler deploy
 ```
 
-- `src/worker.ts` runs only for `/`, to redirect WordPress's `/?p=ID` links.
+- `src/worker.ts` runs only for `/`, to redirect WordPress's `/?p=ID` links,
+  and for `/wp-admin/admin-ajax.php`, where the two WPForms forms (contact,
+  Hacker Days) post: `src/forms.ts` answers in WPForms' own json and emails
+  hello@ruralhackers.com through Resend, from `web@out.ruralhackers.com`. It
+  needs the Worker secret `RESEND_API_KEY` (`bunx wrangler secret put
+  RESEND_API_KEY`); without it the forms tell the visitor to write to
+  hello@ruralhackers.com instead.
 - `_redirects` and `_headers` (generated / in `public/`) handle the other old
   WordPress urls and the cache of `/wp-content`.
 - `www` goes to the apex through a redirect rule on the zone, and the zone has

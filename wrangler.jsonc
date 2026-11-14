@@ -1,12 +1,13 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   // ruralhackers.com: the static build in dist/, plus a Worker that only runs
-  // for "/" to redirect WordPress's /?p=ID links (src/worker.ts).
+  // for "/" (WordPress's /?p=ID links) and for the WPForms endpoint, which emails
+  // form submissions through Resend (src/worker.ts, src/forms.ts).
   // Deploy with `bun run deploy`, which builds first: the Worker bundles
   // dist/_wp-ids.json.
   "name": "ruralhackers-web",
   "main": "./src/worker.ts",
-  "compatibility_date": "2026-11-14",
+  "compatibility_date": "2026-10-03",
   "workers_dev": true,
   // Both hostnames answer here; a zone redirect rule sends www to the apex.
   // Before this, ruralhackers.com was an A record to WordPress on Hostinger
@@ -20,6 +21,6 @@
     "binding": "ASSETS",
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash",
-    "run_worker_first": ["/"]
+    "run_worker_first": ["/", "/wp-admin/admin-ajax.php"]
   }
 }
